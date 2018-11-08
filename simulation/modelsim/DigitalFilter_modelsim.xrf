@@ -1,0 +1,11 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd
+source_file = 1, C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd
+source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, C:/Users/Martin/OneDrive/Dokument/Projekt15/db/DigitalFilter.cbx.xml
+design_name = DigitalFilter
+instance = comp, \input~input\, input~input, DigitalFilter, 1
+instance = comp, \~QUARTUS_CREATED_GND~I\, ~QUARTUS_CREATED_GND~I, DigitalFilter, 1
