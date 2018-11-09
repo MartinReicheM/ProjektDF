@@ -25,8 +25,8 @@ architecture rtl of s2p is
 	signal tmpS2P 	: std_logic_vector(15 downto 0):=(others=>'0');
 	signal sndS2P	: std_logic_vector(15 downto 0):=(others=>'0');
 	signal tmpP2S	: std_logic_vector(15 downto 0):=(others=>'0');
-	signal sndP2S	: std_logic_vector(15 downto 0):=(others=>'0');
 	signal p2sTick : integer range 0 to 15 :=0;
+	signal s2pTick : integer range 0 to 15 :=0;
 	signal p2sInter: std_logic;
 begin
  
@@ -38,7 +38,11 @@ begin
 				serialOut	<='0';
 				p2sInter		<='0';
 				p2sTick		<= 0 ;
+				tmpP2S		<=(others=>'0');
+				s2pTick		<=0;
+				tmps2P		<=(others=>'0');
 				parallellOut<=(others=>'0');
+				
 		
 		elsif rising_edge(bClock) then 
 		
@@ -56,14 +60,24 @@ begin
 				else 
 					p2sTick<=0;
 					rdyOut<='0';
-					p2sInter<='0';
-			
-					
+					p2sInter<='Z';
 				end if;
+				
+----------- Receiving bitstream chunked up to 16bit arrays -----------
+				
+				if (s2pTick < 16) then 
+					tmpS2P(s2pTick)<=serialIn;
+					s2pTick<=s2pTick+1;
+				else
+					sndS2P<=tmpS2P;
+					s2pTick<=0;
+				end if;
+				
 		end if;
 		
 	end process;
 	serialOut <= p2sInter;
+	parallellOut<=sndS2P;
 	
 end architecture rtl;
 	
