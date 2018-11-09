@@ -1,4 +1,62 @@
-|DigitalFilter
+|Main
+pin_name1 => clock_divider:inst.clock_100
+pin_name2 => clock_divider:inst.reset
+
+
+|Main|clock_divider:inst
+clock_100 => clock_125_ticker[0].CLK
+clock_100 => clock_125_ticker[1].CLK
+clock_100 => clock_125_ticker[2].CLK
+clock_100 => clock_125_ticker[3].CLK
+clock_100 => clock_125_internal.CLK
+clock_100 => clock_400_ticker[0].CLK
+clock_100 => clock_400_ticker[1].CLK
+clock_100 => clock_400_ticker[2].CLK
+clock_100 => clock_400_ticker[3].CLK
+clock_100 => clock_400_ticker[4].CLK
+clock_100 => clock_400_ticker[5].CLK
+clock_100 => clock_400_ticker[6].CLK
+clock_100 => clock_400_ticker[7].CLK
+clock_100 => clock_400_ticker[8].CLK
+clock_100 => clock_400_ticker[9].CLK
+clock_100 => clock_400_ticker[10].CLK
+clock_100 => clock_400_ticker[11].CLK
+clock_100 => clock_400_ticker[12].CLK
+clock_100 => clock_400_ticker[13].CLK
+clock_100 => clock_400_ticker[14].CLK
+clock_100 => clock_400_ticker[15].CLK
+clock_100 => clock_400_ticker[16].CLK
+clock_100 => clock_400_ticker[17].CLK
+clock_100 => clock_400_internal.CLK
+reset => clock_400_ticker[0].ACLR
+reset => clock_400_ticker[1].ACLR
+reset => clock_400_ticker[2].ACLR
+reset => clock_400_ticker[3].ACLR
+reset => clock_400_ticker[4].ACLR
+reset => clock_400_ticker[5].ACLR
+reset => clock_400_ticker[6].ACLR
+reset => clock_400_ticker[7].ACLR
+reset => clock_400_ticker[8].ACLR
+reset => clock_400_ticker[9].ACLR
+reset => clock_400_ticker[10].ACLR
+reset => clock_400_ticker[11].ACLR
+reset => clock_400_ticker[12].ACLR
+reset => clock_400_ticker[13].ACLR
+reset => clock_400_ticker[14].ACLR
+reset => clock_400_ticker[15].ACLR
+reset => clock_400_ticker[16].ACLR
+reset => clock_400_ticker[17].ACLR
+reset => clock_400_internal.ACLR
+reset => clock_125_internal.ENA
+reset => clock_125_ticker[3].ENA
+reset => clock_125_ticker[2].ENA
+reset => clock_125_ticker[1].ENA
+reset => clock_125_ticker[0].ENA
+clock_400 <= clock_400_internal.DB_MAX_OUTPUT_PORT_TYPE
+clock_125 <= clock_125_internal.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Main|DigitalFilter:inst2
 input => ~NO_FANOUT~
 
 

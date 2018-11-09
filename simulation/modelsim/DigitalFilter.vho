@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "11/08/2018 15:05:49"
+-- DATE "11/09/2018 16:10:10"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -33,17 +33,19 @@ USE ALTERA_LNSIM.ALTERA_LNSIM_COMPONENTS.ALL;
 USE CYCLONEV.CYCLONEV_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY 	DigitalFilter IS
+ENTITY 	Main IS
     PORT (
-	input : IN std_logic
+	pin_name1 : IN std_logic;
+	pin_name2 : IN std_logic
 	);
-END DigitalFilter;
+END Main;
 
 -- Design Ports Information
--- input	=>  Location: PIN_AB22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- pin_name1	=>  Location: PIN_AD20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- pin_name2	=>  Location: PIN_AB22,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
-ARCHITECTURE structure OF DigitalFilter IS
+ARCHITECTURE structure OF Main IS
 SIGNAL gnd : std_logic := '0';
 SIGNAL vcc : std_logic := '1';
 SIGNAL unknown : std_logic := 'X';
@@ -53,29 +55,43 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
-SIGNAL ww_input : std_logic;
-SIGNAL \input~input_o\ : std_logic;
+SIGNAL ww_pin_name1 : std_logic;
+SIGNAL ww_pin_name2 : std_logic;
+SIGNAL \pin_name1~input_o\ : std_logic;
+SIGNAL \pin_name2~input_o\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
 
 BEGIN
 
-ww_input <= input;
+ww_pin_name1 <= pin_name1;
+ww_pin_name2 <= pin_name2;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
--- Location: IOIBUF_X89_Y9_N4
-\input~input\ : cyclonev_io_ibuf
+-- Location: IOIBUF_X82_Y0_N41
+\pin_name1~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_input,
-	o => \input~input_o\);
+	i => ww_pin_name1,
+	o => \pin_name1~input_o\);
 
--- Location: LABCELL_X50_Y35_N0
+-- Location: IOIBUF_X89_Y9_N4
+\pin_name2~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_pin_name2,
+	o => \pin_name2~input_o\);
+
+-- Location: MLABCELL_X47_Y35_N3
 \~QUARTUS_CREATED_GND~I\ : cyclonev_lcell_comb
 -- Equation(s):
 
