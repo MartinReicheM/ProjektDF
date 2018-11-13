@@ -4,7 +4,10 @@ use ieee.std_logic_arith.all;
 
 entity DigitalFilter is 
 port(
-		input : in std_logic
+		reset : in 	std_logic;
+		clock : in 	std_logic;
+		input : in 	std_logic_vector(15 downto 0);
+		output: out std_logic_vector(15 downto 0)
 );
 end entity;
 
