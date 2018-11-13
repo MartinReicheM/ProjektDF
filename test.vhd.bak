@@ -1,0 +1,19 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+
+entity test is 
+port( 
+		input		: in  std_logic;
+		clock1	: in  std_logic;
+		output	: out std_logic
+		);
+end entity test
+
+architecture rtl of test is 
+
+begin 
+process(clock1
+input<=output;
+
+end rtl;

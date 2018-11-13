@@ -88,7 +88,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1072 176 1264 288)
+	(rect 832 192 1024 304)
 	(text "DigitalFilter" (rect 5 0 60 12)(font "Arial" ))
 	(text "inst2" (rect 8 96 31 108)(font "Arial" ))
 	(port
@@ -116,7 +116,7 @@ refer to the applicable agreement for further details.
 		(pt 192 32)
 		(output)
 		(text "output[15..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "output[15..0]" (rect 119 27 171 39)(font "Arial" ))
+		(text "output[15..0]" (rect 119 27 181 39)(font "Arial" ))
 		(line (pt 192 32)(pt 176 32)(line_width 3))
 	)
 	(drawing
