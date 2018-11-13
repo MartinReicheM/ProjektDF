@@ -1,0 +1,67 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do DigitalFilter_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:27:02 on Nov 13,2018
+# vcom -reportprogress 300 -93 -work work C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_SIGNED
+# -- Compiling entity DigitalFilter
+# -- Compiling architecture rtl of DigitalFilter
+# End time: 12:27:02 on Nov 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:27:02 on Nov 13,2018
+# vcom -reportprogress 300 -93 -work work C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity clock_divider
+# -- Compiling architecture rtl of clock_divider
+# End time: 12:27:02 on Nov 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+wave create -pattern none -portmode in -language vhdl /digitalfilter/reset
+# Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
+# digitalfilter
+wave create -pattern none -portmode in -language vhdl /digitalfilter/clock
+# digitalfilter
+wave create -pattern none -portmode in -language vhdl /digitalfilter/strIn
+# digitalfilter
+wave create -pattern none -portmode in -language vhdl /digitalfilter/rdyIn
+# digitalfilter
+wave create -pattern none -portmode in -language vhdl -range 3 0 /digitalfilter/order
+# digitalfilter
+wave create -pattern none -portmode in -language vhdl -range 3 0 /digitalfilter/Ftype
+# digitalfilter
+wave create -pattern none -portmode in -language vhdl -range 15 0 /digitalfilter/input
+# digitalfilter
+wave create -pattern none -portmode out -language vhdl -range 15 0 /digitalfilter/output
+# digitalfilter
+wave modify -driver freeze -pattern constant -value 0 -starttime 0ns -endtime 10ns NewSig:/digitalfilter/reset
+# digitalfilter
+wave modify -driver freeze -pattern constant -value 1 -starttime 10ns -endtime 1000ns NewSig:/digitalfilter/reset
+# digitalfilter
+wave modify -driver freeze -pattern clock -initialvalue 0 -period 2ns -dutycycle 50 -starttime 0ns -endtime 1000ns NewSig:/digitalfilter/clock
+# digitalfilter
+wave modify -driver freeze -pattern constant -value 1 -starttime 0ns -endtime 1000ns NewSig:/digitalfilter/rdyin
+# digitalfilter
+wave modify -driver freeze -pattern constant -value 0010 -range 3 0 -starttime 0ns -endtime 1000ns NewSig:/digitalfilter/order
+# digitalfilter

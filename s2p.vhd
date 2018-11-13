@@ -9,7 +9,6 @@ port(
 	bClock			: in 	std_logic;
 	strIn				: in 	std_logic;
 	strOut			: out std_logic:='0';
-	rdyIn				: in  std_logic;
 	rdyOut			: out std_logic:='0';
 	serialIn 		: in 	std_logic;
 	parallellIn		: in 	std_logic_vector(15 downto 0);
@@ -46,7 +45,7 @@ begin
 		
 		elsif rising_edge(bClock) then 
 		
------------ Sending processed 16bit arrays to a bitstream -----------
+----------- Receiving 16bit arrays : sending bitstream -----------
 
 				if (p2sTick = 0 and strIn='1') then
 					tmpp2s <= parallellIn;
@@ -63,13 +62,15 @@ begin
 					p2sInter<='Z';
 				end if;
 				
------------ Receiving bitstream chunked up to 16bit arrays -----------
+----------- Receiving bitstream : sending 16bit arrays -----------
 				
 				if (s2pTick < 16) then 
 					tmpS2P(s2pTick)<=serialIn;
 					s2pTick<=s2pTick+1;
+					strOut<='0';
 				else
 					sndS2P<=tmpS2P;
+					strOut<='1';
 					s2pTick<=0;
 				end if;
 				
