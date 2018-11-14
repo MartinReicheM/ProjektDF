@@ -1,5 +1,5 @@
 Flow report for DigitalFilter
-Tue Nov 13 12:20:22 2018
+Wed Nov 14 13:54:07 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,25 +40,25 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Nov 13 12:20:22 2018       ;
+; Flow Status                     ; Successful - Wed Nov 14 13:54:07 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; DigitalFilter                               ;
 ; Top-level Entity Name           ; Main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1 / 32,070 ( < 1 % )                        ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 0                                           ;
-; Total pins                      ; 2 / 457 ( < 1 % )                           ;
+; Total pins                      ; 2                                           ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
 ; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
 +---------------------------------+---------------------------------------------+
 
 
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/13/2018 12:19:10 ;
+; Start date & time ; 11/14/2018 13:53:51 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DigitalFilter       ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 98959870024861.154210794900692         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 98959870024861.154220003012232         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -97,12 +97,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4873 MB             ; 00:00:32                           ;
-; Fitter               ; 00:00:38     ; 1.0                     ; 6277 MB             ; 00:00:59                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4842 MB             ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.0                     ; 5109 MB             ; 00:00:05                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4747 MB             ; 00:00:02                           ;
-; Total                ; 00:01:07     ; --                      ; --                  ; 00:01:46                           ;
+; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 4875 MB             ; 00:00:35                           ;
+; Total                ; 00:00:16     ; --                      ; --                  ; 00:00:35                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -112,10 +108,6 @@ refer to the applicable agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; DESKTOP-TKO7KMB  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-TKO7KMB  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-TKO7KMB  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-TKO7KMB  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-TKO7KMB  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -123,10 +115,6 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off DigitalFilter -c DigitalFilter
-quartus_fit --read_settings_files=off --write_settings_files=off DigitalFilter -c DigitalFilter
-quartus_asm --read_settings_files=off --write_settings_files=off DigitalFilter -c DigitalFilter
-quartus_sta DigitalFilter -c DigitalFilter
-quartus_eda --read_settings_files=off --write_settings_files=off DigitalFilter -c DigitalFilter
 
 
 

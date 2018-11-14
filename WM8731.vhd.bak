@@ -1,0 +1,22 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_signed.all;
+
+entity WM8731 is 
+
+port(
+
+
+
+
+);
+
+end entity WM8731;
+
+architecture rtl of WM8731 is 
+
+begin 
+
+
+
+end rtl;

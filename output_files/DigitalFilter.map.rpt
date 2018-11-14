@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DigitalFilter
-Tue Nov 13 12:19:23 2018
+Wed Nov 14 13:54:07 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -42,7 +42,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Nov 13 12:19:23 2018       ;
+; Analysis & Synthesis Status     ; Successful - Wed Nov 14 13:54:07 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; DigitalFilter                               ;
 ; Top-level Entity Name           ; Main                                        ;
@@ -255,12 +255,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Nov 13 12:19:09 2018
+    Info: Processing started: Wed Nov 14 13:53:50 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DigitalFilter -c DigitalFilter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file digitalfilter.vhd
-    Info (12022): Found design unit 1: DigitalFilter-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 19
+    Info (12022): Found design unit 1: DigitalFilter-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 20
     Info (12023): Found entity 1: DigitalFilter File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file clock_divider.vhd
     Info (12022): Found design unit 1: clock_divider-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 12
@@ -270,11 +270,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file main.bd
 Info (12021): Found 2 design units, including 1 entities, in source file s2p.vhd
     Info (12022): Found design unit 1: s2p-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/s2p.vhd Line: 23
     Info (12023): Found entity 1: s2p File: C:/Users/Martin/OneDrive/Dokument/Projekt15/s2p.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file i2c.vhd
+    Info (12022): Found design unit 1: i2cc-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 15
+    Info (12023): Found entity 1: i2cc File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file test.vhd
+    Info (12022): Found design unit 1: test-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/test.vhd Line: 15
+    Info (12023): Found entity 1: test File: C:/Users/Martin/OneDrive/Dokument/Projekt15/test.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file wm8731.vhd
+    Info (12022): Found design unit 1: WM8731-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 19
+    Info (12023): Found entity 1: WM8731 File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 5
 Info (12127): Elaborating entity "Main" for the top level hierarchy
 Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:inst"
 Info (12128): Elaborating entity "DigitalFilter" for hierarchy "DigitalFilter:inst2"
-Warning (10541): VHDL Signal Declaration warning at DigitalFilter.vhd(23): used implicit default value for signal "inputarray" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 23
-Warning (10873): Using initial value X (don't care) for net "coeffarray[2..7]" at DigitalFilter.vhd(22) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 22
+Warning (10541): VHDL Signal Declaration warning at DigitalFilter.vhd(24): used implicit default value for signal "inputarray" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 24
+Warning (10873): Using initial value X (don't care) for net "coeffarray[2..7]" at DigitalFilter.vhd(23) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 23
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
@@ -284,9 +293,9 @@ Info (21057): Implemented 2 device resources after synthesis - the final resourc
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 0 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4873 megabytes
-    Info: Processing ended: Tue Nov 13 12:19:24 2018
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Peak virtual memory: 4875 megabytes
+    Info: Processing ended: Wed Nov 14 13:54:07 2018
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:35
 
 

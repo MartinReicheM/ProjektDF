@@ -8,7 +8,7 @@ port(
 		clock1	: in  std_logic;
 		output	: out std_logic
 		);
-end entity test
+end entity test;
 
 
 
