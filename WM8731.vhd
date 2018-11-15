@@ -20,6 +20,8 @@ architecture rtl of WM8731 is
 
 begin 
 
+AUD_DACDAT<=AUD_ADCDAT;
+
 
 
 end rtl;

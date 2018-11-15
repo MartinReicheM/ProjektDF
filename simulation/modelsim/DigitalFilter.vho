@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "11/13/2018 12:20:22"
+-- DATE "11/15/2018 12:45:29"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -35,14 +35,14 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY 	Main IS
     PORT (
-	pin_name1 : IN std_logic;
-	pin_name2 : IN std_logic
+	pin_name2 : OUT std_logic;
+	pin_name1 : IN std_logic
 	);
 END Main;
 
 -- Design Ports Information
--- pin_name1	=>  Location: PIN_AD20,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- pin_name2	=>  Location: PIN_AB22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- pin_name2	=>  Location: PIN_AH9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- pin_name1	=>  Location: PIN_AF11,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF Main IS
@@ -55,21 +55,33 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
-SIGNAL ww_pin_name1 : std_logic;
 SIGNAL ww_pin_name2 : std_logic;
-SIGNAL \pin_name1~input_o\ : std_logic;
-SIGNAL \pin_name2~input_o\ : std_logic;
+SIGNAL ww_pin_name1 : std_logic;
 SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
+SIGNAL \pin_name1~input_o\ : std_logic;
 
 BEGIN
 
+pin_name2 <= ww_pin_name2;
 ww_pin_name1 <= pin_name1;
-ww_pin_name2 <= pin_name2;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
--- Location: IOIBUF_X82_Y0_N41
+-- Location: IOOBUF_X18_Y0_N93
+\pin_name2~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \pin_name1~input_o\,
+	devoe => ww_devoe,
+	o => ww_pin_name2);
+
+-- Location: IOIBUF_X18_Y0_N41
 \pin_name1~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -80,18 +92,7 @@ PORT MAP (
 	i => ww_pin_name1,
 	o => \pin_name1~input_o\);
 
--- Location: IOIBUF_X89_Y9_N4
-\pin_name2~input\ : cyclonev_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_pin_name2,
-	o => \pin_name2~input_o\);
-
--- Location: MLABCELL_X47_Y35_N3
+-- Location: LABCELL_X56_Y33_N3
 \~QUARTUS_CREATED_GND~I\ : cyclonev_lcell_comb
 -- Equation(s):
 

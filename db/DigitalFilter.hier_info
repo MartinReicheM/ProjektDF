@@ -1,6 +1,16 @@
 |Main
-pin_name1 => clock_divider:inst.clock_100
-pin_name2 => clock_divider:inst.reset
+pin_name2 <= AUD_DACDAC.DB_MAX_OUTPUT_PORT_TYPE
+pin_name1 => WM8731:inst1.AUD_ADCDAT
+
+
+|Main|WM8731:inst1
+clock50 => ~NO_FANOUT~
+AUD_BCLK <= AUD_BCLK.DB_MAX_OUTPUT_PORT_TYPE
+AUD_XCK <= AUD_XCK.DB_MAX_OUTPUT_PORT_TYPE
+AUD_ADCLRCK <= AUD_ADCLRCK.DB_MAX_OUTPUT_PORT_TYPE
+AUD_ADCDAT => AUD_DACDAT.DATAIN
+AUD_DACLRCK <= comb.DB_MAX_OUTPUT_PORT_TYPE
+AUD_DACDAT <= AUD_ADCDAT.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Main|clock_divider:inst
