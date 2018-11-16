@@ -34,13 +34,11 @@ begin
 		if (reset='0') then 
 				strOut		<='0';
 				rdyOut		<='0';
-				serialOut	<='0';
 				p2sInter		<='0';
 				p2sTick		<= 0 ;
 				tmpP2S		<=(others=>'0');
 				s2pTick		<=0;
 				tmps2P		<=(others=>'0');
-				parallellOut<=(others=>'0');
 				
 		
 		elsif rising_edge(bClock) then 

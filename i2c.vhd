@@ -1,18 +1,15 @@
 library ieee;
 use IEEE.std_logic_1164.all;
 
-entity i2cc is
+entity i2c is
 port(
-	clock_200k: in std_logic;
-	start_strobe: in std_logic;
-	reset: in std_logic;
+	clock: in std_logic;
 	sda: inout std_logic;
-	scl: out std_logic;
-	data_out: out std_logic_vector(7 downto 0)
+	scl: out std_logic
 	);
  end entity;
  
- architecture rtl of i2cc is
+ architecture rtl of i2c is
  
  ----Signals----
  signal statemachine: integer range 0 to 15 :=0;
@@ -22,14 +19,13 @@ port(
  signal start_strobe1: std_logic:='0';
  signal clock_counter: integer := 0;
  signal counter: integer := 0;
-
  
   ----SDA and SCL signals----
  signal sda_out: std_logic:='1';
  signal scl_out: std_logic:='0';
  
  ----Slave adress----
- constant addr_slave: std_logic_vector(7 downto 0) :="1001000"&'0'; --Slave address + write
+ constant addr_slave: std_logic_vector(7 downto 0) :="0011010"&'0'; --Slave address + write
  
  --Register values
  constant R0: std_logic_vector (7 downto 0) := "00000000";
@@ -43,13 +39,13 @@ port(
  constant R4: std_logic_vector (7 downto 0) := "00001000"; 
  constant R44: std_logic_vector (7 downto 0):= "11010010"; 
  constant R5: std_logic_vector (7 downto 0) := "00001010"; 
- constant R55: std_logic_vector (7 downto 0):= "00000001"; 
+ constant R55: std_logic_vector (7 downto 0):= "00000110"; 
  constant R6: std_logic_vector (7 downto 0) := "00001100"; 
  constant R66: std_logic_vector (7 downto 0):= "01100010"; 
  constant R7: std_logic_vector (7 downto 0) := "00001110";
  constant R77: std_logic_vector (7 downto 0):= "01000011";
  constant R8: std_logic_vector (7 downto 0) := "00010000";
- constant R88: std_logic_vector (7 downto 0):= "00100000"; 
+ constant R88: std_logic_vector (7 downto 0):= "00000000"; 
  constant R9: std_logic_vector (7 downto 0) := "00010010"; 
  constant R99: std_logic_vector (7 downto 0):= "00000001"; 
  constant R15: std_logic_vector (7 downto 0):= "00011110"; 
@@ -60,32 +56,31 @@ port(
  sda <= 'Z' when sda_out='1' else '0';
  scl <= scl_out;
  
- process(clock_200k,reset)
+ process(clock)
  begin
  
- --if(reset='0') then
- --scl_out<='1';
- --sda_out<='1';
- --statemachine<=0;
+ if(counter=11) then
+ scl_out<='1';
+ sda_out<='1';
+ statemachine<=0;
  
- if rising_edge(clock_200k) then
+ elsif rising_edge(clock) then
  
-   --clock_counter<=clock_counter+1;
-	--if(clock_counter=199999) then
-	--clock_counter<=0;
-	--start_strobe1 <= not(start_strobe1);
-	--end if;
+   clock_counter<=clock_counter+1;
+	if(clock_counter=199999) then
+	clock_counter<=0;
+	start_strobe1 <= not(start_strobe1);
+	end if;
  
  case statemachine is
  
  --------------------IDLE STATE--------------------- 
 		when 0 =>
-			counter <= counter+1; 
 			scl_out<='1';
 			sda_out<='1'; --Sda ansätts till Z.
-			--if(start_strobe1<='0') then
+			if(start_strobe1<='0') then
 			statemachine <= statemachine + 1;
-			--end if;
+			end if;
 			
  --------------------Start STATE--------------------
  
@@ -122,8 +117,7 @@ port(
 			
 		when 5=>
 			scl_out<='1';
-			--ack<=sda; 
-			--ack<='0';
+			ack<=sda; 
 			if ack = '1' then
 			statemachine <= 4;
 			else 
@@ -135,7 +129,9 @@ port(
 		when 6 =>
 		scl_out<='0';
 		
-		if(counter =1) then
+		if(counter =0) then
+		sda_out <=R15(count);
+		elsif(counter =1) then
 		sda_out <=R0(count);
 		elsif(counter=2)then
 		sda_out <=R1(count);
@@ -161,7 +157,6 @@ port(
 		
 		when 7=>
 			scl_out<='1';
-			sda_out <=R0(count);
 			if((count-1)>=0) then
 			count <= count - 1;
 			statemachine <= 6;
@@ -179,8 +174,7 @@ port(
 			
 		when 9=>
 			scl_out<='1';
-			--ack<=sda; 
-			--ack<='0';
+			ack<=sda; 
 			if ack = '1' then
 			statemachine <= 8;
 			else 
@@ -191,7 +185,9 @@ port(
 		when 10 =>
 		scl_out<='0';
 		
-		if(counter =1) then
+		if(counter =0) then
+		sda_out <=R1515(count);
+		elsif(counter =1) then
 		sda_out <=R00(count);
 		elsif(counter=2)then
 		sda_out <=R11(count);
@@ -217,7 +213,6 @@ port(
 		
 		when 11=>
 			scl_out<='1';
-			sda_out <=R00(count);
 			if((count-1)>=0) then
 			count <= count - 1;
 			statemachine <= 10;
@@ -235,8 +230,7 @@ port(
 			
 		when 13=>
 			scl_out<='1';
-			--ack<=sda; 
-			--ack<='0';
+			ack<=sda; 
 			if ack = '1' then
 			statemachine <= 12;
 			else 
@@ -254,6 +248,7 @@ port(
 			scl_out<='1';
 			sda_out<='1'; 
 			statemachine <=0;
+			counter <= counter+1; 
 			
 -------------------Other condition-------------------
 		when others => statemachine<=1;
