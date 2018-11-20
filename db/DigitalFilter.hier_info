@@ -25,7 +25,15 @@ bclk => adclrc~reg0.CLK
 bclk => daclrc~reg0.CLK
 dacdat <= dacdat~reg0.DB_MAX_OUTPUT_PORT_TYPE
 adcdat => dacdat~reg0.DATAIN
-reset => ~NO_FANOUT~
+reset => count[0].PRESET
+reset => count[1].PRESET
+reset => count[2].PRESET
+reset => count[3].PRESET
+reset => statemachine[0].ACLR
+reset => statemachine[1].ACLR
+reset => adclrc~reg0.ACLR
+reset => daclrc~reg0.ACLR
+reset => dacdat~reg0.ENA
 
 
 |Main|clock_divider:inst

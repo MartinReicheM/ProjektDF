@@ -4,6 +4,14 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "daclrc",
+					"strict" : false
+				},
+				{
+					"name" : "adclrc",
+					"strict" : false
+				},
+				{
 					"name" : "dacdata",
 					"strict" : false
 				},
@@ -20,15 +28,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
 					"name" : "adcdat",
 					"strict" : false
 				},
 				{
 					"name" : "clock_50",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
 					"strict" : false
 				}
 			]

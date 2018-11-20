@@ -20,70 +20,80 @@ architecture rtl of WM8731 is
 
 	----Constants----
 	signal inL: std_logic_vector(15 downto 0):=(others=>'0');
-	signal inR: std_logic_vector(15 downto 0):="0000000000000000";
-	signal utL: std_logic_vector(15 downto 0):="0000000000000000";
-	signal utR: std_logic_vector(15 downto 0):="0000000000000000";
+	signal inR: std_logic_vector(15 downto 0):=(others=>'0');
+	signal utL: std_logic_vector(15 downto 0):=(others=>'0');
+	signal utR: std_logic_vector(15 downto 0):=(others=>'0');
 	
 	begin
 	
-	process(bclk)
+	process(reset,bclk)
 	
 	begin
 	
-	--if(reset='1') then
-	--scl_out<='1';
-	--sda_out<='1';
-	--statemachine<=0;
+		if(reset='0') then
+				daclrc<='0';
+				adclrc<='0';
+				statemachine<=0;
+				count<=15;
+				inL<=(others=>'0');
+				inR<=(others=>'0');
+				utL<=(others=>'0');
+				utR<=(others=>'0');
  
-	if falling_edge(bclk) then
+		elsif falling_edge(bclk) then
 	
-	case statemachine is
+			case statemachine is
 	
 	 --------------------Set LRC high-------------------
-	when 0 =>
-	daclrc <= '1';
-	adclrc <= '1';
-	statemachine <= statemachine + 1;
+			when 0 =>
+				daclrc <= '1';
+				adclrc <= '1';
+				statemachine <= statemachine + 1;
 
-	 --------------------Read left--------------------	
+----------------------Read left----------------------	
 
-	when 1 =>
+			when 1 =>
 	
-	inL(count) <= adcdat;
+				inL(count) <= adcdat;
 	
-	if((count-1)>=0) then
-		count <= count - 1;
-		statemachine <= 1;
-	else
-		statemachine <= statemachine + 1;
-		count<=15;
-	end if;
+				if((count-1)>=0) then
+					count <= count - 1;
+					statemachine <= 1;
+				else
+					statemachine <= statemachine + 1;
+					count<=15;
+				end if;
 	
-	--------------------Read right--------------------
+--------------------Read  right--------------------
 	
-	when 2 =>
+			when 2 =>
 	
-	inR(count) <= adcdat;
+				inR(count) <= adcdat;
 	
-	if((count-1)>=0) then
-		count <= count - 1;
-		statemachine <= 1;
-	else
-		statemachine <= 0;
-		count<=15;
-	end if;
+				if((count-1)>=0) then
+					count <= count - 1;
+					statemachine <= 1;
+				else
+					statemachine <= 0;
+					count<=15;
+				end if;
 	
-	-------------------Other condition-------------------
+------------------Other condition------------------
 	
-	when others => statemachine<=0;
-	
-	end case;
+			when others => 
+				statemachine<=0;
+			
+			end case;
+--------------------Loop back test--------------------
 
-	elsif rising_edge(bclk) then
-	dacdat <= adcdat;
+		elsif rising_edge(bclk) then
+			dacdat <= adcdat;
+			
 		
-	end if;
+		end if;
+		
 	end process;
-	end architecture;
+	
+end architecture;
 
  

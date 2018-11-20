@@ -3,147 +3,179 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'clock_50'
-Slack : -5.372
-TNS   : -326.275
+Slack : -5.853
+TNS   : -342.036
 
 Type  : Slow 1100mV 85C Model Setup 'clock_divider:inst|clk_i2c2'
-Slack : -4.187
-TNS   : -304.932
+Slack : -4.514
+TNS   : -372.691
+
+Type  : Slow 1100mV 85C Model Setup 'clock_divider:inst|clk_i2c'
+Slack : -1.597
+TNS   : -17.817
 
 Type  : Slow 1100mV 85C Model Hold 'clock_divider:inst|clk_i2c2'
 Slack : 0.283
 TNS   : 0.000
 
+Type  : Slow 1100mV 85C Model Hold 'clock_divider:inst|clk_i2c'
+Slack : 0.418
+TNS   : 0.000
+
 Type  : Slow 1100mV 85C Model Hold 'clock_50'
-Slack : 0.379
+Slack : 0.455
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'clock_divider:inst|clk_i2c2'
-Slack : -2.622
-TNS   : -18.116
+Slack : -2.777
+TNS   : -24.576
 
 Type  : Slow 1100mV 85C Model Removal 'clock_divider:inst|clk_i2c2'
-Slack : 1.379
+Slack : 1.445
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock_50'
-Slack : -0.394
-TNS   : -68.474
+Slack : -0.762
+TNS   : -73.234
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock_divider:inst|clk_i2c2'
 Slack : -0.394
-TNS   : -59.442
+TNS   : -63.574
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock_divider:inst|clk_i2c'
 Slack : -0.394
-TNS   : -0.526
+TNS   : -6.774
 
 Type  : Slow 1100mV 0C Model Setup 'clock_50'
-Slack : -5.464
-TNS   : -322.104
+Slack : -5.940
+TNS   : -338.621
 
 Type  : Slow 1100mV 0C Model Setup 'clock_divider:inst|clk_i2c2'
-Slack : -4.193
-TNS   : -294.749
+Slack : -4.490
+TNS   : -359.599
+
+Type  : Slow 1100mV 0C Model Setup 'clock_divider:inst|clk_i2c'
+Slack : -1.539
+TNS   : -16.176
 
 Type  : Slow 1100mV 0C Model Hold 'clock_divider:inst|clk_i2c2'
 Slack : 0.282
 TNS   : 0.000
 
+Type  : Slow 1100mV 0C Model Hold 'clock_divider:inst|clk_i2c'
+Slack : 0.450
+TNS   : 0.000
+
 Type  : Slow 1100mV 0C Model Hold 'clock_50'
-Slack : 0.376
+Slack : 0.455
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'clock_divider:inst|clk_i2c2'
-Slack : -2.575
-TNS   : -17.786
+Slack : -2.695
+TNS   : -23.923
 
 Type  : Slow 1100mV 0C Model Removal 'clock_divider:inst|clk_i2c2'
-Slack : 1.304
+Slack : 1.334
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock_50'
-Slack : -0.394
-TNS   : -74.607
+Slack : -0.748
+TNS   : -80.437
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock_divider:inst|clk_i2c2'
 Slack : -0.394
-TNS   : -59.484
+TNS   : -62.692
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock_divider:inst|clk_i2c'
 Slack : -0.394
-TNS   : -0.521
+TNS   : -6.741
 
 Type  : Fast 1100mV 85C Model Setup 'clock_50'
-Slack : -3.012
-TNS   : -136.376
+Slack : -4.032
+TNS   : -148.587
 
 Type  : Fast 1100mV 85C Model Setup 'clock_divider:inst|clk_i2c2'
-Slack : -2.030
-TNS   : -141.808
+Slack : -2.314
+TNS   : -184.104
+
+Type  : Fast 1100mV 85C Model Setup 'clock_divider:inst|clk_i2c'
+Slack : -0.712
+TNS   : -6.518
 
 Type  : Fast 1100mV 85C Model Hold 'clock_divider:inst|clk_i2c2'
-Slack : 0.100
+Slack : 0.099
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'clock_50'
-Slack : 0.184
+Slack : 0.218
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'clock_divider:inst|clk_i2c'
+Slack : 0.264
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'clock_divider:inst|clk_i2c2'
-Slack : -1.216
-TNS   : -8.378
+Slack : -1.281
+TNS   : -11.311
 
 Type  : Fast 1100mV 85C Model Removal 'clock_divider:inst|clk_i2c2'
-Slack : 0.662
+Slack : 0.791
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock_50'
-Slack : -0.387
-TNS   : -10.755
+Slack : -0.681
+TNS   : -12.937
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock_divider:inst|clk_i2c2'
-Slack : -0.015
-TNS   : -0.054
+Slack : 0.002
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock_divider:inst|clk_i2c'
-Slack : 0.139
+Slack : 0.134
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'clock_50'
-Slack : -2.751
-TNS   : -118.185
+Slack : -3.413
+TNS   : -127.338
 
 Type  : Fast 1100mV 0C Model Setup 'clock_divider:inst|clk_i2c2'
-Slack : -1.845
-TNS   : -124.703
+Slack : -2.081
+TNS   : -161.195
+
+Type  : Fast 1100mV 0C Model Setup 'clock_divider:inst|clk_i2c'
+Slack : -0.589
+TNS   : -5.170
 
 Type  : Fast 1100mV 0C Model Hold 'clock_divider:inst|clk_i2c2'
-Slack : 0.085
+Slack : 0.084
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'clock_50'
-Slack : 0.176
+Slack : 0.212
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'clock_divider:inst|clk_i2c'
+Slack : 0.246
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'clock_divider:inst|clk_i2c2'
-Slack : -1.076
-TNS   : -7.413
+Slack : -1.122
+TNS   : -9.911
 
 Type  : Fast 1100mV 0C Model Removal 'clock_divider:inst|clk_i2c2'
-Slack : 0.592
+Slack : 0.699
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock_50'
-Slack : -0.374
-TNS   : -10.915
+Slack : -0.638
+TNS   : -12.811
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock_divider:inst|clk_i2c2'
-Slack : 0.019
+Slack : 0.036
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock_divider:inst|clk_i2c'
-Slack : 0.144
+Slack : 0.131
 TNS   : 0.000
 
 ------------------------------------------------------------

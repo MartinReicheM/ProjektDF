@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DigitalFilter
-Fri Nov 16 16:18:19 2018
+Tue Nov 20 20:53:38 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,14 +13,12 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -46,13 +44,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Nov 16 16:18:19 2018       ;
+; Analysis & Synthesis Status     ; Successful - Tue Nov 20 20:53:38 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; DigitalFilter                               ;
 ; Top-level Entity Name           ; Main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 175                                         ;
+; Total registers                 ; 183                                         ;
 ; Total pins                      ; 9                                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -184,31 +182,31 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 154            ;
-;                                             ;                ;
-; Combinational ALUT usage for logic          ; 256            ;
-;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 51             ;
-;     -- 5 input functions                    ; 12             ;
-;     -- 4 input functions                    ; 10             ;
-;     -- <=3 input functions                  ; 183            ;
-;                                             ;                ;
-; Dedicated logic registers                   ; 175            ;
-;                                             ;                ;
-; I/O pins                                    ; 9              ;
-;                                             ;                ;
-; Total DSP Blocks                            ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; clock_50~input ;
-; Maximum fan-out                             ; 99             ;
-; Total fan-out                               ; 1439           ;
-; Average fan-out                             ; 3.20           ;
-+---------------------------------------------+----------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 155         ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 258         ;
+;     -- 7 input functions                    ; 1           ;
+;     -- 6 input functions                    ; 50          ;
+;     -- 5 input functions                    ; 12          ;
+;     -- 4 input functions                    ; 10          ;
+;     -- <=3 input functions                  ; 185         ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 183         ;
+;                                             ;             ;
+; I/O pins                                    ; 9           ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 108         ;
+; Total fan-out                               ; 1473        ;
+; Average fan-out                             ; 3.21        ;
++---------------------------------------------+-------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -216,35 +214,12 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+---------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Entity Name   ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+---------------+--------------+
-; |Main                      ; 256 (0)             ; 175 (0)                   ; 0                 ; 0          ; 9    ; 0            ; |Main                    ; Main          ; work         ;
-;    |WM8731:inst1|          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Main|WM8731:inst1       ; WM8731        ; work         ;
+; |Main                      ; 258 (0)             ; 183 (0)                   ; 0                 ; 0          ; 9    ; 0            ; |Main                    ; Main          ; work         ;
+;    |WM8731:inst1|          ; 7 (7)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Main|WM8731:inst1       ; WM8731        ; work         ;
 ;    |clock_divider:inst|    ; 120 (120)           ; 99 (99)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|clock_divider:inst ; clock_divider ; work         ;
-;    |i2c:inst4|             ; 136 (136)           ; 75 (75)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|i2c:inst4          ; i2c           ; work         ;
+;    |i2c:inst4|             ; 131 (131)           ; 75 (75)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|i2c:inst4          ; i2c           ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; WM8731:inst1|daclrc                   ; Stuck at VCC due to stuck port data_in ;
-; WM8731:inst1|adclrc                   ; Stuck at VCC due to stuck port data_in ;
-; WM8731:inst1|statemachine[0,1]        ; Lost fanout                            ;
-; WM8731:inst1|count[0..3]              ; Lost fanout                            ;
-; Total Number of Removed Registers = 8 ;                                        ;
-+---------------------------------------+----------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                          ;
-+---------------------+---------------------------+------------------------------------------------------------------------------------+
-; Register name       ; Reason for Removal        ; Registers Removed due to This Register                                             ;
-+---------------------+---------------------------+------------------------------------------------------------------------------------+
-; WM8731:inst1|daclrc ; Stuck at VCC              ; WM8731:inst1|statemachine[1], WM8731:inst1|statemachine[0], WM8731:inst1|count[0], ;
-;                     ; due to stuck port data_in ; WM8731:inst1|count[1], WM8731:inst1|count[2], WM8731:inst1|count[3]                ;
-+---------------------+---------------------------+------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -252,12 +227,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 175   ;
+; Total registers                              ; 183   ;
 ; Number of registers using Synchronous Clear  ; 129   ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 105   ;
+; Number of registers using Asynchronous Clear ; 113   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 67    ;
+; Number of registers using Clock Enable       ; 74    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -269,10 +244,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; i2c:inst4|scl_out                      ; 1       ;
 ; i2c:inst4|sda_out                      ; 6       ;
-; i2c:inst4|count[2]                     ; 14      ;
-; i2c:inst4|count[0]                     ; 13      ;
-; i2c:inst4|count[1]                     ; 14      ;
-; Total number of inverted registers = 5 ;         ;
+; WM8731:inst1|count[3]                  ; 3       ;
+; WM8731:inst1|count[2]                  ; 4       ;
+; WM8731:inst1|count[0]                  ; 6       ;
+; WM8731:inst1|count[1]                  ; 5       ;
+; i2c:inst4|count[2]                     ; 13      ;
+; i2c:inst4|count[0]                     ; 12      ;
+; i2c:inst4|count[1]                     ; 13      ;
+; Total number of inverted registers = 9 ;         ;
 +----------------------------------------+---------+
 
 
@@ -293,28 +272,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 175                         ;
-;     CLR               ; 8                           ;
+; arriav_ff             ; 183                         ;
+;     CLR               ; 10                          ;
 ;     CLR SCLR          ; 97                          ;
-;     ENA               ; 35                          ;
+;     ENA               ; 36                          ;
+;     ENA CLR           ; 6                           ;
 ;     ENA SCLR          ; 32                          ;
-;     plain             ; 3                           ;
+;     plain             ; 2                           ;
 ; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 258                         ;
+; arriav_lcell_comb     ; 259                         ;
 ;     arith             ; 160                         ;
 ;         1 data inputs ; 160                         ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
 ;     normal            ; 98                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 15                          ;
-;         3 data inputs ; 8                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 7                           ;
 ;         4 data inputs ; 10                          ;
 ;         5 data inputs ; 12                          ;
-;         6 data inputs ; 51                          ;
+;         6 data inputs ; 50                          ;
 ; boundary_port         ; 9                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.48                        ;
+; Average LUT depth     ; 3.40                        ;
 +-----------------------+-----------------------------+
 
 
@@ -333,7 +314,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Nov 16 16:18:01 2018
+    Info: Processing started: Tue Nov 20 20:53:23 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DigitalFilter -c DigitalFilter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -361,6 +342,8 @@ Info (12127): Elaborating entity "Main" for the top level hierarchy
 Info (12128): Elaborating entity "WM8731" for hierarchy "WM8731:inst1"
 Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(22): object "inL" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 22
 Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(23): object "inR" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 23
+Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(24): object "utL" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 24
+Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(25): object "utR" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 25
 Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:inst"
 Warning (10492): VHDL Process Statement warning at clock_divider.vhd(37): signal "clk_i2c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 37
 Warning (10492): VHDL Process Statement warning at clock_divider.vhd(57): signal "clk_i2c1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 57
@@ -373,23 +356,19 @@ Warning (10873): Using initial value X (don't care) for net "coeffarray[2..7]" a
 Info (12128): Elaborating entity "s2p" for hierarchy "s2p:inst3"
 Warning (13050): Open-drain buffer(s) that do not directly drive top-level pin(s) are removed
     Warning (13051): Converted the fanout from the open-drain buffer "i2c:inst4|sda" to the node "i2c:inst4|Mux28" into a wire File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 7
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "daclrc" is stuck at VCC
-    Warning (13410): Pin "adclrc" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register i2c:inst4|scl_out will power up to High File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 62
-Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 266 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 270 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 257 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 4880 megabytes
-    Info: Processing ended: Fri Nov 16 16:18:19 2018
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:30
+    Info (21061): Implemented 261 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 4879 megabytes
+    Info: Processing ended: Tue Nov 20 20:53:38 2018
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:29
 
 

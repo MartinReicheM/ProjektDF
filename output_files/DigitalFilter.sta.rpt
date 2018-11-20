@@ -1,5 +1,5 @@
 Timing Analyzer report for DigitalFilter
-Fri Nov 16 16:19:42 2018
+Tue Nov 20 20:54:48 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -101,12 +101,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.12        ;
+; Average used               ; 1.11        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  12.5%      ;
+;     Processor 2            ;  10.6%      ;
 +----------------------------+-------------+
 
 
@@ -126,8 +126,9 @@ refer to the applicable agreement for further details.
 +------------+-----------------+-----------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                  ; Note ;
 +------------+-----------------+-----------------------------+------+
-; 156.94 MHz ; 156.94 MHz      ; clock_50                    ;      ;
-; 192.79 MHz ; 192.79 MHz      ; clock_divider:inst|clk_i2c2 ;      ;
+; 145.92 MHz ; 145.92 MHz      ; clock_50                    ;      ;
+; 181.36 MHz ; 181.36 MHz      ; clock_divider:inst|clk_i2c2 ;      ;
+; 385.06 MHz ; 385.06 MHz      ; clock_divider:inst|clk_i2c  ;      ;
 +------------+-----------------+-----------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -143,8 +144,9 @@ HTML report is unavailable in plain text report export.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -5.372 ; -326.275      ;
-; clock_divider:inst|clk_i2c2 ; -4.187 ; -304.932      ;
+; clock_50                    ; -5.853 ; -342.036      ;
+; clock_divider:inst|clk_i2c2 ; -4.514 ; -372.691      ;
+; clock_divider:inst|clk_i2c  ; -1.597 ; -17.817       ;
 +-----------------------------+--------+---------------+
 
 
@@ -154,7 +156,8 @@ HTML report is unavailable in plain text report export.
 ; Clock                       ; Slack ; End Point TNS ;
 +-----------------------------+-------+---------------+
 ; clock_divider:inst|clk_i2c2 ; 0.283 ; 0.000         ;
-; clock_50                    ; 0.379 ; 0.000         ;
+; clock_divider:inst|clk_i2c  ; 0.418 ; 0.000         ;
+; clock_50                    ; 0.455 ; 0.000         ;
 +-----------------------------+-------+---------------+
 
 
@@ -163,7 +166,7 @@ HTML report is unavailable in plain text report export.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_divider:inst|clk_i2c2 ; -2.622 ; -18.116       ;
+; clock_divider:inst|clk_i2c2 ; -2.777 ; -24.576       ;
 +-----------------------------+--------+---------------+
 
 
@@ -172,7 +175,7 @@ HTML report is unavailable in plain text report export.
 +-----------------------------+-------+---------------+
 ; Clock                       ; Slack ; End Point TNS ;
 +-----------------------------+-------+---------------+
-; clock_divider:inst|clk_i2c2 ; 1.379 ; 0.000         ;
+; clock_divider:inst|clk_i2c2 ; 1.445 ; 0.000         ;
 +-----------------------------+-------+---------------+
 
 
@@ -181,9 +184,9 @@ HTML report is unavailable in plain text report export.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -0.394 ; -68.474       ;
-; clock_divider:inst|clk_i2c2 ; -0.394 ; -59.442       ;
-; clock_divider:inst|clk_i2c  ; -0.394 ; -0.526        ;
+; clock_50                    ; -0.762 ; -73.234       ;
+; clock_divider:inst|clk_i2c2 ; -0.394 ; -63.574       ;
+; clock_divider:inst|clk_i2c  ; -0.394 ; -6.774        ;
 +-----------------------------+--------+---------------+
 
 
@@ -198,8 +201,9 @@ No synchronizer chains to report.
 +------------+-----------------+-----------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                  ; Note ;
 +------------+-----------------+-----------------------------+------+
-; 154.7 MHz  ; 154.7 MHz       ; clock_50                    ;      ;
-; 192.57 MHz ; 192.57 MHz      ; clock_divider:inst|clk_i2c2 ;      ;
+; 144.09 MHz ; 144.09 MHz      ; clock_50                    ;      ;
+; 182.15 MHz ; 182.15 MHz      ; clock_divider:inst|clk_i2c2 ;      ;
+; 393.86 MHz ; 393.86 MHz      ; clock_divider:inst|clk_i2c  ;      ;
 +------------+-----------------+-----------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -209,8 +213,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -5.464 ; -322.104      ;
-; clock_divider:inst|clk_i2c2 ; -4.193 ; -294.749      ;
+; clock_50                    ; -5.940 ; -338.621      ;
+; clock_divider:inst|clk_i2c2 ; -4.490 ; -359.599      ;
+; clock_divider:inst|clk_i2c  ; -1.539 ; -16.176       ;
 +-----------------------------+--------+---------------+
 
 
@@ -220,7 +225,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Clock                       ; Slack ; End Point TNS ;
 +-----------------------------+-------+---------------+
 ; clock_divider:inst|clk_i2c2 ; 0.282 ; 0.000         ;
-; clock_50                    ; 0.376 ; 0.000         ;
+; clock_divider:inst|clk_i2c  ; 0.450 ; 0.000         ;
+; clock_50                    ; 0.455 ; 0.000         ;
 +-----------------------------+-------+---------------+
 
 
@@ -229,7 +235,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_divider:inst|clk_i2c2 ; -2.575 ; -17.786       ;
+; clock_divider:inst|clk_i2c2 ; -2.695 ; -23.923       ;
 +-----------------------------+--------+---------------+
 
 
@@ -238,7 +244,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------+-------+---------------+
 ; Clock                       ; Slack ; End Point TNS ;
 +-----------------------------+-------+---------------+
-; clock_divider:inst|clk_i2c2 ; 1.304 ; 0.000         ;
+; clock_divider:inst|clk_i2c2 ; 1.334 ; 0.000         ;
 +-----------------------------+-------+---------------+
 
 
@@ -247,9 +253,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -0.394 ; -74.607       ;
-; clock_divider:inst|clk_i2c2 ; -0.394 ; -59.484       ;
-; clock_divider:inst|clk_i2c  ; -0.394 ; -0.521        ;
+; clock_50                    ; -0.748 ; -80.437       ;
+; clock_divider:inst|clk_i2c2 ; -0.394 ; -62.692       ;
+; clock_divider:inst|clk_i2c  ; -0.394 ; -6.741        ;
 +-----------------------------+--------+---------------+
 
 
@@ -264,8 +270,9 @@ No synchronizer chains to report.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -3.012 ; -136.376      ;
-; clock_divider:inst|clk_i2c2 ; -2.030 ; -141.808      ;
+; clock_50                    ; -4.032 ; -148.587      ;
+; clock_divider:inst|clk_i2c2 ; -2.314 ; -184.104      ;
+; clock_divider:inst|clk_i2c  ; -0.712 ; -6.518        ;
 +-----------------------------+--------+---------------+
 
 
@@ -274,8 +281,9 @@ No synchronizer chains to report.
 +-----------------------------+-------+---------------+
 ; Clock                       ; Slack ; End Point TNS ;
 +-----------------------------+-------+---------------+
-; clock_divider:inst|clk_i2c2 ; 0.100 ; 0.000         ;
-; clock_50                    ; 0.184 ; 0.000         ;
+; clock_divider:inst|clk_i2c2 ; 0.099 ; 0.000         ;
+; clock_50                    ; 0.218 ; 0.000         ;
+; clock_divider:inst|clk_i2c  ; 0.264 ; 0.000         ;
 +-----------------------------+-------+---------------+
 
 
@@ -284,7 +292,7 @@ No synchronizer chains to report.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_divider:inst|clk_i2c2 ; -1.216 ; -8.378        ;
+; clock_divider:inst|clk_i2c2 ; -1.281 ; -11.311       ;
 +-----------------------------+--------+---------------+
 
 
@@ -293,7 +301,7 @@ No synchronizer chains to report.
 +-----------------------------+-------+---------------+
 ; Clock                       ; Slack ; End Point TNS ;
 +-----------------------------+-------+---------------+
-; clock_divider:inst|clk_i2c2 ; 0.662 ; 0.000         ;
+; clock_divider:inst|clk_i2c2 ; 0.791 ; 0.000         ;
 +-----------------------------+-------+---------------+
 
 
@@ -302,9 +310,9 @@ No synchronizer chains to report.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -0.387 ; -10.755       ;
-; clock_divider:inst|clk_i2c2 ; -0.015 ; -0.054        ;
-; clock_divider:inst|clk_i2c  ; 0.139  ; 0.000         ;
+; clock_50                    ; -0.681 ; -12.937       ;
+; clock_divider:inst|clk_i2c2 ; 0.002  ; 0.000         ;
+; clock_divider:inst|clk_i2c  ; 0.134  ; 0.000         ;
 +-----------------------------+--------+---------------+
 
 
@@ -319,8 +327,9 @@ No synchronizer chains to report.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -2.751 ; -118.185      ;
-; clock_divider:inst|clk_i2c2 ; -1.845 ; -124.703      ;
+; clock_50                    ; -3.413 ; -127.338      ;
+; clock_divider:inst|clk_i2c2 ; -2.081 ; -161.195      ;
+; clock_divider:inst|clk_i2c  ; -0.589 ; -5.170        ;
 +-----------------------------+--------+---------------+
 
 
@@ -329,8 +338,9 @@ No synchronizer chains to report.
 +-----------------------------+-------+---------------+
 ; Clock                       ; Slack ; End Point TNS ;
 +-----------------------------+-------+---------------+
-; clock_divider:inst|clk_i2c2 ; 0.085 ; 0.000         ;
-; clock_50                    ; 0.176 ; 0.000         ;
+; clock_divider:inst|clk_i2c2 ; 0.084 ; 0.000         ;
+; clock_50                    ; 0.212 ; 0.000         ;
+; clock_divider:inst|clk_i2c  ; 0.246 ; 0.000         ;
 +-----------------------------+-------+---------------+
 
 
@@ -339,7 +349,7 @@ No synchronizer chains to report.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_divider:inst|clk_i2c2 ; -1.076 ; -7.413        ;
+; clock_divider:inst|clk_i2c2 ; -1.122 ; -9.911        ;
 +-----------------------------+--------+---------------+
 
 
@@ -348,7 +358,7 @@ No synchronizer chains to report.
 +-----------------------------+-------+---------------+
 ; Clock                       ; Slack ; End Point TNS ;
 +-----------------------------+-------+---------------+
-; clock_divider:inst|clk_i2c2 ; 0.592 ; 0.000         ;
+; clock_divider:inst|clk_i2c2 ; 0.699 ; 0.000         ;
 +-----------------------------+-------+---------------+
 
 
@@ -357,9 +367,9 @@ No synchronizer chains to report.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -0.374 ; -10.915       ;
-; clock_divider:inst|clk_i2c2 ; 0.019  ; 0.000         ;
-; clock_divider:inst|clk_i2c  ; 0.144  ; 0.000         ;
+; clock_50                    ; -0.638 ; -12.811       ;
+; clock_divider:inst|clk_i2c2 ; 0.036  ; 0.000         ;
+; clock_divider:inst|clk_i2c  ; 0.131  ; 0.000         ;
 +-----------------------------+--------+---------------+
 
 
@@ -374,14 +384,14 @@ No synchronizer chains to report.
 +------------------------------+----------+-------+----------+---------+---------------------+
 ; Clock                        ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack             ; -5.464   ; 0.085 ; -2.622   ; 0.592   ; -0.394              ;
-;  clock_50                    ; -5.464   ; 0.176 ; N/A      ; N/A     ; -0.394              ;
-;  clock_divider:inst|clk_i2c  ; N/A      ; N/A   ; N/A      ; N/A     ; -0.394              ;
-;  clock_divider:inst|clk_i2c2 ; -4.193   ; 0.085 ; -2.622   ; 0.592   ; -0.394              ;
-; Design-wide TNS              ; -631.207 ; 0.0   ; -18.116  ; 0.0     ; -134.612            ;
-;  clock_50                    ; -326.275 ; 0.000 ; N/A      ; N/A     ; -74.607             ;
-;  clock_divider:inst|clk_i2c  ; N/A      ; N/A   ; N/A      ; N/A     ; -0.526              ;
-;  clock_divider:inst|clk_i2c2 ; -304.932 ; 0.000 ; -18.116  ; 0.000   ; -59.484             ;
+; Worst-case Slack             ; -5.940   ; 0.084 ; -2.777   ; 0.699   ; -0.762              ;
+;  clock_50                    ; -5.940   ; 0.212 ; N/A      ; N/A     ; -0.762              ;
+;  clock_divider:inst|clk_i2c  ; -1.597   ; 0.246 ; N/A      ; N/A     ; -0.394              ;
+;  clock_divider:inst|clk_i2c2 ; -4.514   ; 0.084 ; -2.777   ; 0.699   ; -0.394              ;
+; Design-wide TNS              ; -732.544 ; 0.0   ; -24.576  ; 0.0     ; -149.87             ;
+;  clock_50                    ; -342.036 ; 0.000 ; N/A      ; N/A     ; -80.437             ;
+;  clock_divider:inst|clk_i2c  ; -17.817  ; 0.000 ; N/A      ; N/A     ; -6.774              ;
+;  clock_divider:inst|clk_i2c2 ; -372.691 ; 0.000 ; -24.576  ; 0.000   ; -63.574             ;
 +------------------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -404,9 +414,9 @@ No synchronizer chains to report.
 +----------+--------------+-----------------+-----------------+
 ; Pin      ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +----------+--------------+-----------------+-----------------+
+; reset    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; adcdat   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; clock_50 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; reset    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 +----------+--------------+-----------------+-----------------+
 
 
@@ -416,11 +426,11 @@ No synchronizer chains to report.
 ; Pin     ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; daclrc  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
-; adclrc  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
-; dacdata ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
-; sda     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
-; scl     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
-; MCLK    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; adclrc  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; dacdata ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; sda     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; scl     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; MCLK    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
 +---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -430,11 +440,11 @@ No synchronizer chains to report.
 ; Pin     ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; daclrc  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
-; adclrc  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
-; dacdata ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
-; sda     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
-; scl     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
-; MCLK    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; adclrc  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; dacdata ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; sda     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; scl     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; MCLK    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
 +---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -444,11 +454,11 @@ No synchronizer chains to report.
 ; Pin     ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; daclrc  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
-; adclrc  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
-; dacdata ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
-; sda     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
-; scl     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
-; MCLK    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; adclrc  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; dacdata ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; sda     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; scl     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; MCLK    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
 +---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -458,11 +468,11 @@ No synchronizer chains to report.
 ; Pin     ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; daclrc  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
-; adclrc  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
-; dacdata ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
-; sda     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
-; scl     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
-; MCLK    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; adclrc  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; dacdata ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; sda     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; scl     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; MCLK    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
 +---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -471,10 +481,11 @@ No synchronizer chains to report.
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 ; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
-; clock_50                    ; clock_50                    ; 6191     ; 0        ; 0        ; 0        ;
+; clock_50                    ; clock_50                    ; 6578     ; 0        ; 0        ; 0        ;
 ; clock_divider:inst|clk_i2c  ; clock_50                    ; 1        ; 1        ; 0        ; 0        ;
 ; clock_divider:inst|clk_i2c2 ; clock_50                    ; 1        ; 1        ; 0        ; 0        ;
-; clock_divider:inst|clk_i2c2 ; clock_divider:inst|clk_i2c2 ; 6765     ; 0        ; 0        ; 0        ;
+; clock_divider:inst|clk_i2c  ; clock_divider:inst|clk_i2c  ; 0        ; 0        ; 0        ; 51       ;
+; clock_divider:inst|clk_i2c2 ; clock_divider:inst|clk_i2c2 ; 7798     ; 0        ; 0        ; 0        ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -484,10 +495,11 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 ; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
-; clock_50                    ; clock_50                    ; 6191     ; 0        ; 0        ; 0        ;
+; clock_50                    ; clock_50                    ; 6578     ; 0        ; 0        ; 0        ;
 ; clock_divider:inst|clk_i2c  ; clock_50                    ; 1        ; 1        ; 0        ; 0        ;
 ; clock_divider:inst|clk_i2c2 ; clock_50                    ; 1        ; 1        ; 0        ; 0        ;
-; clock_divider:inst|clk_i2c2 ; clock_divider:inst|clk_i2c2 ; 6765     ; 0        ; 0        ; 0        ;
+; clock_divider:inst|clk_i2c  ; clock_divider:inst|clk_i2c  ; 0        ; 0        ; 0        ; 51       ;
+; clock_divider:inst|clk_i2c2 ; clock_divider:inst|clk_i2c2 ; 7798     ; 0        ; 0        ; 0        ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -497,7 +509,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 ; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
-; clock_divider:inst|clk_i2c2 ; clock_divider:inst|clk_i2c2 ; 224      ; 0        ; 0        ; 0        ;
+; clock_divider:inst|clk_i2c2 ; clock_divider:inst|clk_i2c2 ; 288      ; 0        ; 0        ; 0        ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -507,7 +519,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 ; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
-; clock_divider:inst|clk_i2c2 ; clock_divider:inst|clk_i2c2 ; 224      ; 0        ; 0        ; 0        ;
+; clock_divider:inst|clk_i2c2 ; clock_divider:inst|clk_i2c2 ; 288      ; 0        ; 0        ; 0        ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -532,9 +544,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 2     ; 2    ;
-; Unconstrained Input Port Paths  ; 131   ; 131  ;
-; Unconstrained Output Ports      ; 4     ; 4    ;
-; Unconstrained Output Port Paths ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 152   ; 152  ;
+; Unconstrained Output Ports      ; 6     ; 6    ;
+; Unconstrained Output Port Paths ; 6     ; 6    ;
 +---------------------------------+-------+------+
 
 
@@ -565,7 +577,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
 ; MCLK        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; adclrc      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; dacdata     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; daclrc      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; scl         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; sda         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
@@ -587,7 +601,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
 ; MCLK        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; adclrc      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; dacdata     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; daclrc      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; scl         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; sda         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
@@ -599,7 +615,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Nov 16 16:19:34 2018
+    Info: Processing started: Tue Nov 20 20:54:40 2018
 Info: Command: quartus_sta DigitalFilter -c DigitalFilter
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -618,124 +634,132 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -5.372
+Info (332146): Worst-case setup slack is -5.853
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.372            -326.275 clock_50 
-    Info (332119):    -4.187            -304.932 clock_divider:inst|clk_i2c2 
+    Info (332119):    -5.853            -342.036 clock_50 
+    Info (332119):    -4.514            -372.691 clock_divider:inst|clk_i2c2 
+    Info (332119):    -1.597             -17.817 clock_divider:inst|clk_i2c 
 Info (332146): Worst-case hold slack is 0.283
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.283               0.000 clock_divider:inst|clk_i2c2 
-    Info (332119):     0.379               0.000 clock_50 
-Info (332146): Worst-case recovery slack is -2.622
+    Info (332119):     0.418               0.000 clock_divider:inst|clk_i2c 
+    Info (332119):     0.455               0.000 clock_50 
+Info (332146): Worst-case recovery slack is -2.777
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.622             -18.116 clock_divider:inst|clk_i2c2 
-Info (332146): Worst-case removal slack is 1.379
+    Info (332119):    -2.777             -24.576 clock_divider:inst|clk_i2c2 
+Info (332146): Worst-case removal slack is 1.445
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.379               0.000 clock_divider:inst|clk_i2c2 
-Info (332146): Worst-case minimum pulse width slack is -0.394
+    Info (332119):     1.445               0.000 clock_divider:inst|clk_i2c2 
+Info (332146): Worst-case minimum pulse width slack is -0.762
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394             -68.474 clock_50 
-    Info (332119):    -0.394             -59.442 clock_divider:inst|clk_i2c2 
-    Info (332119):    -0.394              -0.526 clock_divider:inst|clk_i2c 
+    Info (332119):    -0.762             -73.234 clock_50 
+    Info (332119):    -0.394             -63.574 clock_divider:inst|clk_i2c2 
+    Info (332119):    -0.394              -6.774 clock_divider:inst|clk_i2c 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -5.464
+Info (332146): Worst-case setup slack is -5.940
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.464            -322.104 clock_50 
-    Info (332119):    -4.193            -294.749 clock_divider:inst|clk_i2c2 
+    Info (332119):    -5.940            -338.621 clock_50 
+    Info (332119):    -4.490            -359.599 clock_divider:inst|clk_i2c2 
+    Info (332119):    -1.539             -16.176 clock_divider:inst|clk_i2c 
 Info (332146): Worst-case hold slack is 0.282
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.282               0.000 clock_divider:inst|clk_i2c2 
-    Info (332119):     0.376               0.000 clock_50 
-Info (332146): Worst-case recovery slack is -2.575
+    Info (332119):     0.450               0.000 clock_divider:inst|clk_i2c 
+    Info (332119):     0.455               0.000 clock_50 
+Info (332146): Worst-case recovery slack is -2.695
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.575             -17.786 clock_divider:inst|clk_i2c2 
-Info (332146): Worst-case removal slack is 1.304
+    Info (332119):    -2.695             -23.923 clock_divider:inst|clk_i2c2 
+Info (332146): Worst-case removal slack is 1.334
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.304               0.000 clock_divider:inst|clk_i2c2 
-Info (332146): Worst-case minimum pulse width slack is -0.394
+    Info (332119):     1.334               0.000 clock_divider:inst|clk_i2c2 
+Info (332146): Worst-case minimum pulse width slack is -0.748
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394             -74.607 clock_50 
-    Info (332119):    -0.394             -59.484 clock_divider:inst|clk_i2c2 
-    Info (332119):    -0.394              -0.521 clock_divider:inst|clk_i2c 
+    Info (332119):    -0.748             -80.437 clock_50 
+    Info (332119):    -0.394             -62.692 clock_divider:inst|clk_i2c2 
+    Info (332119):    -0.394              -6.741 clock_divider:inst|clk_i2c 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.012
+Info (332146): Worst-case setup slack is -4.032
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.012            -136.376 clock_50 
-    Info (332119):    -2.030            -141.808 clock_divider:inst|clk_i2c2 
-Info (332146): Worst-case hold slack is 0.100
+    Info (332119):    -4.032            -148.587 clock_50 
+    Info (332119):    -2.314            -184.104 clock_divider:inst|clk_i2c2 
+    Info (332119):    -0.712              -6.518 clock_divider:inst|clk_i2c 
+Info (332146): Worst-case hold slack is 0.099
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.100               0.000 clock_divider:inst|clk_i2c2 
-    Info (332119):     0.184               0.000 clock_50 
-Info (332146): Worst-case recovery slack is -1.216
+    Info (332119):     0.099               0.000 clock_divider:inst|clk_i2c2 
+    Info (332119):     0.218               0.000 clock_50 
+    Info (332119):     0.264               0.000 clock_divider:inst|clk_i2c 
+Info (332146): Worst-case recovery slack is -1.281
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.216              -8.378 clock_divider:inst|clk_i2c2 
-Info (332146): Worst-case removal slack is 0.662
+    Info (332119):    -1.281             -11.311 clock_divider:inst|clk_i2c2 
+Info (332146): Worst-case removal slack is 0.791
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.662               0.000 clock_divider:inst|clk_i2c2 
-Info (332146): Worst-case minimum pulse width slack is -0.387
+    Info (332119):     0.791               0.000 clock_divider:inst|clk_i2c2 
+Info (332146): Worst-case minimum pulse width slack is -0.681
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.387             -10.755 clock_50 
-    Info (332119):    -0.015              -0.054 clock_divider:inst|clk_i2c2 
-    Info (332119):     0.139               0.000 clock_divider:inst|clk_i2c 
+    Info (332119):    -0.681             -12.937 clock_50 
+    Info (332119):     0.002               0.000 clock_divider:inst|clk_i2c2 
+    Info (332119):     0.134               0.000 clock_divider:inst|clk_i2c 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.751
+Info (332146): Worst-case setup slack is -3.413
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.751            -118.185 clock_50 
-    Info (332119):    -1.845            -124.703 clock_divider:inst|clk_i2c2 
-Info (332146): Worst-case hold slack is 0.085
+    Info (332119):    -3.413            -127.338 clock_50 
+    Info (332119):    -2.081            -161.195 clock_divider:inst|clk_i2c2 
+    Info (332119):    -0.589              -5.170 clock_divider:inst|clk_i2c 
+Info (332146): Worst-case hold slack is 0.084
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.085               0.000 clock_divider:inst|clk_i2c2 
-    Info (332119):     0.176               0.000 clock_50 
-Info (332146): Worst-case recovery slack is -1.076
+    Info (332119):     0.084               0.000 clock_divider:inst|clk_i2c2 
+    Info (332119):     0.212               0.000 clock_50 
+    Info (332119):     0.246               0.000 clock_divider:inst|clk_i2c 
+Info (332146): Worst-case recovery slack is -1.122
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.076              -7.413 clock_divider:inst|clk_i2c2 
-Info (332146): Worst-case removal slack is 0.592
+    Info (332119):    -1.122              -9.911 clock_divider:inst|clk_i2c2 
+Info (332146): Worst-case removal slack is 0.699
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.592               0.000 clock_divider:inst|clk_i2c2 
-Info (332146): Worst-case minimum pulse width slack is -0.374
+    Info (332119):     0.699               0.000 clock_divider:inst|clk_i2c2 
+Info (332146): Worst-case minimum pulse width slack is -0.638
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.374             -10.915 clock_50 
-    Info (332119):     0.019               0.000 clock_divider:inst|clk_i2c2 
-    Info (332119):     0.144               0.000 clock_divider:inst|clk_i2c 
+    Info (332119):    -0.638             -12.811 clock_50 
+    Info (332119):     0.036               0.000 clock_divider:inst|clk_i2c2 
+    Info (332119):     0.131               0.000 clock_divider:inst|clk_i2c 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5136 megabytes
-    Info: Processing ended: Fri Nov 16 16:19:42 2018
+    Info: Peak virtual memory: 5147 megabytes
+    Info: Processing ended: Tue Nov 20 20:54:48 2018
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Total CPU time (on all processors): 00:00:08
 
 
