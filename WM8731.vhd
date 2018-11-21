@@ -3,12 +3,14 @@ use IEEE.std_logic_1164.all;
 
 entity WM8731 is
 port(
-	daclrc: out std_logic;
-	adclrc: out std_logic;
-	bclk: in std_logic;
-	dacdat: out std_logic;
-	adcdat: in std_logic;
-	reset: in std_logic
+	daclrc	: out std_logic;
+	adclrc	: out std_logic;
+	bclk		: in  std_logic;
+	dacdat	: out std_logic;
+	adcdat	: in  std_logic;
+	reset		: in  std_logic;
+	o_parL	: out std_logic_vector(15 downto 0);
+	o_parR	: out std_logic_vector(15 downto 0)
 	);
  end entity;
  
@@ -51,10 +53,11 @@ architecture rtl of WM8731 is
 				statemachine <= statemachine + 1;
 
 ----------------------Read left----------------------	
-
 			when 1 =>
 	
 				inL(count) <= adcdat;
+				daclrc <= '0';
+				adclrc <= '0';
 	
 				if((count-1)>=0) then
 					count <= count - 1;
@@ -65,10 +68,11 @@ architecture rtl of WM8731 is
 				end if;
 	
 --------------------Read  right--------------------
-	
 			when 2 =>
 	
 				inR(count) <= adcdat;
+				daclrc <= '0';
+				adclrc <= '0';
 	
 				if((count-1)>=0) then
 					count <= count - 1;
@@ -86,14 +90,16 @@ architecture rtl of WM8731 is
 			end case;
 --------------------Loop back test--------------------
 
-		elsif rising_edge(bclk) then
-			dacdat <= adcdat;
+--		elsif rising_edge(bclk) then
+--			dacdat <= adcdat;
 			
 		
 		end if;
-		
-	end process;
+	dacdat<=adcdat;
 	
+	end process;
+--	o_parL<=inL;
+--	o_parR<=inR;
 end architecture;
 
  

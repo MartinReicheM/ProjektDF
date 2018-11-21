@@ -1,0 +1,17 @@
+Partition Merge Status : Successful - Wed Nov 21 11:58:40 2018
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : DigitalFilter
+Top-level Entity Name : Main
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 1120
+Total pins : 41
+Total virtual pins : 0
+Total block memory bits : 147,456
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

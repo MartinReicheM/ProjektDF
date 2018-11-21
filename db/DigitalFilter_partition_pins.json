@@ -28,11 +28,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "adcdat",
 					"strict" : false
 				},
 				{
-					"name" : "adcdat",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
