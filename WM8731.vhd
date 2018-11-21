@@ -95,8 +95,14 @@ architecture rtl of WM8731 is
 			
 		
 		end if;
-	dacdat<=adcdat;
+		
+	end process;
 	
+	process (bclk) is 
+	begin 
+	if rising_edge(bclk) then
+			dacdat<=adcdat;
+	end if;
 	end process;
 --	o_parL<=inL;
 --	o_parR<=inR;

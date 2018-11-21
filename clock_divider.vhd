@@ -15,9 +15,10 @@ port (
  
  architecture rtl of clock_divider is
  
- signal count_BCLK: integer range 0 to 20		:=0;
- signal count_MCLK: integer range 0 to 10		:=0;
- signal count_i2c	: integer range 0 to 150	:=0;
+ signal count_BCLK: integer range 0 to 16		:=0;
+ signal count_MCLK: integer range 0 to 4		:=0;
+ signal count_i2c	: integer range 0 to 125	:=0;
+ signal count_test: integer range 0 to 8		:=0;
  
  signal BCLK_Sig,MCLK_Sig,i2c_Sig: std_logic :='0'; 
 
@@ -38,30 +39,33 @@ port (
 	
 -----------Clock BCLK  1536 kHz-----------
 			if(count_BCLK>=15) then
-				count_BCLK<=0;
 				BCLK_Sig  <= not(BCLK_Sig);
+				count_BCLK<=0;
+			else
+				count_BCLK<=count_BCLK+1;
 			end if;
 			
 ----------Clock MCLK  12.5 MHz----------
-			if(count_MCLK>=4) then
-				count_MCLK<=0;
+			if(count_MCLK>=3) then
 				MCLK_Sig  <= not(MCLK_Sig);
+				count_MCLK<=0;
+			else
+				count_MCLK<=count_MCLK+1;
 			end if;
 			
 ------------Clock i2c  400 kHz------------
 			if(count_i2c>=124) then
-				count_i2c<=0;
 				i2c_Sig  <= not(i2c_Sig);
+				count_i2c<=0;
+			else
+				count_i2c <=count_i2c +1;
 			end if;
-			
-			count_i2c <=count_i2c +1;
-			count_MCLK<=count_MCLK+1;
-			count_BCLK<=count_BCLK+1;
-	
+				
 	end if;
  	
  end process;
-   MCLK  <= MCLK_Sig;
+   
+	MCLK  <= MCLK_Sig;
 	BCLK  <= BCLK_Sig;
 	clk400<= i2c_Sig;
 

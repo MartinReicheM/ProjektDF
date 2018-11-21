@@ -1,5 +1,5 @@
 Timing Analyzer report for DigitalFilter
-Wed Nov 21 16:08:59 2018
+Wed Nov 21 16:48:21 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -101,12 +101,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.10        ;
+; Average used               ; 1.08        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   9.5%      ;
+;     Processor 2            ;   7.9%      ;
 +----------------------------+-------------+
 
 
@@ -126,9 +126,9 @@ refer to the applicable agreement for further details.
 +------------+-----------------+-----------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                  ; Note ;
 +------------+-----------------+-----------------------------+------+
-; 204.37 MHz ; 204.37 MHz      ; clock_divider:inst|i2c_Sig  ;      ;
-; 204.83 MHz ; 204.83 MHz      ; clock_50                    ;      ;
-; 355.75 MHz ; 355.75 MHz      ; clock_divider:inst|BCLK_Sig ;      ;
+; 212.63 MHz ; 212.63 MHz      ; clock_50                    ;      ;
+; 220.02 MHz ; 220.02 MHz      ; clock_divider:inst|i2c_Sig  ;      ;
+; 404.37 MHz ; 404.37 MHz      ; clock_divider:inst|BCLK_Sig ;      ;
 +------------+-----------------+-----------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -144,9 +144,9 @@ HTML report is unavailable in plain text report export.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -4.708 ; -19.892       ;
-; clock_divider:inst|i2c_Sig  ; -3.893 ; -338.896      ;
-; clock_divider:inst|BCLK_Sig ; -1.811 ; -18.048       ;
+; clock_50                    ; -5.176 ; -25.022       ;
+; clock_divider:inst|i2c_Sig  ; -3.545 ; -315.779      ;
+; clock_divider:inst|BCLK_Sig ; -1.473 ; -15.431       ;
 +-----------------------------+--------+---------------+
 
 
@@ -155,9 +155,9 @@ HTML report is unavailable in plain text report export.
 +-----------------------------+-------+---------------+
 ; Clock                       ; Slack ; End Point TNS ;
 +-----------------------------+-------+---------------+
-; clock_50                    ; 0.384 ; 0.000         ;
-; clock_divider:inst|i2c_Sig  ; 0.415 ; 0.000         ;
-; clock_divider:inst|BCLK_Sig ; 0.676 ; 0.000         ;
+; clock_divider:inst|i2c_Sig  ; 0.282 ; 0.000         ;
+; clock_divider:inst|BCLK_Sig ; 0.296 ; 0.000         ;
+; clock_50                    ; 0.388 ; 0.000         ;
 +-----------------------------+-------+---------------+
 
 
@@ -166,7 +166,7 @@ HTML report is unavailable in plain text report export.
 +----------------------------+--------+---------------+
 ; Clock                      ; Slack  ; End Point TNS ;
 +----------------------------+--------+---------------+
-; clock_divider:inst|i2c_Sig ; -2.813 ; -24.885       ;
+; clock_divider:inst|i2c_Sig ; -2.633 ; -20.868       ;
 +----------------------------+--------+---------------+
 
 
@@ -175,7 +175,7 @@ HTML report is unavailable in plain text report export.
 +----------------------------+-------+---------------+
 ; Clock                      ; Slack ; End Point TNS ;
 +----------------------------+-------+---------------+
-; clock_divider:inst|i2c_Sig ; 1.138 ; 0.000         ;
+; clock_divider:inst|i2c_Sig ; 0.905 ; 0.000         ;
 +----------------------------+-------+---------------+
 
 
@@ -184,9 +184,9 @@ HTML report is unavailable in plain text report export.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -0.827 ; -10.684       ;
-; clock_divider:inst|i2c_Sig  ; -0.394 ; -59.251       ;
-; clock_divider:inst|BCLK_Sig ; -0.394 ; -6.204        ;
+; clock_50                    ; -0.970 ; -11.678       ;
+; clock_divider:inst|i2c_Sig  ; -0.394 ; -53.986       ;
+; clock_divider:inst|BCLK_Sig ; -0.394 ; -6.786        ;
 +-----------------------------+--------+---------------+
 
 
@@ -201,9 +201,9 @@ No synchronizer chains to report.
 +------------+-----------------+-----------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                  ; Note ;
 +------------+-----------------+-----------------------------+------+
-; 194.97 MHz ; 194.97 MHz      ; clock_50                    ;      ;
-; 203.62 MHz ; 203.62 MHz      ; clock_divider:inst|i2c_Sig  ;      ;
-; 362.45 MHz ; 362.45 MHz      ; clock_divider:inst|BCLK_Sig ;      ;
+; 201.73 MHz ; 201.73 MHz      ; clock_50                    ;      ;
+; 219.64 MHz ; 219.64 MHz      ; clock_divider:inst|i2c_Sig  ;      ;
+; 408.16 MHz ; 408.16 MHz      ; clock_divider:inst|BCLK_Sig ;      ;
 +------------+-----------------+-----------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -213,9 +213,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -4.635 ; -20.157       ;
-; clock_divider:inst|i2c_Sig  ; -3.911 ; -325.467      ;
-; clock_divider:inst|BCLK_Sig ; -1.759 ; -17.323       ;
+; clock_50                    ; -5.114 ; -24.575       ;
+; clock_divider:inst|i2c_Sig  ; -3.553 ; -304.109      ;
+; clock_divider:inst|BCLK_Sig ; -1.450 ; -14.341       ;
 +-----------------------------+--------+---------------+
 
 
@@ -224,9 +224,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------+-------+---------------+
 ; Clock                       ; Slack ; End Point TNS ;
 +-----------------------------+-------+---------------+
-; clock_50                    ; 0.406 ; 0.000         ;
-; clock_divider:inst|i2c_Sig  ; 0.430 ; 0.000         ;
-; clock_divider:inst|BCLK_Sig ; 0.677 ; 0.000         ;
+; clock_divider:inst|i2c_Sig  ; 0.283 ; 0.000         ;
+; clock_divider:inst|BCLK_Sig ; 0.302 ; 0.000         ;
+; clock_50                    ; 0.404 ; 0.000         ;
 +-----------------------------+-------+---------------+
 
 
@@ -235,7 +235,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------+--------+---------------+
 ; Clock                      ; Slack  ; End Point TNS ;
 +----------------------------+--------+---------------+
-; clock_divider:inst|i2c_Sig ; -2.730 ; -24.141       ;
+; clock_divider:inst|i2c_Sig ; -2.551 ; -20.366       ;
 +----------------------------+--------+---------------+
 
 
@@ -244,7 +244,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------+-------+---------------+
 ; Clock                      ; Slack ; End Point TNS ;
 +----------------------------+-------+---------------+
-; clock_divider:inst|i2c_Sig ; 1.084 ; 0.000         ;
+; clock_divider:inst|i2c_Sig ; 0.880 ; 0.000         ;
 +----------------------------+-------+---------------+
 
 
@@ -253,9 +253,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -0.852 ; -11.532       ;
-; clock_divider:inst|i2c_Sig  ; -0.394 ; -57.875       ;
-; clock_divider:inst|BCLK_Sig ; -0.394 ; -6.841        ;
+; clock_50                    ; -0.973 ; -12.700       ;
+; clock_divider:inst|i2c_Sig  ; -0.394 ; -53.645       ;
+; clock_divider:inst|BCLK_Sig ; -0.394 ; -6.381        ;
 +-----------------------------+--------+---------------+
 
 
@@ -270,9 +270,9 @@ No synchronizer chains to report.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -3.879 ; -8.459        ;
-; clock_divider:inst|i2c_Sig  ; -1.861 ; -163.645      ;
-; clock_divider:inst|BCLK_Sig ; -0.705 ; -6.669        ;
+; clock_50                    ; -4.087 ; -11.470       ;
+; clock_divider:inst|i2c_Sig  ; -1.722 ; -154.355      ;
+; clock_divider:inst|BCLK_Sig ; -0.586 ; -5.496        ;
 +-----------------------------+--------+---------------+
 
 
@@ -281,9 +281,9 @@ No synchronizer chains to report.
 +-----------------------------+-------+---------------+
 ; Clock                       ; Slack ; End Point TNS ;
 +-----------------------------+-------+---------------+
-; clock_divider:inst|i2c_Sig  ; 0.154 ; 0.000         ;
-; clock_50                    ; 0.186 ; 0.000         ;
-; clock_divider:inst|BCLK_Sig ; 0.366 ; 0.000         ;
+; clock_divider:inst|i2c_Sig  ; 0.099 ; 0.000         ;
+; clock_divider:inst|BCLK_Sig ; 0.164 ; 0.000         ;
+; clock_50                    ; 0.189 ; 0.000         ;
 +-----------------------------+-------+---------------+
 
 
@@ -292,7 +292,7 @@ No synchronizer chains to report.
 +----------------------------+--------+---------------+
 ; Clock                      ; Slack  ; End Point TNS ;
 +----------------------------+--------+---------------+
-; clock_divider:inst|i2c_Sig ; -1.349 ; -11.860       ;
+; clock_divider:inst|i2c_Sig ; -1.279 ; -9.748        ;
 +----------------------------+--------+---------------+
 
 
@@ -301,7 +301,7 @@ No synchronizer chains to report.
 +----------------------------+-------+---------------+
 ; Clock                      ; Slack ; End Point TNS ;
 +----------------------------+-------+---------------+
-; clock_divider:inst|i2c_Sig ; 0.547 ; 0.000         ;
+; clock_divider:inst|i2c_Sig ; 0.441 ; 0.000         ;
 +----------------------------+-------+---------------+
 
 
@@ -310,9 +310,9 @@ No synchronizer chains to report.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -0.750 ; -3.521        ;
-; clock_divider:inst|i2c_Sig  ; -0.059 ; -0.986        ;
-; clock_divider:inst|BCLK_Sig ; 0.125  ; 0.000         ;
+; clock_50                    ; -0.864 ; -3.982        ;
+; clock_divider:inst|i2c_Sig  ; 0.029  ; 0.000         ;
+; clock_divider:inst|BCLK_Sig ; 0.041  ; 0.000         ;
 +-----------------------------+--------+---------------+
 
 
@@ -327,9 +327,9 @@ No synchronizer chains to report.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -3.353 ; -7.226        ;
-; clock_divider:inst|i2c_Sig  ; -1.668 ; -142.697      ;
-; clock_divider:inst|BCLK_Sig ; -0.602 ; -5.462        ;
+; clock_50                    ; -3.542 ; -9.583        ;
+; clock_divider:inst|i2c_Sig  ; -1.522 ; -131.920      ;
+; clock_divider:inst|BCLK_Sig ; -0.478 ; -4.365        ;
 +-----------------------------+--------+---------------+
 
 
@@ -338,9 +338,9 @@ No synchronizer chains to report.
 +-----------------------------+-------+---------------+
 ; Clock                       ; Slack ; End Point TNS ;
 +-----------------------------+-------+---------------+
-; clock_divider:inst|i2c_Sig  ; 0.142 ; 0.000         ;
-; clock_50                    ; 0.179 ; 0.000         ;
-; clock_divider:inst|BCLK_Sig ; 0.339 ; 0.000         ;
+; clock_divider:inst|i2c_Sig  ; 0.083 ; 0.000         ;
+; clock_divider:inst|BCLK_Sig ; 0.147 ; 0.000         ;
+; clock_50                    ; 0.178 ; 0.000         ;
 +-----------------------------+-------+---------------+
 
 
@@ -349,7 +349,7 @@ No synchronizer chains to report.
 +----------------------------+--------+---------------+
 ; Clock                      ; Slack  ; End Point TNS ;
 +----------------------------+--------+---------------+
-; clock_divider:inst|i2c_Sig ; -1.175 ; -10.330       ;
+; clock_divider:inst|i2c_Sig ; -1.074 ; -8.100        ;
 +----------------------------+--------+---------------+
 
 
@@ -358,7 +358,7 @@ No synchronizer chains to report.
 +----------------------------+-------+---------------+
 ; Clock                      ; Slack ; End Point TNS ;
 +----------------------------+-------+---------------+
-; clock_divider:inst|i2c_Sig ; 0.492 ; 0.000         ;
+; clock_divider:inst|i2c_Sig ; 0.392 ; 0.000         ;
 +----------------------------+-------+---------------+
 
 
@@ -367,9 +367,9 @@ No synchronizer chains to report.
 +-----------------------------+--------+---------------+
 ; Clock                       ; Slack  ; End Point TNS ;
 +-----------------------------+--------+---------------+
-; clock_50                    ; -0.729 ; -3.460        ;
-; clock_divider:inst|i2c_Sig  ; -0.009 ; -0.136        ;
-; clock_divider:inst|BCLK_Sig ; 0.143  ; 0.000         ;
+; clock_50                    ; -0.816 ; -3.828        ;
+; clock_divider:inst|i2c_Sig  ; 0.055  ; 0.000         ;
+; clock_divider:inst|BCLK_Sig ; 0.066  ; 0.000         ;
 +-----------------------------+--------+---------------+
 
 
@@ -384,14 +384,14 @@ No synchronizer chains to report.
 +------------------------------+----------+-------+----------+---------+---------------------+
 ; Clock                        ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack             ; -4.708   ; 0.142 ; -2.813   ; 0.492   ; -0.852              ;
-;  clock_50                    ; -4.708   ; 0.179 ; N/A      ; N/A     ; -0.852              ;
-;  clock_divider:inst|BCLK_Sig ; -1.811   ; 0.339 ; N/A      ; N/A     ; -0.394              ;
-;  clock_divider:inst|i2c_Sig  ; -3.911   ; 0.142 ; -2.813   ; 0.492   ; -0.394              ;
-; Design-wide TNS              ; -376.836 ; 0.0   ; -24.885  ; 0.0     ; -76.248             ;
-;  clock_50                    ; -20.157  ; 0.000 ; N/A      ; N/A     ; -11.532             ;
-;  clock_divider:inst|BCLK_Sig ; -18.048  ; 0.000 ; N/A      ; N/A     ; -6.841              ;
-;  clock_divider:inst|i2c_Sig  ; -338.896 ; 0.000 ; -24.885  ; 0.000   ; -59.251             ;
+; Worst-case Slack             ; -5.176   ; 0.083 ; -2.633   ; 0.392   ; -0.973              ;
+;  clock_50                    ; -5.176   ; 0.178 ; N/A      ; N/A     ; -0.973              ;
+;  clock_divider:inst|BCLK_Sig ; -1.473   ; 0.147 ; N/A      ; N/A     ; -0.394              ;
+;  clock_divider:inst|i2c_Sig  ; -3.553   ; 0.083 ; -2.633   ; 0.392   ; -0.394              ;
+; Design-wide TNS              ; -356.232 ; 0.0   ; -20.868  ; 0.0     ; -72.726             ;
+;  clock_50                    ; -25.022  ; 0.000 ; N/A      ; N/A     ; -12.700             ;
+;  clock_divider:inst|BCLK_Sig ; -15.431  ; 0.000 ; N/A      ; N/A     ; -6.786              ;
+;  clock_divider:inst|i2c_Sig  ; -315.779 ; 0.000 ; -20.868  ; 0.000   ; -53.986             ;
 +------------------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -414,8 +414,8 @@ No synchronizer chains to report.
 +----------+--------------+-----------------+-----------------+
 ; Pin      ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +----------+--------------+-----------------+-----------------+
-; adcdat   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; reset    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; adcdat   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; clock_50 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 +----------+--------------+-----------------+-----------------+
 
@@ -481,11 +481,11 @@ No synchronizer chains to report.
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 ; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
-; clock_50                    ; clock_50                    ; 69       ; 0        ; 0        ; 0        ;
+; clock_50                    ; clock_50                    ; 110      ; 0        ; 0        ; 0        ;
 ; clock_divider:inst|BCLK_Sig ; clock_50                    ; 1        ; 1        ; 0        ; 0        ;
 ; clock_divider:inst|i2c_Sig  ; clock_50                    ; 1        ; 1        ; 0        ; 0        ;
-; clock_divider:inst|BCLK_Sig ; clock_divider:inst|BCLK_Sig ; 0        ; 0        ; 0        ; 51       ;
-; clock_divider:inst|i2c_Sig  ; clock_divider:inst|i2c_Sig  ; 6609     ; 0        ; 0        ; 0        ;
+; clock_divider:inst|BCLK_Sig ; clock_divider:inst|BCLK_Sig ; 0        ; 0        ; 0        ; 45       ;
+; clock_divider:inst|i2c_Sig  ; clock_divider:inst|i2c_Sig  ; 7043     ; 0        ; 0        ; 0        ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -495,11 +495,11 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 ; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
-; clock_50                    ; clock_50                    ; 69       ; 0        ; 0        ; 0        ;
+; clock_50                    ; clock_50                    ; 110      ; 0        ; 0        ; 0        ;
 ; clock_divider:inst|BCLK_Sig ; clock_50                    ; 1        ; 1        ; 0        ; 0        ;
 ; clock_divider:inst|i2c_Sig  ; clock_50                    ; 1        ; 1        ; 0        ; 0        ;
-; clock_divider:inst|BCLK_Sig ; clock_divider:inst|BCLK_Sig ; 0        ; 0        ; 0        ; 51       ;
-; clock_divider:inst|i2c_Sig  ; clock_divider:inst|i2c_Sig  ; 6609     ; 0        ; 0        ; 0        ;
+; clock_divider:inst|BCLK_Sig ; clock_divider:inst|BCLK_Sig ; 0        ; 0        ; 0        ; 45       ;
+; clock_divider:inst|i2c_Sig  ; clock_divider:inst|i2c_Sig  ; 7043     ; 0        ; 0        ; 0        ;
 +-----------------------------+-----------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -615,7 +615,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Nov 21 16:08:50 2018
+    Info: Processing started: Wed Nov 21 16:48:14 2018
 Info: Command: quartus_sta DigitalFilter -c DigitalFilter
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -634,132 +634,132 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.708
+Info (332146): Worst-case setup slack is -5.176
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.708             -19.892 clock_50 
-    Info (332119):    -3.893            -338.896 clock_divider:inst|i2c_Sig 
-    Info (332119):    -1.811             -18.048 clock_divider:inst|BCLK_Sig 
-Info (332146): Worst-case hold slack is 0.384
+    Info (332119):    -5.176             -25.022 clock_50 
+    Info (332119):    -3.545            -315.779 clock_divider:inst|i2c_Sig 
+    Info (332119):    -1.473             -15.431 clock_divider:inst|BCLK_Sig 
+Info (332146): Worst-case hold slack is 0.282
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.384               0.000 clock_50 
-    Info (332119):     0.415               0.000 clock_divider:inst|i2c_Sig 
-    Info (332119):     0.676               0.000 clock_divider:inst|BCLK_Sig 
-Info (332146): Worst-case recovery slack is -2.813
+    Info (332119):     0.282               0.000 clock_divider:inst|i2c_Sig 
+    Info (332119):     0.296               0.000 clock_divider:inst|BCLK_Sig 
+    Info (332119):     0.388               0.000 clock_50 
+Info (332146): Worst-case recovery slack is -2.633
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.813             -24.885 clock_divider:inst|i2c_Sig 
-Info (332146): Worst-case removal slack is 1.138
+    Info (332119):    -2.633             -20.868 clock_divider:inst|i2c_Sig 
+Info (332146): Worst-case removal slack is 0.905
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.138               0.000 clock_divider:inst|i2c_Sig 
-Info (332146): Worst-case minimum pulse width slack is -0.827
+    Info (332119):     0.905               0.000 clock_divider:inst|i2c_Sig 
+Info (332146): Worst-case minimum pulse width slack is -0.970
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.827             -10.684 clock_50 
-    Info (332119):    -0.394             -59.251 clock_divider:inst|i2c_Sig 
-    Info (332119):    -0.394              -6.204 clock_divider:inst|BCLK_Sig 
+    Info (332119):    -0.970             -11.678 clock_50 
+    Info (332119):    -0.394             -53.986 clock_divider:inst|i2c_Sig 
+    Info (332119):    -0.394              -6.786 clock_divider:inst|BCLK_Sig 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.635
+Info (332146): Worst-case setup slack is -5.114
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.635             -20.157 clock_50 
-    Info (332119):    -3.911            -325.467 clock_divider:inst|i2c_Sig 
-    Info (332119):    -1.759             -17.323 clock_divider:inst|BCLK_Sig 
-Info (332146): Worst-case hold slack is 0.406
+    Info (332119):    -5.114             -24.575 clock_50 
+    Info (332119):    -3.553            -304.109 clock_divider:inst|i2c_Sig 
+    Info (332119):    -1.450             -14.341 clock_divider:inst|BCLK_Sig 
+Info (332146): Worst-case hold slack is 0.283
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.406               0.000 clock_50 
-    Info (332119):     0.430               0.000 clock_divider:inst|i2c_Sig 
-    Info (332119):     0.677               0.000 clock_divider:inst|BCLK_Sig 
-Info (332146): Worst-case recovery slack is -2.730
+    Info (332119):     0.283               0.000 clock_divider:inst|i2c_Sig 
+    Info (332119):     0.302               0.000 clock_divider:inst|BCLK_Sig 
+    Info (332119):     0.404               0.000 clock_50 
+Info (332146): Worst-case recovery slack is -2.551
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.730             -24.141 clock_divider:inst|i2c_Sig 
-Info (332146): Worst-case removal slack is 1.084
+    Info (332119):    -2.551             -20.366 clock_divider:inst|i2c_Sig 
+Info (332146): Worst-case removal slack is 0.880
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.084               0.000 clock_divider:inst|i2c_Sig 
-Info (332146): Worst-case minimum pulse width slack is -0.852
+    Info (332119):     0.880               0.000 clock_divider:inst|i2c_Sig 
+Info (332146): Worst-case minimum pulse width slack is -0.973
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.852             -11.532 clock_50 
-    Info (332119):    -0.394             -57.875 clock_divider:inst|i2c_Sig 
-    Info (332119):    -0.394              -6.841 clock_divider:inst|BCLK_Sig 
+    Info (332119):    -0.973             -12.700 clock_50 
+    Info (332119):    -0.394             -53.645 clock_divider:inst|i2c_Sig 
+    Info (332119):    -0.394              -6.381 clock_divider:inst|BCLK_Sig 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.879
+Info (332146): Worst-case setup slack is -4.087
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.879              -8.459 clock_50 
-    Info (332119):    -1.861            -163.645 clock_divider:inst|i2c_Sig 
-    Info (332119):    -0.705              -6.669 clock_divider:inst|BCLK_Sig 
-Info (332146): Worst-case hold slack is 0.154
+    Info (332119):    -4.087             -11.470 clock_50 
+    Info (332119):    -1.722            -154.355 clock_divider:inst|i2c_Sig 
+    Info (332119):    -0.586              -5.496 clock_divider:inst|BCLK_Sig 
+Info (332146): Worst-case hold slack is 0.099
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.154               0.000 clock_divider:inst|i2c_Sig 
-    Info (332119):     0.186               0.000 clock_50 
-    Info (332119):     0.366               0.000 clock_divider:inst|BCLK_Sig 
-Info (332146): Worst-case recovery slack is -1.349
+    Info (332119):     0.099               0.000 clock_divider:inst|i2c_Sig 
+    Info (332119):     0.164               0.000 clock_divider:inst|BCLK_Sig 
+    Info (332119):     0.189               0.000 clock_50 
+Info (332146): Worst-case recovery slack is -1.279
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.349             -11.860 clock_divider:inst|i2c_Sig 
-Info (332146): Worst-case removal slack is 0.547
+    Info (332119):    -1.279              -9.748 clock_divider:inst|i2c_Sig 
+Info (332146): Worst-case removal slack is 0.441
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.547               0.000 clock_divider:inst|i2c_Sig 
-Info (332146): Worst-case minimum pulse width slack is -0.750
+    Info (332119):     0.441               0.000 clock_divider:inst|i2c_Sig 
+Info (332146): Worst-case minimum pulse width slack is -0.864
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.750              -3.521 clock_50 
-    Info (332119):    -0.059              -0.986 clock_divider:inst|i2c_Sig 
-    Info (332119):     0.125               0.000 clock_divider:inst|BCLK_Sig 
+    Info (332119):    -0.864              -3.982 clock_50 
+    Info (332119):     0.029               0.000 clock_divider:inst|i2c_Sig 
+    Info (332119):     0.041               0.000 clock_divider:inst|BCLK_Sig 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.353
+Info (332146): Worst-case setup slack is -3.542
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.353              -7.226 clock_50 
-    Info (332119):    -1.668            -142.697 clock_divider:inst|i2c_Sig 
-    Info (332119):    -0.602              -5.462 clock_divider:inst|BCLK_Sig 
-Info (332146): Worst-case hold slack is 0.142
+    Info (332119):    -3.542              -9.583 clock_50 
+    Info (332119):    -1.522            -131.920 clock_divider:inst|i2c_Sig 
+    Info (332119):    -0.478              -4.365 clock_divider:inst|BCLK_Sig 
+Info (332146): Worst-case hold slack is 0.083
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.142               0.000 clock_divider:inst|i2c_Sig 
-    Info (332119):     0.179               0.000 clock_50 
-    Info (332119):     0.339               0.000 clock_divider:inst|BCLK_Sig 
-Info (332146): Worst-case recovery slack is -1.175
+    Info (332119):     0.083               0.000 clock_divider:inst|i2c_Sig 
+    Info (332119):     0.147               0.000 clock_divider:inst|BCLK_Sig 
+    Info (332119):     0.178               0.000 clock_50 
+Info (332146): Worst-case recovery slack is -1.074
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.175             -10.330 clock_divider:inst|i2c_Sig 
-Info (332146): Worst-case removal slack is 0.492
+    Info (332119):    -1.074              -8.100 clock_divider:inst|i2c_Sig 
+Info (332146): Worst-case removal slack is 0.392
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.492               0.000 clock_divider:inst|i2c_Sig 
-Info (332146): Worst-case minimum pulse width slack is -0.729
+    Info (332119):     0.392               0.000 clock_divider:inst|i2c_Sig 
+Info (332146): Worst-case minimum pulse width slack is -0.816
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.729              -3.460 clock_50 
-    Info (332119):    -0.009              -0.136 clock_divider:inst|i2c_Sig 
-    Info (332119):     0.143               0.000 clock_divider:inst|BCLK_Sig 
+    Info (332119):    -0.816              -3.828 clock_50 
+    Info (332119):     0.055               0.000 clock_divider:inst|i2c_Sig 
+    Info (332119):     0.066               0.000 clock_divider:inst|BCLK_Sig 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5133 megabytes
-    Info: Processing ended: Wed Nov 21 16:08:58 2018
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Peak virtual memory: 5132 megabytes
+    Info: Processing ended: Wed Nov 21 16:48:21 2018
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
 
 

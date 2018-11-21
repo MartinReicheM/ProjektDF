@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Martin/OneDrive/Dokument/Projekt15/simulation/modelsim
 Eclock_divider
-Z1 w1542812843
+Z1 w1542814543
 Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -22,9 +22,9 @@ V7WmG6z5ZNI]YLk99dkM?V3
 !s100 ;CLnV7Gh;8U>0BUg6DNcg2
 Z7 OV;C;10.5b;63
 31
-Z8 !s110 1542813345
+Z8 !s110 1542814684
 !i10b 1
-Z9 !s108 1542813345.000000
+Z9 !s108 1542814684.000000
 Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd|
 Z11 !s107 C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd|
 !i113 1
@@ -37,8 +37,8 @@ R4
 DEx4 work 13 clock_divider 0 22 7WmG6z5ZNI]YLk99dkM?V3
 l24
 L16
-VGCa9f8Z7OG5Y:a75oe73k1
-!s100 lcPP6ZT7zdlz9>^I;@b1Q2
+VLf3<Uz`W1h6F:;JDkRA3I3
+!s100 WKSELQSJLZ752g82m>>OU2
 R7
 31
 R8
@@ -105,11 +105,11 @@ V7GFoo20K8Bj=i>7WFgZX60
 !s100 leVZ6fJgVd7f`i6jWZ57A1
 R7
 31
-Z23 !s110 1542813346
+R8
 !i10b 1
-Z24 !s108 1542813346.000000
-Z25 !s90 -reportprogress|300|-93|-work|work|C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd|
-Z26 !s107 C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd|
+R9
+Z23 !s90 -reportprogress|300|-93|-work|work|C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd|
+Z24 !s107 C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd|
 !i113 1
 R12
 R13
@@ -123,40 +123,40 @@ VNIC;X2NOW6kkmCf@PXKoQ0
 !s100 UfO0_]F@<7i25;UWAn[[z0
 R7
 31
-R23
+R8
 !i10b 1
+R9
+R23
 R24
-R25
-R26
 !i113 1
 R12
 R13
 Es2p
-Z27 w1542380471
+Z25 w1542380471
 R2
-Z28 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z26 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 R3
 R4
 R0
-Z29 8C:/Users/Martin/OneDrive/Dokument/Projekt15/s2p.vhd
-Z30 FC:/Users/Martin/OneDrive/Dokument/Projekt15/s2p.vhd
+Z27 8C:/Users/Martin/OneDrive/Dokument/Projekt15/s2p.vhd
+Z28 FC:/Users/Martin/OneDrive/Dokument/Projekt15/s2p.vhd
 l0
 L6
 V]2BaBGeGETfWh;me?OhP_0
 !s100 EAV>ko`fJ82EB=60^YPQ82
 R7
 31
-R23
+R8
 !i10b 1
 R9
-Z31 !s90 -reportprogress|300|-93|-work|work|C:/Users/Martin/OneDrive/Dokument/Projekt15/s2p.vhd|
-Z32 !s107 C:/Users/Martin/OneDrive/Dokument/Projekt15/s2p.vhd|
+Z29 !s90 -reportprogress|300|-93|-work|work|C:/Users/Martin/OneDrive/Dokument/Projekt15/s2p.vhd|
+Z30 !s107 C:/Users/Martin/OneDrive/Dokument/Projekt15/s2p.vhd|
 !i113 1
 R12
 R13
 Artl
 R2
-R28
+R26
 R3
 R4
 DEx4 work 3 s2p 0 22 ]2BaBGeGETfWh;me?OhP_0
@@ -166,32 +166,32 @@ V26Ho9[=E^PzH_:9C^XFe]0
 !s100 Q<E5n]=F=4bbW2O3kj4M03
 R7
 31
-R23
+R8
 !i10b 1
 R9
-R31
-R32
+R29
+R30
 !i113 1
 R12
 R13
 Ewm8731
-Z33 w1542806813
+Z31 w1542806813
 R3
 R4
 R0
-Z34 8C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd
-Z35 FC:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd
+Z32 8C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd
+Z33 FC:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd
 l0
 L4
 V<<h95WHELFX;]`7Ni4NJX1
 !s100 6fAL?knod:@E>K;ZeGOBc2
 R7
 31
-R23
+R8
 !i10b 1
-R24
-Z36 !s90 -reportprogress|300|-93|-work|work|C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd|
-Z37 !s107 C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd|
+R9
+Z34 !s90 -reportprogress|300|-93|-work|work|C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd|
+Z35 !s107 C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd|
 !i113 1
 R12
 R13
@@ -205,11 +205,11 @@ VRKIeFGgAz`QXiPgED02hd1
 !s100 :lPO5>HB6?N0T=[56kLWM1
 R7
 31
-R23
+R8
 !i10b 1
-R24
-R36
-R37
+R9
+R34
+R35
 !i113 1
 R12
 R13

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DigitalFilter
-Wed Nov 21 16:07:43 2018
+Wed Nov 21 16:47:14 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -45,13 +45,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Nov 21 16:07:43 2018       ;
+; Analysis & Synthesis Status     ; Successful - Wed Nov 21 16:47:14 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; DigitalFilter                               ;
 ; Top-level Entity Name           ; Main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 98                                          ;
+; Total registers                 ; 99                                          ;
 ; Total pins                      ; 9                                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -193,11 +193,11 @@ refer to the applicable agreement for further details.
 ; Combinational ALUT usage for logic          ; 155                        ;
 ;     -- 7 input functions                    ; 0                          ;
 ;     -- 6 input functions                    ; 34                         ;
-;     -- 5 input functions                    ; 12                         ;
-;     -- 4 input functions                    ; 14                         ;
-;     -- <=3 input functions                  ; 95                         ;
+;     -- 5 input functions                    ; 13                         ;
+;     -- 4 input functions                    ; 12                         ;
+;     -- <=3 input functions                  ; 96                         ;
 ;                                             ;                            ;
-; Dedicated logic registers                   ; 98                         ;
+; Dedicated logic registers                   ; 99                         ;
 ;                                             ;                            ;
 ; I/O pins                                    ; 9                          ;
 ;                                             ;                            ;
@@ -205,8 +205,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                            ;
 ; Maximum fan-out node                        ; clock_divider:inst|i2c_Sig ;
 ; Maximum fan-out                             ; 76                         ;
-; Total fan-out                               ; 856                        ;
-; Average fan-out                             ; 3.16                       ;
+; Total fan-out                               ; 863                        ;
+; Average fan-out                             ; 3.17                       ;
 +---------------------------------------------+----------------------------+
 
 
@@ -215,8 +215,8 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+---------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Entity Name   ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+---------------+--------------+
-; |Main                      ; 155 (0)             ; 98 (0)                    ; 0                 ; 0          ; 9    ; 0            ; |Main                    ; Main          ; work         ;
-;    |WM8731:inst1|          ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Main|WM8731:inst1       ; WM8731        ; work         ;
+; |Main                      ; 155 (0)             ; 99 (0)                    ; 0                 ; 0          ; 9    ; 0            ; |Main                    ; Main          ; work         ;
+;    |WM8731:inst1|          ; 9 (9)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Main|WM8731:inst1       ; WM8731        ; work         ;
 ;    |clock_divider:inst|    ; 16 (16)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|clock_divider:inst ; clock_divider ; work         ;
 ;    |i2c:inst4|             ; 130 (130)           ; 75 (75)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|i2c:inst4          ; i2c           ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+---------------+--------------+
@@ -228,12 +228,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------+----------------------------------------------+
 ; Register name                         ; Reason for Removal                           ;
 +---------------------------------------+----------------------------------------------+
-; clock_divider:inst|count_i2c[0]       ; Merged with clock_divider:inst|count_BCLK[0] ;
-; clock_divider:inst|count_MCLK[0]      ; Merged with clock_divider:inst|count_BCLK[0] ;
-; clock_divider:inst|count_MCLK[1]      ; Merged with clock_divider:inst|count_BCLK[1] ;
-; clock_divider:inst|count_BCLK[2]      ; Merged with clock_divider:inst|count_MCLK[2] ;
-; clock_divider:inst|count_BCLK[3]      ; Merged with clock_divider:inst|count_MCLK[3] ;
-; Total Number of Removed Registers = 5 ;                                              ;
+; clock_divider:inst|count_MCLK[2]      ; Stuck at GND due to stuck port data_in       ;
+; clock_divider:inst|count_BCLK[4]      ; Stuck at GND due to stuck port data_in       ;
+; clock_divider:inst|count_BCLK[0]      ; Merged with clock_divider:inst|count_MCLK[0] ;
+; Total Number of Removed Registers = 3 ;                                              ;
 +---------------------------------------+----------------------------------------------+
 
 
@@ -242,12 +240,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 98    ;
-; Number of registers using Synchronous Clear  ; 33    ;
+; Total registers                              ; 99    ;
+; Number of registers using Synchronous Clear  ; 40    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 29    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 72    ;
+; Number of registers using Clock Enable       ; 71    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -275,8 +273,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |Main|i2c:inst4|counter[7]  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|WM8731:inst1|count[2] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |Main|i2c:inst4|counter[28] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|WM8731:inst1|count[3] ;
 ; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |Main|i2c:inst4|count[2]    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
@@ -286,29 +284,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 98                          ;
-;     CLR               ; 23                          ;
-;     CLR SCLR          ; 1                           ;
+; arriav_ff             ; 99                          ;
+;     CLR               ; 17                          ;
+;     CLR SCLR          ; 8                           ;
 ;     ENA               ; 35                          ;
-;     ENA CLR           ; 5                           ;
+;     ENA CLR           ; 4                           ;
 ;     ENA SCLR          ; 32                          ;
-;     plain             ; 2                           ;
+;     plain             ; 3                           ;
 ; arriav_io_obuf        ; 1                           ;
 ; arriav_lcell_comb     ; 156                         ;
 ;     arith             ; 71                          ;
-;         1 data inputs ; 70                          ;
-;         2 data inputs ; 1                           ;
+;         1 data inputs ; 71                          ;
 ;     normal            ; 85                          ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 11                          ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 13                          ;
 ;         3 data inputs ; 8                           ;
-;         4 data inputs ; 14                          ;
-;         5 data inputs ; 12                          ;
+;         4 data inputs ; 12                          ;
+;         5 data inputs ; 13                          ;
 ;         6 data inputs ; 34                          ;
 ; boundary_port         ; 9                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.32                        ;
+; Average LUT depth     ; 3.29                        ;
 +-----------------------+-----------------------------+
 
 
@@ -317,7 +314,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -327,7 +324,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Nov 21 16:07:24 2018
+    Info: Processing started: Wed Nov 21 16:46:55 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DigitalFilter -c DigitalFilter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -359,7 +356,6 @@ Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(24): object "inL" ass
 Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(25): object "inR" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 25
 Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(26): object "utL" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 26
 Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(27): object "utR" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 27
-Warning (10492): VHDL Process Statement warning at WM8731.vhd(98): signal "adcdat" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 98
 Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:inst"
 Warning (10541): VHDL Signal Declaration warning at clock_divider.vhd(11): used implicit default value for signal "test_clk" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 11
 Info (12128): Elaborating entity "i2c" for hierarchy "i2c:inst4"
@@ -375,14 +371,14 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
     Critical Warning (18010): Register i2c:inst4|scl_out will power up to High File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 62
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 164 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 165 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 155 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 4879 megabytes
-    Info: Processing ended: Wed Nov 21 16:07:43 2018
+    Info (21061): Implemented 156 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 4880 megabytes
+    Info: Processing ended: Wed Nov 21 16:47:14 2018
     Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:37
+    Info: Total CPU time (on all processors): 00:00:36
 
 
