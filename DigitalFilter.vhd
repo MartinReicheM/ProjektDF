@@ -6,7 +6,6 @@ use ieee.std_logic_signed.all;
 entity DigitalFilter is 
 port(
 		reset 	: in 	std_logic;
-		clock		: in 	std_logic;
 		strInL	: in  std_logic;
 		strInR	: in  std_logic;
 		strOutL	: out std_logic;
@@ -37,12 +36,12 @@ coeffarray(1)<="0011001100110011";
 coeffarray(2)<="0011001100110011";
 coeffarray(3)<="0011001100110011";
 
-	process(clock, reset) is 
+	process(strInL, reset) is 
 	begin 
 		if (reset = '0') then 
 			loops<=0;
 		
-		elsif rising_edge(clock) then 
+		elsif rising_edge(strInL) then 
 			if (loops < conv_integer(order)) then 
 				multiVec <= coeffarray(loops)*inputarrayL(loops);
 				outVec<= outVec + multiVec(31 downto 16);

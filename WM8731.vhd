@@ -11,6 +11,8 @@ port(
 	reset		: in  std_logic;
 	o_strL	: out std_logic;
 	o_strR	: out std_logic;
+	i_parL	: in  std_logic_vector(15 downto 0);
+	i_parR	: in  std_logic_vector(15 downto 0);
 	o_parL	: out std_logic_vector(15 downto 0);
 	o_parR	: out std_logic_vector(15 downto 0)
 	);
