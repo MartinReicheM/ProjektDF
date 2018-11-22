@@ -67,9 +67,9 @@ set_location_assignment PIN_AF14 -to clock_50
 set_location_assignment PIN_G7 -to MCLK
 set_location_assignment PIN_J7 -to dacdata
 set_location_assignment PIN_K8 -to adclrc
-set_location_assignment PIN_K7 -to adcdat
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp1.stp
 set_global_assignment -name SIGNALTAP_FILE output_files/stp1.stp
+set_location_assignment PIN_K7 -to adcdac
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp
