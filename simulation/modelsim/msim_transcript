@@ -12,7 +12,7 @@
 # 
 # vcom -93 -work work {C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:38:04 on Nov 21,2018
+# Start time: 19:09:54 on Nov 21,2018
 # vcom -reportprogress 300 -93 -work work C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -21,11 +21,11 @@
 # -- Loading package STD_LOGIC_SIGNED
 # -- Compiling entity DigitalFilter
 # -- Compiling architecture rtl of DigitalFilter
-# End time: 16:38:04 on Nov 21,2018, Elapsed time: 0:00:00
+# End time: 19:09:55 on Nov 21,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:38:04 on Nov 21,2018
+# Start time: 19:09:55 on Nov 21,2018
 # vcom -reportprogress 300 -93 -work work C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -33,11 +33,11 @@
 # -- Loading package std_logic_arith
 # -- Compiling entity clock_divider
 # -- Compiling architecture rtl of clock_divider
-# End time: 16:38:04 on Nov 21,2018, Elapsed time: 0:00:00
+# End time: 19:09:55 on Nov 21,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Martin/OneDrive/Dokument/Projekt15/s2p.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:38:04 on Nov 21,2018
+# Start time: 19:09:55 on Nov 21,2018
 # vcom -reportprogress 300 -93 -work work C:/Users/Martin/OneDrive/Dokument/Projekt15/s2p.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -46,65 +46,28 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity s2p
 # -- Compiling architecture rtl of s2p
-# End time: 16:38:04 on Nov 21,2018, Elapsed time: 0:00:00
+# End time: 19:09:55 on Nov 21,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:38:04 on Nov 21,2018
+# Start time: 19:09:55 on Nov 21,2018
 # vcom -reportprogress 300 -93 -work work C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity i2c
 # -- Compiling architecture rtl of i2c
-# End time: 16:38:04 on Nov 21,2018, Elapsed time: 0:00:00
+# End time: 19:09:56 on Nov 21,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:38:04 on Nov 21,2018
+# Start time: 19:09:56 on Nov 21,2018
 # vcom -reportprogress 300 -93 -work work C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity WM8731
 # -- Compiling architecture rtl of WM8731
-# End time: 16:38:05 on Nov 21,2018, Elapsed time: 0:00:01
+# End time: 19:09:56 on Nov 21,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-wave create -pattern none -portmode in -language vhdl /clock_divider/clock_50
-# Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
-# clock_divider
-wave create -pattern none -portmode in -language vhdl /clock_divider/reset
-# clock_divider
-wave create -pattern none -portmode out -language vhdl /clock_divider/MCLK
-# clock_divider
-wave create -pattern none -portmode out -language vhdl /clock_divider/BCLK
-# clock_divider
-wave create -pattern none -portmode out -language vhdl /clock_divider/test_clk
-# clock_divider
-wave create -pattern none -portmode out -language vhdl /clock_divider/clk400
-# clock_divider
-wave modify -driver freeze -pattern clock -initialvalue 0 -period 2ns -dutycycle 50 -starttime 0ns -endtime 1000ns NewSig:/clock_divider/clock_50
-# clock_divider
-wave modify -driver freeze -pattern constant -value 0 -starttime 0ns -endtime 10ns NewSig:/clock_divider/reset
-# clock_divider
-wave modify -driver freeze -pattern constant -value 1 -starttime 10ns -endtime 1000ns NewSig:/clock_divider/reset
-# clock_divider
-vsim -gui -l msim_transcript work.clock_divider -t ns
-# vsim -gui -l msim_transcript work.clock_divider -t ns 
-# Start time: 16:39:45 on Nov 21,2018
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading work.clock_divider(rtl)
-run -all
-add wave -position end  sim:/clock_divider/MCLK
-add wave -position end  sim:/clock_divider/BCLK
-add wave -position end  sim:/clock_divider/clk400
-restart
-run -all
-# WARNING: No extended dataflow license exists
-# End time: 16:40:59 on Nov 21,2018, Elapsed time: 0:01:14
-# Errors: 0, Warnings: 1

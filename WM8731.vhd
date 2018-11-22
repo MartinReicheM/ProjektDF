@@ -76,7 +76,7 @@ architecture rtl of WM8731 is
 	
 				if((count-1)>=0) then
 					count <= count - 1;
-					statemachine <= 1;
+					statemachine <= 2;
 				else
 					statemachine <= 0;
 					count<=15;
@@ -90,20 +90,22 @@ architecture rtl of WM8731 is
 			end case;
 --------------------Loop back test--------------------
 
---		elsif rising_edge(bclk) then
---			dacdat <= adcdat;
+		elsif rising_edge(bclk) then
+			dacdat <= adcdat;
 			
 		
 		end if;
 		
 	end process;
 	
-	process (bclk) is 
-	begin 
-	if rising_edge(bclk) then
-			dacdat<=adcdat;
-	end if;
-	end process;
+--	process (bclk) is 
+--	begin 
+	
+--	if rising_edge(bclk) then
+--			dacdat<=adcdat;
+--	end if;
+--	end process;
+	
 --	o_parL<=inL;
 --	o_parR<=inR;
 end architecture;

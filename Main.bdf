@@ -21,7 +21,7 @@ refer to the applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 96 168 272 184)
+	(rect 72 168 248 184)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "adcdat" (rect 9 0 42 12)(font "Arial" ))
 	(pt 176 8)
@@ -34,10 +34,11 @@ refer to the applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 16 184 72 208))
 )
 (pin
 	(input)
-	(rect 88 360 264 376)
+	(rect 104 360 280 376)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "reset" (rect 9 0 33 12)(font "Arial" ))
 	(pt 176 8)
@@ -50,6 +51,7 @@ refer to the applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 40 376 104 400))
 )
 (pin
 	(input)
@@ -66,6 +68,7 @@ refer to the applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 40 360 104 384))
 )
 (pin
 	(output)
@@ -82,6 +85,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1032 56 1088 80))
 )
 (pin
 	(output)
@@ -98,6 +102,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1032 80 1088 104))
 )
 (pin
 	(output)
@@ -114,6 +119,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1032 104 1088 128))
 )
 (pin
 	(output)
@@ -130,6 +136,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1032 128 1096 152))
 )
 (pin
 	(output)
@@ -146,6 +153,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1032 152 1096 176))
 )
 (pin
 	(output)
@@ -162,6 +170,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1032 32 1088 56))
 )
 (symbol
 	(rect 1104 256 1296 368)
@@ -271,70 +280,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 568 128 752 272)
-	(text "WM8731" (rect 5 0 47 12)(font "Arial" ))
-	(text "inst1" (rect 8 128 31 140)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "bclk" (rect 0 0 20 12)(font "Arial" ))
-		(text "bclk" (rect 21 27 41 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "adcdat" (rect 0 0 33 12)(font "Arial" ))
-		(text "adcdat" (rect 21 43 54 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "reset" (rect 0 0 24 12)(font "Arial" ))
-		(text "reset" (rect 21 59 45 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 184 32)
-		(output)
-		(text "daclrc" (rect 0 0 29 12)(font "Arial" ))
-		(text "daclrc" (rect 139 27 163 39)(font "Arial" ))
-		(line (pt 184 32)(pt 168 32))
-	)
-	(port
-		(pt 184 48)
-		(output)
-		(text "adclrc" (rect 0 0 29 12)(font "Arial" ))
-		(text "adclrc" (rect 139 43 163 55)(font "Arial" ))
-		(line (pt 184 48)(pt 168 48))
-	)
-	(port
-		(pt 184 64)
-		(output)
-		(text "dacdat" (rect 0 0 33 12)(font "Arial" ))
-		(text "dacdat" (rect 136 59 163 71)(font "Arial" ))
-		(line (pt 184 64)(pt 168 64))
-	)
-	(port
-		(pt 184 80)
-		(output)
-		(text "o_parL[15..0]" (rect 0 0 64 12)(font "Arial" ))
-		(text "o_parL[15..0]" (rect 109 75 163 87)(font "Arial" ))
-		(line (pt 184 80)(pt 168 80)(line_width 3))
-	)
-	(port
-		(pt 184 96)
-		(output)
-		(text "o_parR[15..0]" (rect 0 0 67 12)(font "Arial" ))
-		(text "o_parR[15..0]" (rect 107 91 163 103)(font "Arial" ))
-		(line (pt 184 96)(pt 168 96)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 168 128))
-	)
-)
-(symbol
 	(rect 336 320 504 432)
 	(text "clock_divider" (rect 5 0 69 12)(font "Arial" ))
 	(text "inst" (rect 8 96 25 108)(font "Arial" ))
@@ -406,9 +351,69 @@ refer to the applicable agreement for further details.
 		(rectangle (rect 16 16 120 64))
 	)
 )
-(connector
-	(pt 768 160)
-	(pt 768 48)
+(symbol
+	(rect 560 128 744 272)
+	(text "WM8731" (rect 5 0 47 12)(font "Arial" ))
+	(text "inst5" (rect 8 128 30 145)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "bclk" (rect 0 0 20 12)(font "Arial" ))
+		(text "bclk" (rect 21 27 41 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "adcdat" (rect 0 0 33 12)(font "Arial" ))
+		(text "adcdat" (rect 21 43 54 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "reset" (rect 0 0 24 12)(font "Arial" ))
+		(text "reset" (rect 21 59 45 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "daclrc" (rect 0 0 29 12)(font "Arial" ))
+		(text "daclrc" (rect 139 27 168 39)(font "Arial" ))
+		(line (pt 184 32)(pt 168 32))
+	)
+	(port
+		(pt 184 48)
+		(output)
+		(text "adclrc" (rect 0 0 29 12)(font "Arial" ))
+		(text "adclrc" (rect 139 43 168 55)(font "Arial" ))
+		(line (pt 184 48)(pt 168 48))
+	)
+	(port
+		(pt 184 64)
+		(output)
+		(text "dacdat" (rect 0 0 33 12)(font "Arial" ))
+		(text "dacdat" (rect 136 59 169 71)(font "Arial" ))
+		(line (pt 184 64)(pt 168 64))
+	)
+	(port
+		(pt 184 80)
+		(output)
+		(text "o_parL[15..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "o_parL[15..0]" (rect 109 75 173 87)(font "Arial" ))
+		(line (pt 184 80)(pt 168 80)(line_width 3))
+	)
+	(port
+		(pt 184 96)
+		(output)
+		(text "o_parR[15..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "o_parR[15..0]" (rect 107 91 174 103)(font "Arial" ))
+		(line (pt 184 96)(pt 168 96)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 168 128))
+	)
 )
 (connector
 	(text "daclrc" (rect 770 32 798 49)(font "Intel Clear" ))
@@ -457,16 +462,6 @@ refer to the applicable agreement for further details.
 	(pt 536 160)
 )
 (connector
-	(text "bclk" (rect 522 144 542 161)(font "Intel Clear" ))
-	(pt 536 160)
-	(pt 568 160)
-)
-(connector
-	(text "reset" (rect 306 176 329 193)(font "Intel Clear" ))
-	(pt 320 192)
-	(pt 568 192)
-)
-(connector
 	(pt 784 72)
 	(pt 784 176)
 )
@@ -484,38 +479,12 @@ refer to the applicable agreement for further details.
 	(pt 320 368)
 )
 (connector
-	(text "reset" (rect 266 352 289 369)(font "Intel Clear" ))
-	(pt 264 368)
-	(pt 320 368)
-)
-(connector
-	(pt 320 368)
-	(pt 336 368)
-)
-(connector
-	(pt 752 160)
-	(pt 768 160)
-)
-(connector
-	(pt 752 176)
-	(pt 784 176)
-)
-(connector
-	(pt 752 192)
-	(pt 800 192)
-)
-(connector
 	(pt 504 368)
 	(pt 536 368)
 )
 (connector
 	(pt 720 384)
 	(pt 816 384)
-)
-(connector
-	(text "adcdac" (rect 274 160 307 177)(font "Intel Clear" ))
-	(pt 272 176)
-	(pt 568 176)
 )
 (connector
 	(text "MCLK" (rect 570 8 599 25)(font "Intel Clear" ))
@@ -529,5 +498,45 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 520 352)
 	(pt 504 352)
+)
+(connector
+	(text "reset" (rect 314 352 337 369)(font "Intel Clear" ))
+	(pt 320 368)
+	(pt 336 368)
+)
+(connector
+	(pt 280 368)
+	(pt 320 368)
+)
+(connector
+	(pt 768 48)
+	(pt 768 160)
+)
+(connector
+	(pt 744 160)
+	(pt 768 160)
+)
+(connector
+	(pt 744 176)
+	(pt 784 176)
+)
+(connector
+	(pt 744 192)
+	(pt 800 192)
+)
+(connector
+	(text "reset" (rect 330 176 353 193)(font "Intel Clear" ))
+	(pt 560 192)
+	(pt 320 192)
+)
+(connector
+	(text "adcdac" (rect 258 160 291 177)(font "Intel Clear" ))
+	(pt 560 176)
+	(pt 248 176)
+)
+(connector
+	(text "bclk" (rect 546 144 566 161)(font "Intel Clear" ))
+	(pt 560 160)
+	(pt 536 160)
 )
 (junction (pt 320 368))
