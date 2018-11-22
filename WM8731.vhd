@@ -90,8 +90,8 @@ architecture rtl of WM8731 is
 			end case;
 --------------------Loop back test--------------------
 
-		elsif rising_edge(bclk) then
-			dacdat <= adcdat;
+--		elsif rising_edge(bclk) then
+--			dacdat <= adcdat;
 			
 		
 		end if;
@@ -106,8 +106,8 @@ architecture rtl of WM8731 is
 --	end if;
 --	end process;
 	
---	o_parL<=inL;
---	o_parR<=inR;
+	o_parL<=inL;
+	o_parR<=inR;
 end architecture;
 
  

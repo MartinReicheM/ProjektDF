@@ -24,19 +24,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "dacdat",
-					"strict" : false
-				},
-				{
 					"name" : "clock_50",
 					"strict" : false
 				},
 				{
 					"name" : "reset",
-					"strict" : false
-				},
-				{
-					"name" : "adcdat",
 					"strict" : false
 				}
 			]

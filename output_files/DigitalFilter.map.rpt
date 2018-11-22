@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DigitalFilter
-Thu Nov 22 11:03:26 2018
+Thu Nov 22 12:30:26 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -44,13 +44,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Nov 22 11:03:26 2018       ;
+; Analysis & Synthesis Status     ; Successful - Thu Nov 22 12:30:26 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; DigitalFilter                               ;
 ; Top-level Entity Name           ; Main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 183                                         ;
+; Total registers                 ; 182                                         ;
 ; Total pins                      ; 9                                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -173,10 +173,8 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                  ; Library ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+---------+
-; DigitalFilter.vhd                ; yes             ; User VHDL File                     ; C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd ;         ;
 ; clock_divider.vhd                ; yes             ; User VHDL File                     ; C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd ;         ;
 ; Main.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Martin/OneDrive/Dokument/Projekt15/Main.bdf          ;         ;
-; s2p.vhd                          ; yes             ; User VHDL File                     ; C:/Users/Martin/OneDrive/Dokument/Projekt15/s2p.vhd           ;         ;
 ; i2c.vhd                          ; yes             ; User VHDL File                     ; C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd           ;         ;
 ; WM8731.vhd                       ; yes             ; User VHDL File                     ; C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd        ;         ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+---------+
@@ -187,7 +185,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 157         ;
+; Estimate of Logic utilization (ALMs needed) ; 156         ;
 ;                                             ;             ;
 ; Combinational ALUT usage for logic          ; 260         ;
 ;     -- 7 input functions                    ; 1           ;
@@ -196,15 +194,15 @@ refer to the applicable agreement for further details.
 ;     -- 4 input functions                    ; 10          ;
 ;     -- <=3 input functions                  ; 187         ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 183         ;
+; Dedicated logic registers                   ; 182         ;
 ;                                             ;             ;
 ; I/O pins                                    ; 9           ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; reset~input ;
-; Maximum fan-out                             ; 108         ;
-; Total fan-out                               ; 1476        ;
+; Maximum fan-out                             ; 107         ;
+; Total fan-out                               ; 1472        ;
 ; Average fan-out                             ; 3.20        ;
 +---------------------------------------------+-------------+
 
@@ -214,8 +212,8 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+---------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Entity Name   ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+---------------+--------------+
-; |Main                      ; 260 (0)             ; 183 (0)                   ; 0                 ; 0          ; 9    ; 0            ; |Main                    ; Main          ; work         ;
-;    |WM8731:inst5|          ; 9 (9)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Main|WM8731:inst5       ; WM8731        ; work         ;
+; |Main                      ; 260 (0)             ; 182 (0)                   ; 0                 ; 0          ; 9    ; 0            ; |Main                    ; Main          ; work         ;
+;    |WM8731:inst5|          ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Main|WM8731:inst5       ; WM8731        ; work         ;
 ;    |clock_divider:inst|    ; 120 (120)           ; 99 (99)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|clock_divider:inst ; clock_divider ; work         ;
 ;    |i2c:inst4|             ; 131 (131)           ; 75 (75)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|i2c:inst4          ; i2c           ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+---------------+--------------+
@@ -227,12 +225,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 183   ;
+; Total registers                              ; 182   ;
 ; Number of registers using Synchronous Clear  ; 129   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 113   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 72    ;
+; Number of registers using Clock Enable       ; 71    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -246,8 +244,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; i2c:inst4|sda_out                      ; 6       ;
 ; WM8731:inst5|count[3]                  ; 3       ;
 ; WM8731:inst5|count[2]                  ; 4       ;
-; WM8731:inst5|count[0]                  ; 6       ;
 ; WM8731:inst5|count[1]                  ; 5       ;
+; WM8731:inst5|count[0]                  ; 6       ;
 ; i2c:inst4|count[2]                     ; 13      ;
 ; i2c:inst4|count[0]                     ; 12      ;
 ; i2c:inst4|count[1]                     ; 13      ;
@@ -271,20 +269,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 183                         ;
+; arriav_ff             ; 182                         ;
 ;     CLR               ; 12                          ;
 ;     CLR SCLR          ; 97                          ;
-;     ENA               ; 36                          ;
+;     ENA               ; 35                          ;
 ;     ENA CLR           ; 4                           ;
 ;     ENA SCLR          ; 32                          ;
 ;     plain             ; 2                           ;
 ; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 261                         ;
+; arriav_lcell_comb     ; 262                         ;
 ;     arith             ; 160                         ;
 ;         1 data inputs ; 160                         ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 100                         ;
+;     normal            ; 101                         ;
+;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 4                           ;
 ;         2 data inputs ; 17                          ;
 ;         3 data inputs ; 7                           ;
@@ -294,7 +293,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; boundary_port         ; 9                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.40                        ;
+; Average LUT depth     ; 3.41                        ;
 +-----------------------+-----------------------------+
 
 
@@ -303,7 +302,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -313,12 +312,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Nov 22 11:03:11 2018
+    Info: Processing started: Thu Nov 22 12:30:08 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DigitalFilter -c DigitalFilter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file digitalfilter.vhd
-    Info (12022): Found design unit 1: DigitalFilter-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 20
+    Info (12022): Found design unit 1: DigitalFilter-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 23
     Info (12023): Found entity 1: DigitalFilter File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file clock_divider.vhd
     Info (12022): Found design unit 1: clock_divider-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 15
@@ -339,37 +338,34 @@ Info (12021): Found 2 design units, including 1 entities, in source file wm8731.
     Info (12023): Found entity 1: WM8731 File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 4
 Info (12127): Elaborating entity "Main" for the top level hierarchy
 Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:inst"
-Warning (10492): VHDL Process Statement warning at clock_divider.vhd(37): signal "clk_i2c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 37
-Warning (10492): VHDL Process Statement warning at clock_divider.vhd(57): signal "clk_i2c1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 57
-Warning (10492): VHDL Process Statement warning at clock_divider.vhd(77): signal "clk_i2c2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 77
+Warning (10492): VHDL Process Statement warning at clock_divider.vhd(37): signal "clk_bclk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 37
+Warning (10492): VHDL Process Statement warning at clock_divider.vhd(57): signal "clk_mclk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at clock_divider.vhd(77): signal "clk_i2c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 77
 Info (12128): Elaborating entity "WM8731" for hierarchy "WM8731:inst5"
-Warning (10541): VHDL Signal Declaration warning at WM8731.vhd(12): used implicit default value for signal "o_parL" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 12
-Warning (10541): VHDL Signal Declaration warning at WM8731.vhd(13): used implicit default value for signal "o_parR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 13
-Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(24): object "inL" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 24
-Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(25): object "inR" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 25
+Warning (10541): VHDL Signal Declaration warning at WM8731.vhd(9): used implicit default value for signal "dacdat" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 9
 Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(26): object "utL" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 26
 Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(27): object "utR" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 27
 Info (12128): Elaborating entity "i2c" for hierarchy "i2c:inst4"
 Warning (10492): VHDL Process Statement warning at i2c.vhd(62): signal "counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 62
-Info (12128): Elaborating entity "DigitalFilter" for hierarchy "DigitalFilter:inst2"
-Warning (10541): VHDL Signal Declaration warning at DigitalFilter.vhd(24): used implicit default value for signal "inputarray" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 24
-Warning (10873): Using initial value X (don't care) for net "coeffarray[2..7]" at DigitalFilter.vhd(23) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 23
-Info (12128): Elaborating entity "s2p" for hierarchy "s2p:inst3"
 Warning (13050): Open-drain buffer(s) that do not directly drive top-level pin(s) are removed
     Warning (13051): Converted the fanout from the open-drain buffer "i2c:inst4|sda" to the node "i2c:inst4|Mux28" into a wire File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 7
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "dacdat" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register i2c:inst4|scl_out will power up to High File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 62
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 270 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "adcdat"
+Info (21057): Implemented 269 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 261 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 4878 megabytes
-    Info: Processing ended: Thu Nov 22 11:03:26 2018
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:31
+    Info (21061): Implemented 260 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4877 megabytes
+    Info: Processing ended: Thu Nov 22 12:30:26 2018
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:35
 
 
