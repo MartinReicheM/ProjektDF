@@ -20,9 +20,9 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 200 160)
+	(rect 16 16 200 192)
 	(text "WM8731" (rect 5 0 41 12)(font "Arial" ))
-	(text "inst" (rect 8 128 20 140)(font "Arial" ))
+	(text "inst" (rect 8 160 20 172)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -68,18 +68,32 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 184 80)
 		(output)
-		(text "o_parL[15..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "o_parL[15..0]" (rect 110 75 163 87)(font "Arial" ))
-		(line (pt 184 80)(pt 168 80)(line_width 3))
+		(text "o_strL" (rect 0 0 27 12)(font "Arial" ))
+		(text "o_strL" (rect 136 75 163 87)(font "Arial" ))
+		(line (pt 184 80)(pt 168 80)(line_width 1))
 	)
 	(port
 		(pt 184 96)
 		(output)
+		(text "o_strR" (rect 0 0 29 12)(font "Arial" ))
+		(text "o_strR" (rect 134 91 163 103)(font "Arial" ))
+		(line (pt 184 96)(pt 168 96)(line_width 1))
+	)
+	(port
+		(pt 184 112)
+		(output)
+		(text "o_parL[15..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "o_parL[15..0]" (rect 110 107 163 119)(font "Arial" ))
+		(line (pt 184 112)(pt 168 112)(line_width 3))
+	)
+	(port
+		(pt 184 128)
+		(output)
 		(text "o_parR[15..0]" (rect 0 0 55 12)(font "Arial" ))
-		(text "o_parR[15..0]" (rect 108 91 163 103)(font "Arial" ))
-		(line (pt 184 96)(pt 168 96)(line_width 3))
+		(text "o_parR[15..0]" (rect 108 123 163 135)(font "Arial" ))
+		(line (pt 184 128)(pt 168 128)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 168 128)(line_width 1))
+		(rectangle (rect 16 16 168 160)(line_width 1))
 	)
 )
