@@ -41,7 +41,7 @@ architecture rtl of WM8731 is
 	begin
 	
 		if(reset='0') then
-				daclrc<='0';
+				--daclrc<='0';
 				adclrc<='0';
 				statemachine<=0;
 				count<=15;
@@ -133,11 +133,11 @@ architecture rtl of WM8731 is
 			   countR <= countR - 1;
 			end if;
 		end if;
-		
 	end process;
 
-	--o_parL<=inL;
-	--o_parR<=inR;
+	o_parL<=inL;
+	o_parR<=inR;
+	
 
 end architecture;
 

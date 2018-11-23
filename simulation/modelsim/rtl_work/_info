@@ -23,9 +23,9 @@ V;aBcV@k4jch4;A2IL0Y633
 !s100 4nV51Wo0RmN>_1ZDKNha[0
 Z8 OV;C;10.5b;63
 31
-Z9 !s110 1542886575
+Z9 !s110 1542981459
 !i10b 1
-Z10 !s108 1542886575.000000
+Z10 !s108 1542981459.000000
 Z11 !s90 -reportprogress|300|-93|-work|work|C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd|
 Z12 !s107 C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd|
 !i113 1
@@ -51,13 +51,56 @@ R12
 !i113 1
 R13
 R14
-Ei2c
-Z15 w1542819682
+Edigitalfilter
+Z15 w1542976220
+Z16 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
+R2
 R4
 R5
 R0
-Z16 8C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd
-Z17 FC:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd
+Z17 8C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd
+Z18 FC:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd
+l0
+L6
+V0?R^XPU5X=jCA?Ri5b3713
+!s100 K:ad?Ujl1aChKIWcCbnzd1
+R8
+31
+R9
+!i10b 1
+R10
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd|
+Z20 !s107 C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd|
+!i113 1
+R13
+R14
+Artl
+R16
+R2
+R4
+R5
+DEx4 work 13 digitalfilter 0 22 0?R^XPU5X=jCA?Ri5b3713
+l32
+L22
+ViXO1_=>JD8_lMlaAJXLRa3
+!s100 91R^_If[?::DPYN_CCi5]3
+R8
+31
+R9
+!i10b 1
+R10
+R19
+R20
+!i113 1
+R13
+R14
+Ei2c
+Z21 w1542976144
+R4
+R5
+R0
+Z22 8C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd
+Z23 FC:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd
 l0
 L4
 V7GFoo20K8Bj=i>7WFgZX60
@@ -67,8 +110,8 @@ R8
 R9
 !i10b 1
 R10
-Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd|
-Z19 !s107 C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd|
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd|
+Z25 !s107 C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd|
 !i113 1
 R13
 R14
@@ -78,54 +121,54 @@ R5
 DEx4 work 3 i2c 0 22 7GFoo20K8Bj=i>7WFgZX60
 l54
 L12
-VNIC;X2NOW6kkmCf@PXKoQ0
-!s100 UfO0_]F@<7i25;UWAn[[z0
+VgfoSLnLAoGHz5^5H^44o_0
+!s100 HOU1Wdo=1:ok<6n4bJ27h2
 R8
 31
 R9
 !i10b 1
 R10
-R18
-R19
+R24
+R25
 !i113 1
 R13
 R14
 Ewm8731
-Z20 w1542881375
+Z26 w1542978132
 R4
 R5
 R0
-Z21 8C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd
-Z22 FC:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd
+Z27 8C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd
+Z28 FC:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd
 l0
 L4
-V<<h95WHELFX;]`7Ni4NJX1
-!s100 6fAL?knod:@E>K;ZeGOBc2
+V;jMN]`:=4`]0<3FJHk8U]0
+!s100 zC=Rj8oR=ognI==hXT2P^1
 R8
 31
-Z23 !s110 1542886576
+R9
 !i10b 1
 R10
-Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd|
-Z25 !s107 C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd|
+Z29 !s90 -reportprogress|300|-93|-work|work|C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd|
+Z30 !s107 C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd|
 !i113 1
 R13
 R14
 Artl
 R4
 R5
-DEx4 work 6 wm8731 0 22 <<h95WHELFX;]`7Ni4NJX1
-l29
-L17
-V4^fjj6USTMPL^74N_<[XI0
-!s100 z4z?UBddjN]J3mgi<eCbA1
+DEx4 work 6 wm8731 0 22 ;jMN]`:=4`]0<3FJHk8U]0
+l37
+L23
+VV>A:1NY_;dCGaBgHfSA462
+!s100 3J[GR=7k_cQHoSYn0zk`e2
 R8
 31
-R23
+R9
 !i10b 1
 R10
-R24
-R25
+R29
+R30
 !i113 1
 R13
 R14

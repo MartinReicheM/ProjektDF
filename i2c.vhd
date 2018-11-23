@@ -43,7 +43,7 @@ port(
  constant R6: std_logic_vector (7 downto 0) := "00001100"; 
  constant R66: std_logic_vector (7 downto 0):= "01100010"; 
  constant R7: std_logic_vector (7 downto 0) := "00001110";
- constant R77: std_logic_vector (7 downto 0):= "01000011";
+ constant R77: std_logic_vector (7 downto 0):= "00000011";
  constant R8: std_logic_vector (7 downto 0) := "00010000";
  constant R88: std_logic_vector (7 downto 0):= "00000000"; 
  constant R9: std_logic_vector (7 downto 0) := "00010010"; 

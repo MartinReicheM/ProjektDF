@@ -55,8 +55,13 @@ coeffarray(3)<="0011001100110011";
 --
 --	end process;
 	
+	------- 2:nd order FIR filter --------------
 	outVecLL<=coeffarray(0)*inputarrayL(0)+coeffarray(1)*inputarrayL(1)+coeffarray(2)*inputarrayL(2);
 	o_parLL<=outVecLL(31 downto 16);
+	--  o_parLL<=inputarrayL(0);
+	o_parRR<=inputarrayR(0);
+	strOutL<='1';
+	strOutR<='1';
 	
 ------------- Sampling 16bit array from WM8731 ------------------
 	process(reset,strInL) is 
@@ -89,8 +94,4 @@ coeffarray(3)<="0011001100110011";
 		end if;
 	end process;
 	
- --  o_parLL<=inputarrayL(0);
-	o_parRR<=inputarrayR(0);
-	strOutL<='1';
-	strOutR<='1';
 end architecture rtl;
