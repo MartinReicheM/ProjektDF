@@ -9,13 +9,13 @@ port(
 		strInL	: in  std_logic;
 		strInR	: in  std_logic;
 		strOutL	: out std_logic;
-		strOutR	: out std_logic:='0';
+		strOutR	: out std_logic;
 		order 	: in  std_logic_vector(3 downto 0);
 		Ftype		: in  std_logic_vector(3 downto 0);
-		i_parL	: in 	std_logic_vector(15 downto 0);
-		i_parR	: in 	std_logic_vector(15 downto 0);
-		o_parL	: out std_logic_vector(15 downto 0);
-		o_parR	: out std_logic_vector(15 downto 0)
+		i_parLL	: in 	std_logic_vector(15 downto 0);
+		i_parRR	: in 	std_logic_vector(15 downto 0);
+		o_parLL	: out std_logic_vector(15 downto 0);
+		o_parRR	: out std_logic_vector(15 downto 0)
 );
 end entity;
 
@@ -26,35 +26,38 @@ signal coeffarray : coefficiants;
 signal inputarrayL,inputarrayR : inputs;
 signal inputtick	: integer range 0 to 7:=0;
 signal loops 		: integer range 0 to 7:=0;
-signal outVec		: std_logic_vector(15 downto 0):=(others=>'0');
-signal multiVec	: std_logic_vector(31 downto 0):=(others=>'0');
+signal outVecLL	: std_logic_vector(31 downto 0):=(others=>'0');
+signal outVecRR	: std_logic_vector(31 downto 0):=(others=>'0');
 
 begin 
-
-coeffarray(0)<="0101010101010101";
-coeffarray(1)<="0011001100110011";
-coeffarray(2)<="0011001100110011";
+-----COEFFICIANTS FOR LP 9KHZ FIR FILTER -----
+coeffarray(0)<="0000010011101100";
+coeffarray(1)<="0001111010010011";
+coeffarray(2)<="0000010011101100";
 coeffarray(3)<="0011001100110011";
 
-	process(strInL, reset) is 
-	begin 
-		if (reset = '0') then 
-			loops<=0;
-		
-		elsif rising_edge(strInL) then 
-			if (loops < conv_integer(order)) then 
-				multiVec <= coeffarray(loops)*inputarrayL(loops);
-				outVec<= outVec + multiVec(31 downto 16);
-				loops<=loops + 1;
-			else 
-				strOutL<='1';
-				
-			end if; 
-		
-		end if;
+--	process(strInL, reset) is 
+--	begin 
+--		if (reset = '0') then 
+--			loops<=0;
+--		
+--		elsif rising_edge(strInL) then 
+--			if (loops < conv_integer(order)) then 
+--				multiVec <= coeffarray(loops)*inputarrayL(loops);
+--				outVec<= outVec + multiVec(31 downto 16);
+--				loops<=loops + 1;
+--			else 
+--				
+--			end if; 
+--		
+--		end if;
+--	
+--
+--	end process;
 	
-
-	end process;
+	outVecLL<=coeffarray(0)*inputarrayL(0)+coeffarray(1)*inputarrayL(1)+coeffarray(2)*inputarrayL(2);
+	o_parLL<=outVecLL(31 downto 16);
+	
 ------------- Sampling 16bit array from WM8731 ------------------
 	process(reset,strInL) is 
 	begin 
@@ -67,7 +70,7 @@ coeffarray(3)<="0011001100110011";
 		elsif rising_edge(strInL) then 
 			inputarrayL(0)<=inputarrayL(1);
 			inputarrayL(1)<=inputarrayL(2);
-			inputarrayL(2)<=i_parL;
+			inputarrayL(2)<=i_parLL;
 		end if;
 	end process;
 	
@@ -82,11 +85,12 @@ coeffarray(3)<="0011001100110011";
 		elsif rising_edge(strInR) then 
 			inputarrayR(0)<=inputarrayR(1);
 			inputarrayR(1)<=inputarrayR(2);
-			inputarrayR(2)<=i_parR;
+			inputarrayR(2)<=i_parRR;
 		end if;
 	end process;
-
---o_parL<=outVec when  rdyIn <= '1' else (others=>'Z'); 
-		
-
+	
+ --  o_parLL<=inputarrayL(0);
+	o_parRR<=inputarrayR(0);
+	strOutL<='1';
+	strOutR<='1';
 end architecture rtl;

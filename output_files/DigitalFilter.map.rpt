@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DigitalFilter
-Thu Nov 22 12:30:26 2018
+Fri Nov 23 11:51:30 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,12 +13,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -44,7 +46,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Nov 22 12:30:26 2018       ;
+; Analysis & Synthesis Status     ; Successful - Fri Nov 23 11:51:30 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; DigitalFilter                               ;
 ; Top-level Entity Name           ; Main                                        ;
@@ -173,6 +175,7 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                  ; Library ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+---------+
+; DigitalFilter.vhd                ; yes             ; User VHDL File                     ; C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd ;         ;
 ; clock_divider.vhd                ; yes             ; User VHDL File                     ; C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd ;         ;
 ; Main.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Martin/OneDrive/Dokument/Projekt15/Main.bdf          ;         ;
 ; i2c.vhd                          ; yes             ; User VHDL File                     ; C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd           ;         ;
@@ -187,12 +190,12 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Estimate of Logic utilization (ALMs needed) ; 156         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 260         ;
+; Combinational ALUT usage for logic          ; 259         ;
 ;     -- 7 input functions                    ; 1           ;
 ;     -- 6 input functions                    ; 51          ;
 ;     -- 5 input functions                    ; 11          ;
 ;     -- 4 input functions                    ; 10          ;
-;     -- <=3 input functions                  ; 187         ;
+;     -- <=3 input functions                  ; 186         ;
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 182         ;
 ;                                             ;             ;
@@ -202,7 +205,7 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; reset~input ;
 ; Maximum fan-out                             ; 107         ;
-; Total fan-out                               ; 1472        ;
+; Total fan-out                               ; 1470        ;
 ; Average fan-out                             ; 3.20        ;
 +---------------------------------------------+-------------+
 
@@ -212,12 +215,203 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+---------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Entity Name   ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+---------------+--------------+
-; |Main                      ; 260 (0)             ; 182 (0)                   ; 0                 ; 0          ; 9    ; 0            ; |Main                    ; Main          ; work         ;
-;    |WM8731:inst5|          ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Main|WM8731:inst5       ; WM8731        ; work         ;
+; |Main                      ; 259 (0)             ; 182 (0)                   ; 0                 ; 0          ; 9    ; 0            ; |Main                    ; Main          ; work         ;
+;    |WM8731:inst5|          ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Main|WM8731:inst5       ; WM8731        ; work         ;
 ;    |clock_divider:inst|    ; 120 (120)           ; 99 (99)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|clock_divider:inst ; clock_divider ; work         ;
 ;    |i2c:inst4|             ; 131 (131)           ; 75 (75)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|i2c:inst4          ; i2c           ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++-----------------------------------------+---------------------------------------------+
+; Register name                           ; Reason for Removal                          ;
++-----------------------------------------+---------------------------------------------+
+; WM8731:inst5|chanel[1]                  ; Stuck at GND due to stuck port data_in      ;
+; WM8731:inst5|chanel[0]                  ; Stuck at GND due to stuck port clock_enable ;
+; WM8731:inst5|utR[15]                    ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][15]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][15]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][15]  ; Lost fanout                                 ;
+; WM8731:inst5|utR[14]                    ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][14]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][14]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][14]  ; Lost fanout                                 ;
+; WM8731:inst5|utR[13]                    ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][13]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][13]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][13]  ; Lost fanout                                 ;
+; WM8731:inst5|utR[12]                    ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][12]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][12]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][12]  ; Lost fanout                                 ;
+; WM8731:inst5|utR[11]                    ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][11]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][11]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][11]  ; Lost fanout                                 ;
+; WM8731:inst5|utR[10]                    ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][10]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][10]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][10]  ; Lost fanout                                 ;
+; WM8731:inst5|utR[9]                     ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][9]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][9]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][9]   ; Lost fanout                                 ;
+; WM8731:inst5|utR[8]                     ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][8]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][8]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][8]   ; Lost fanout                                 ;
+; WM8731:inst5|utR[7]                     ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][7]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][7]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][7]   ; Lost fanout                                 ;
+; WM8731:inst5|utR[6]                     ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][6]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][6]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][6]   ; Lost fanout                                 ;
+; WM8731:inst5|utR[5]                     ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][5]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][5]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][5]   ; Lost fanout                                 ;
+; WM8731:inst5|utR[4]                     ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][4]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][4]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][4]   ; Lost fanout                                 ;
+; WM8731:inst5|utR[3]                     ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][3]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][3]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][3]   ; Lost fanout                                 ;
+; WM8731:inst5|utR[2]                     ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][2]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][2]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][2]   ; Lost fanout                                 ;
+; WM8731:inst5|utR[1]                     ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][1]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][1]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][1]   ; Lost fanout                                 ;
+; WM8731:inst5|utR[0]                     ; Stuck at GND due to stuck port clock_enable ;
+; DigitalFilter:inst1|inputarrayR[0][0]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[1][0]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayR[2][0]   ; Lost fanout                                 ;
+; WM8731:inst5|utL[0..15]                 ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][0]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][0]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][0]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][1]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][1]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][1]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][2]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][2]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][2]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][3]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][3]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][3]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][4]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][4]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][4]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][5]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][5]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][5]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][6]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][6]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][6]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][7]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][7]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][7]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][8]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][8]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][8]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][9]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][9]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][9]   ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][10]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][10]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][10]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][11]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][11]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][11]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][12]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][12]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][12]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][13]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][13]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][13]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][14]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][14]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][14]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[0][15]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[1][15]  ; Lost fanout                                 ;
+; DigitalFilter:inst1|inputarrayL[2][15]  ; Lost fanout                                 ;
+; WM8731:inst5|countL[0..3]               ; Lost fanout                                 ;
+; WM8731:inst5|o_strR                     ; Lost fanout                                 ;
+; WM8731:inst5|o_strL                     ; Lost fanout                                 ;
+; WM8731:inst5|dacdat                     ; Stuck at GND due to stuck port data_in      ;
+; WM8731:inst5|countR[0..3]               ; Lost fanout                                 ;
+; Total Number of Removed Registers = 141 ;                                             ;
++-----------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                               ;
++----------------------------------------+--------------------------------+---------------------------------------------------------------------------------+
+; Register name                          ; Reason for Removal             ; Registers Removed due to This Register                                          ;
++----------------------------------------+--------------------------------+---------------------------------------------------------------------------------+
+; WM8731:inst5|chanel[0]                 ; Stuck at GND                   ; WM8731:inst5|utR[11], DigitalFilter:inst1|inputarrayR[0][11],                   ;
+;                                        ; due to stuck port clock_enable ; DigitalFilter:inst1|inputarrayR[1][11], DigitalFilter:inst1|inputarrayR[2][11], ;
+;                                        ;                                ; WM8731:inst5|utR[10], DigitalFilter:inst1|inputarrayR[0][10],                   ;
+;                                        ;                                ; DigitalFilter:inst1|inputarrayR[1][10], DigitalFilter:inst1|inputarrayR[2][10], ;
+;                                        ;                                ; WM8731:inst5|utR[9], DigitalFilter:inst1|inputarrayR[0][9],                     ;
+;                                        ;                                ; DigitalFilter:inst1|inputarrayR[1][9], DigitalFilter:inst1|inputarrayR[2][9],   ;
+;                                        ;                                ; WM8731:inst5|utR[8], DigitalFilter:inst1|inputarrayR[0][8],                     ;
+;                                        ;                                ; DigitalFilter:inst1|inputarrayR[1][8], DigitalFilter:inst1|inputarrayR[2][8],   ;
+;                                        ;                                ; WM8731:inst5|utR[7], DigitalFilter:inst1|inputarrayR[0][7],                     ;
+;                                        ;                                ; DigitalFilter:inst1|inputarrayR[1][7], DigitalFilter:inst1|inputarrayR[2][7],   ;
+;                                        ;                                ; WM8731:inst5|utR[6], DigitalFilter:inst1|inputarrayR[0][6],                     ;
+;                                        ;                                ; DigitalFilter:inst1|inputarrayR[1][6], DigitalFilter:inst1|inputarrayR[2][6],   ;
+;                                        ;                                ; WM8731:inst5|utR[5], DigitalFilter:inst1|inputarrayR[0][5],                     ;
+;                                        ;                                ; DigitalFilter:inst1|inputarrayR[1][5], DigitalFilter:inst1|inputarrayR[2][5],   ;
+;                                        ;                                ; WM8731:inst5|utR[4], DigitalFilter:inst1|inputarrayR[0][4],                     ;
+;                                        ;                                ; DigitalFilter:inst1|inputarrayR[1][4], DigitalFilter:inst1|inputarrayR[2][4],   ;
+;                                        ;                                ; WM8731:inst5|utR[3], DigitalFilter:inst1|inputarrayR[0][3],                     ;
+;                                        ;                                ; DigitalFilter:inst1|inputarrayR[1][3], DigitalFilter:inst1|inputarrayR[2][3],   ;
+;                                        ;                                ; WM8731:inst5|utR[2], DigitalFilter:inst1|inputarrayR[0][2],                     ;
+;                                        ;                                ; DigitalFilter:inst1|inputarrayR[1][2], DigitalFilter:inst1|inputarrayR[2][2],   ;
+;                                        ;                                ; WM8731:inst5|utR[1], DigitalFilter:inst1|inputarrayR[0][1],                     ;
+;                                        ;                                ; DigitalFilter:inst1|inputarrayR[1][1], DigitalFilter:inst1|inputarrayR[2][1],   ;
+;                                        ;                                ; WM8731:inst5|utR[0], DigitalFilter:inst1|inputarrayR[0][0],                     ;
+;                                        ;                                ; DigitalFilter:inst1|inputarrayR[1][0], DigitalFilter:inst1|inputarrayR[2][0],   ;
+;                                        ;                                ; WM8731:inst5|countL[3]                                                          ;
+; WM8731:inst5|chanel[1]                 ; Stuck at GND                   ; WM8731:inst5|utL[15], WM8731:inst5|utL[14], WM8731:inst5|utL[13],               ;
+;                                        ; due to stuck port data_in      ; WM8731:inst5|countL[2], WM8731:inst5|countL[1], WM8731:inst5|countL[0],         ;
+;                                        ;                                ; WM8731:inst5|dacdat, WM8731:inst5|countR[3], WM8731:inst5|countR[2],            ;
+;                                        ;                                ; WM8731:inst5|countR[1], WM8731:inst5|countR[0]                                  ;
+; WM8731:inst5|utR[15]                   ; Stuck at GND                   ; DigitalFilter:inst1|inputarrayR[0][15], DigitalFilter:inst1|inputarrayR[1][15], ;
+;                                        ; due to stuck port clock_enable ; DigitalFilter:inst1|inputarrayR[2][15], WM8731:inst5|o_strR                     ;
+; WM8731:inst5|utR[14]                   ; Stuck at GND                   ; DigitalFilter:inst1|inputarrayR[0][14], DigitalFilter:inst1|inputarrayR[1][14], ;
+;                                        ; due to stuck port clock_enable ; DigitalFilter:inst1|inputarrayR[2][14]                                          ;
+; WM8731:inst5|utR[13]                   ; Stuck at GND                   ; DigitalFilter:inst1|inputarrayR[0][13], DigitalFilter:inst1|inputarrayR[1][13], ;
+;                                        ; due to stuck port clock_enable ; DigitalFilter:inst1|inputarrayR[2][13]                                          ;
+; WM8731:inst5|utR[12]                   ; Stuck at GND                   ; DigitalFilter:inst1|inputarrayR[0][12], DigitalFilter:inst1|inputarrayR[1][12], ;
+;                                        ; due to stuck port clock_enable ; DigitalFilter:inst1|inputarrayR[2][12]                                          ;
+; DigitalFilter:inst1|inputarrayL[0][0]  ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][0], DigitalFilter:inst1|inputarrayL[2][0],   ;
+;                                        ;                                ; WM8731:inst5|o_strL                                                             ;
+; DigitalFilter:inst1|inputarrayL[0][1]  ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][1], DigitalFilter:inst1|inputarrayL[2][1]    ;
+; DigitalFilter:inst1|inputarrayL[0][2]  ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][2], DigitalFilter:inst1|inputarrayL[2][2]    ;
+; DigitalFilter:inst1|inputarrayL[0][3]  ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][3], DigitalFilter:inst1|inputarrayL[2][3]    ;
+; DigitalFilter:inst1|inputarrayL[0][4]  ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][4], DigitalFilter:inst1|inputarrayL[2][4]    ;
+; DigitalFilter:inst1|inputarrayL[0][5]  ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][5], DigitalFilter:inst1|inputarrayL[2][5]    ;
+; DigitalFilter:inst1|inputarrayL[0][6]  ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][6], DigitalFilter:inst1|inputarrayL[2][6]    ;
+; DigitalFilter:inst1|inputarrayL[0][7]  ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][7], DigitalFilter:inst1|inputarrayL[2][7]    ;
+; DigitalFilter:inst1|inputarrayL[0][8]  ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][8], DigitalFilter:inst1|inputarrayL[2][8]    ;
+; DigitalFilter:inst1|inputarrayL[0][9]  ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][9], DigitalFilter:inst1|inputarrayL[2][9]    ;
+; DigitalFilter:inst1|inputarrayL[0][10] ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][10], DigitalFilter:inst1|inputarrayL[2][10]  ;
+; DigitalFilter:inst1|inputarrayL[0][11] ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][11], DigitalFilter:inst1|inputarrayL[2][11]  ;
+; DigitalFilter:inst1|inputarrayL[0][12] ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][12], DigitalFilter:inst1|inputarrayL[2][12]  ;
+; DigitalFilter:inst1|inputarrayL[0][13] ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][13], DigitalFilter:inst1|inputarrayL[2][13]  ;
+; DigitalFilter:inst1|inputarrayL[0][14] ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][14], DigitalFilter:inst1|inputarrayL[2][14]  ;
+; DigitalFilter:inst1|inputarrayL[0][15] ; Lost Fanouts                   ; DigitalFilter:inst1|inputarrayL[1][15], DigitalFilter:inst1|inputarrayL[2][15]  ;
++----------------------------------------+--------------------------------+---------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -244,8 +438,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; i2c:inst4|sda_out                      ; 6       ;
 ; WM8731:inst5|count[3]                  ; 3       ;
 ; WM8731:inst5|count[2]                  ; 4       ;
-; WM8731:inst5|count[1]                  ; 5       ;
 ; WM8731:inst5|count[0]                  ; 6       ;
+; WM8731:inst5|count[1]                  ; 5       ;
 ; i2c:inst4|count[2]                     ; 13      ;
 ; i2c:inst4|count[0]                     ; 12      ;
 ; i2c:inst4|count[1]                     ; 13      ;
@@ -253,15 +447,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |Main|i2c:inst4|counter[22] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|WM8731:inst5|count[3] ;
-; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |Main|i2c:inst4|count[2]    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |Main|i2c:inst4|counter[22]  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|WM8731:inst5|countL[0] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|WM8731:inst5|countR[0] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|WM8731:inst5|count[1]  ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |Main|i2c:inst4|count[0]     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
 
 
 +-----------------------------------------------------+
@@ -277,14 +473,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;     ENA SCLR          ; 32                          ;
 ;     plain             ; 2                           ;
 ; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 262                         ;
+; arriav_lcell_comb     ; 261                         ;
 ;     arith             ; 160                         ;
 ;         1 data inputs ; 160                         ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 101                         ;
+;     normal            ; 100                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 4                           ;
+;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 17                          ;
 ;         3 data inputs ; 7                           ;
 ;         4 data inputs ; 10                          ;
@@ -302,7 +498,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -312,12 +508,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Nov 22 12:30:08 2018
+    Info: Processing started: Fri Nov 23 11:51:13 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DigitalFilter -c DigitalFilter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file digitalfilter.vhd
-    Info (12022): Found design unit 1: DigitalFilter-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 23
+    Info (12022): Found design unit 1: DigitalFilter-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 22
     Info (12023): Found entity 1: DigitalFilter File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file clock_divider.vhd
     Info (12022): Found design unit 1: clock_divider-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 15
@@ -334,7 +530,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file test.vh
     Info (12022): Found design unit 1: test-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/test.vhd Line: 15
     Info (12023): Found entity 1: test File: C:/Users/Martin/OneDrive/Dokument/Projekt15/test.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file wm8731.vhd
-    Info (12022): Found design unit 1: WM8731-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 17
+    Info (12022): Found design unit 1: WM8731-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 23
     Info (12023): Found entity 1: WM8731 File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 4
 Info (12127): Elaborating entity "Main" for the top level hierarchy
 Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:inst"
@@ -342,18 +538,23 @@ Warning (10492): VHDL Process Statement warning at clock_divider.vhd(37): signal
 Warning (10492): VHDL Process Statement warning at clock_divider.vhd(57): signal "clk_mclk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 57
 Warning (10492): VHDL Process Statement warning at clock_divider.vhd(77): signal "clk_i2c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 77
 Info (12128): Elaborating entity "WM8731" for hierarchy "WM8731:inst5"
-Warning (10541): VHDL Signal Declaration warning at WM8731.vhd(9): used implicit default value for signal "dacdat" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 9
-Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(26): object "utL" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 26
-Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(27): object "utR" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 27
+Warning (10541): VHDL Signal Declaration warning at WM8731.vhd(18): used implicit default value for signal "o_parL" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 18
+Warning (10541): VHDL Signal Declaration warning at WM8731.vhd(19): used implicit default value for signal "o_parR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 19
+Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(32): object "inL" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 32
+Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(33): object "inR" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 33
+Info (12128): Elaborating entity "DigitalFilter" for hierarchy "DigitalFilter:inst1"
+Warning (10631): VHDL Process Statement warning at DigitalFilter.vhd(62): inferring latch(es) for signal or variable "inputarrayL", which holds its previous value in one or more paths through the process File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 62
+Warning (10631): VHDL Process Statement warning at DigitalFilter.vhd(77): inferring latch(es) for signal or variable "inputarrayR", which holds its previous value in one or more paths through the process File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 77
 Info (12128): Elaborating entity "i2c" for hierarchy "i2c:inst4"
 Warning (10492): VHDL Process Statement warning at i2c.vhd(62): signal "counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 62
+Info (286030): Timing-Driven Synthesis is running
 Warning (13050): Open-drain buffer(s) that do not directly drive top-level pin(s) are removed
     Warning (13051): Converted the fanout from the open-drain buffer "i2c:inst4|sda" to the node "i2c:inst4|Mux28" into a wire File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 7
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "dacdat" is stuck at GND
-Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register i2c:inst4|scl_out will power up to High File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 62
+Info (17049): 122 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
@@ -362,10 +563,10 @@ Info (21057): Implemented 269 device resources after synthesis - the final resou
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 6 output pins
     Info (21061): Implemented 260 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 4877 megabytes
-    Info: Processing ended: Thu Nov 22 12:30:26 2018
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:35
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 4899 megabytes
+    Info: Processing ended: Fri Nov 23 11:51:30 2018
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:34
 
 
