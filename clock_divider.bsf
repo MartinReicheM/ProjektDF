@@ -20,7 +20,7 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 192 128)
+	(rect 16 16 184 128)
 	(text "clock_divider" (rect 5 0 56 12)(font "Arial" ))
 	(text "inst" (rect 8 96 20 108)(font "Arial" ))
 	(port
@@ -33,32 +33,32 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 48)
 		(input)
-		(text "clock_reset" (rect 0 0 46 12)(font "Arial" ))
-		(text "clock_reset" (rect 21 43 67 55)(font "Arial" ))
+		(text "reset" (rect 0 0 20 12)(font "Arial" ))
+		(text "reset" (rect 21 43 41 55)(font "Arial" ))
 		(line (pt 0 48)(pt 16 48)(line_width 1))
 	)
 	(port
-		(pt 176 32)
+		(pt 168 32)
 		(output)
 		(text "MCLK" (rect 0 0 28 12)(font "Arial" ))
-		(text "MCLK" (rect 127 27 155 39)(font "Arial" ))
-		(line (pt 176 32)(pt 160 32)(line_width 1))
+		(text "MCLK" (rect 119 27 147 39)(font "Arial" ))
+		(line (pt 168 32)(pt 152 32)(line_width 1))
 	)
 	(port
-		(pt 176 48)
+		(pt 168 48)
 		(output)
 		(text "BCLK" (rect 0 0 25 12)(font "Arial" ))
-		(text "BCLK" (rect 130 43 155 55)(font "Arial" ))
-		(line (pt 176 48)(pt 160 48)(line_width 1))
+		(text "BCLK" (rect 122 43 147 55)(font "Arial" ))
+		(line (pt 168 48)(pt 152 48)(line_width 1))
 	)
 	(port
-		(pt 176 64)
+		(pt 168 64)
 		(output)
 		(text "clk400" (rect 0 0 25 12)(font "Arial" ))
-		(text "clk400" (rect 130 59 155 71)(font "Arial" ))
-		(line (pt 176 64)(pt 160 64)(line_width 1))
+		(text "clk400" (rect 122 59 147 71)(font "Arial" ))
+		(line (pt 168 64)(pt 152 64)(line_width 1))
 	)
 	(drawing
-		(rectangle (rect 16 16 160 96)(line_width 1))
+		(rectangle (rect 16 16 152 96)(line_width 1))
 	)
 )

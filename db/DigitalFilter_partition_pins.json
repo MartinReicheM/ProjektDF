@@ -8,6 +8,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "daclrc",
+					"strict" : false
+				},
+				{
 					"name" : "bclk",
 					"strict" : false
 				},
@@ -16,11 +20,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "sda",
+					"name" : "scl",
 					"strict" : false
 				},
 				{
-					"name" : "scl",
+					"name" : "dacdat",
+					"strict" : false
+				},
+				{
+					"name" : "sda",
 					"strict" : false
 				},
 				{
@@ -29,6 +37,10 @@
 				},
 				{
 					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "adcdat",
 					"strict" : false
 				}
 			]

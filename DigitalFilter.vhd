@@ -64,30 +64,18 @@ coeffarray(3)<="0011001100110011";
 	strOutR<='1';
 	
 ------------- Sampling 16bit array from WM8731 ------------------
-	process(reset,strInL) is 
-	begin 
-		if (reset='0') then
-			inputarrayL(0)<=(others=>'0');
-			inputarrayL(1)<=(others=>'0');
-			inputarrayL(2)<=(others=>'0');
-			inputarrayL(3)<=(others=>'0');
-		
-		elsif rising_edge(strInL) then 
+	process(strInL) is 
+	begin
+		if rising_edge(strInL) then 
 			inputarrayL(0)<=inputarrayL(1);
 			inputarrayL(1)<=inputarrayL(2);
 			inputarrayL(2)<=i_parLL;
 		end if;
 	end process;
 	
-	process(reset,strInR) is 
+	process(strInR) is 
 	begin 
-		if (reset='0') then
-			inputarrayR(0)<=(others=>'0');
-			inputarrayR(1)<=(others=>'0');
-			inputarrayR(2)<=(others=>'0');
-			inputarrayR(3)<=(others=>'0');
-			
-		elsif rising_edge(strInR) then 
+		if rising_edge(strInR) then 
 			inputarrayR(0)<=inputarrayR(1);
 			inputarrayR(1)<=inputarrayR(2);
 			inputarrayR(2)<=i_parRR;

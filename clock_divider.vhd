@@ -5,7 +5,7 @@ use IEEE.std_logic_unsigned.all;
 entity clock_divider is
 port (
 	clock_50: in std_logic;
-	clock_reset: in std_logic;
+	reset: in std_logic;
 	MCLK: out std_logic;
 	BCLK: out std_logic;
 	clk400: out std_logic
@@ -14,68 +14,48 @@ port (
  
  architecture rtl of clock_divider is
  
- signal clock_counter,clock_counter1,clock_counter2: integer := 0;
+ signal counter_bclk,counter_mclk,counter_i2c: integer := 0;
  signal clk_bclk,clk_mclk,clk_i2c: std_logic := '0'; 
 
  begin
- process(clock_50,clock_reset)
- begin
  
- ------------Clock BCLK(1536kHz)--------------
- if(clock_reset='0') then
-		if(rising_edge(clock_50)) then
-			clock_counter<=clock_counter+1;
-			if(clock_counter=15) then
-				clock_counter<=0;
-				clk_bclk <= not(clk_bclk);
+ process(reset, clock_50) is 
+ begin 
+ 
+ 		if(reset='0') then 
+			--reset
+			
+		elsif rising_edge(clock_50) then 
+		
+		------BCLK-------
+			if(counter_bclk>=7) then
+				clk_bclk<=not(clk_bclk);
+				counter_bclk<=0;
+			else
+				counter_bclk<=counter_bclk+1;
 			end if;
-		end if;
- else
- clock_counter<=0;
- clk_bclk <= '0';
- end if;	
- BCLK<=clk_bclk;
- end process;
- 
-  ------------Clock MCLK (12.288kHz)--------------
- 
-  process(clock_50,clock_reset)
-  begin 
-  
-  if(clock_reset='0') then
-		if(rising_edge(clock_50)) then
-			clock_counter1<=clock_counter1+1;
-			if(clock_counter1=1) then
-				clock_counter1<=0;
-				clk_mclk <= not(clk_mclk);
+			
+		-------MCLK-------
+			if(counter_mclk>=1) then
+				clk_mclk<=not(clk_mclk);
+				counter_mclk<=0;
+			else
+				counter_mclk<=counter_mclk+1;
 			end if;
-		end if;
- else
- clock_counter1<=0;
- clk_mclk <= '0';
- end if;	
- MCLK<=clk_mclk;
- end process;
- 
-   ------------Clock MCLK (400 kHz)--------------
- 
-  process(clock_50,clock_reset)
-  begin 
-  
-  if(clock_reset='0') then
-		if(rising_edge(clock_50)) then
-			clock_counter2<=clock_counter2+1;
-			if(clock_counter2=124) then
-				clock_counter2<=0;
-				clk_i2c <= not(clk_i2c);
+			
+		---- i2c clokc-----
+			if(counter_i2c>=124) then
+				clk_i2c<=not(clk_i2c);
+				counter_i2c<=0;
+			else
+				counter_i2c<=counter_i2c+1;
 			end if;
+		
+		BCLK<=clk_bclk;
+		MCLK<=clk_mclk;
+		clk400<=clk_i2c;
 		end if;
- else
- clock_counter2<=0;
- clk_i2c <= '0';
- end if;	
- clk400<=clk_i2c;
- end process;
- 
+end process;	
+
 end architecture;
 

@@ -34,6 +34,8 @@ architecture rtl of WM8731 is
 	signal utL: std_logic_vector(15 downto 0):=(others=>'0');
 	signal utR: std_logic_vector(15 downto 0):=(others=>'0');
 	
+	signal temp :std_logic;
+	
 	begin
 	
 	process(reset,bclk)
@@ -41,7 +43,7 @@ architecture rtl of WM8731 is
 	begin
 	
 		if(reset='0') then
-				--daclrc<='0';
+				daclrc<='0';
 				adclrc<='0';
 				statemachine<=0;
 				count<=15;
@@ -55,18 +57,18 @@ architecture rtl of WM8731 is
 			case statemachine is
 	
 	 --------------------Set LRC high-------------------
-			when 0 =>
-				--daclrc <= '1';
-				adclrc <= '1';
-				o_strL <= '0';
-				o_strR  <= '0';
-				statemachine <= statemachine + 1;
+		--	when 0 =>
+		--		daclrc <= '0';
+		--		adclrc <= '0';
+		--		o_strL <= '0';
+		--		o_strR  <= '0';
+		--		statemachine <= statemachine + 1;
 
 ----------------------Read left----------------------	
-			when 1 =>
+			when 0 =>
 	
 				inL(count) <= adcdat;
-				--daclrc <= '0';
+				daclrc <= '0';
 				adclrc <= '0';
 	
 				if((count-1)>=0) then
@@ -80,11 +82,11 @@ architecture rtl of WM8731 is
 				end if;
 	
 --------------------Read  right--------------------
-			when 2 =>
+			when 1 =>
 				o_strL<='0';
 				inR(count) <= adcdat;
-				--daclrc <= '0';
-				adclrc <= '0';
+				daclrc <= '1';
+				adclrc <= '1';
 	
 				if((count-1)>=0) then
 					count <= count - 1;
@@ -103,40 +105,42 @@ architecture rtl of WM8731 is
 			end case;
 --------------------Loop back test--------------------
 
---		elsif rising_edge(bclk) then
---			dacdat <= adcdat;
+		elsif rising_edge(bclk) then
+			temp<=adcdat;
+			dacdat <= temp;
 -------------------Digital Output--------------------
 
-		elsif rising_edge(bclk) then
-					
-			if(i_strL = '1' and chanel = 0) then
-				utL <= i_parL;
-				countL <= 15;
-				daclrc <= '1';
-			elsif(countL= 0) then 
-				dacdat<=utL(countL);
-				chanel<= 1;
-			else		
-				dacdat <= utL(countL);
-				countL <= countL - 1;
-				daclrc <= '0';
-			end if;
-
-			if(i_strR = '1' and chanel = 1) then 
-				utR <= i_parR;
-				countR <= 15;
-			elsif(countR = 0) then 
-				dacdat<=utR(countR);
-				chanel<=0;
-			else
-				dacdat <= utR(countR);
-			   countR <= countR - 1;
-			end if;
+--		elsif rising_edge(bclk) then
+--					
+--			if(i_strL = '1' and chanel = 0) then
+--				utL <= i_parL;
+--				countL <= 15;
+--				--daclrc <= '1';
+--			elsif(countL= 0) then 
+--				dacdat<=utL(countL);
+--				chanel<= 1;
+--			else		
+--				dacdat <= utL(countL);
+--				countL <= countL - 1;
+--				--daclrc <= '0';
+--			end if;
+--
+--			if(i_strR = '1' and chanel = 1) then 
+--				utR <= i_parR;
+--				countR <= 15;
+--			elsif(countR = 0) then 
+--				dacdat<=utR(countR);
+--				chanel<=0;
+--			else
+--				dacdat <= utR(countR);
+--			   countR <= countR - 1;
+--			end if;
 		end if;
 	end process;
 
-	o_parL<=inL;
-	o_parR<=inR;
+	--o_parL<=inL;
+	--o_parR<=inR;
+	
 	
 
 end architecture;
