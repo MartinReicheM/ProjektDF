@@ -31,29 +31,28 @@ port(
  ----Slave adress----
  constant addr_slave: std_logic_vector(7 downto 0) :="00110100"; --Slave address + write
  
- --Register values
- constant R0: std_logic_vector (7 downto 0) :=x"00"; --00
- constant R00: std_logic_vector (7 downto 0):=x"10"; --10
- constant R1: std_logic_vector (7 downto 0) :=x"02"; --02
- constant R11: std_logic_vector (7 downto 0):=x"10"; --10
- constant R2: std_logic_vector (7 downto 0) :=x"04"; --04
- constant R22: std_logic_vector (7 downto 0):=x"79"; --79
- constant R3: std_logic_vector (7 downto 0) :=x"06"; --06	-fel?
- constant R33: std_logic_vector (7 downto 0):=x"79"; --79
- constant R4: std_logic_vector (7 downto 0) :=x"08"; --08   -fel?
- constant R44: std_logic_vector (7 downto 0):=x"D0"; --D0
- constant R5: std_logic_vector (7 downto 0) :=x"0A"; --0A   -fel?
- constant R55: std_logic_vector (7 downto 0):=x"06"; --06
- constant R6: std_logic_vector (7 downto 0) :=x"0C"; --0C
- constant R66: std_logic_vector (7 downto 0):=x"00"; --00
- constant R7: std_logic_vector (7 downto 0) :=x"0E"; --0E
- constant R77: std_logic_vector (7 downto 0):=x"0A"; --0A
- constant R8: std_logic_vector (7 downto 0) :=x"10"; --10
- constant R88: std_logic_vector (7 downto 0):=x"00"; --00
- constant R9: std_logic_vector (7 downto 0) :=x"12"; --12
- constant R99: std_logic_vector (7 downto 0):=x"01"; --01
- constant R15: std_logic_vector (7 downto 0):= x"00"; --00
- constant R1515: std_logic_vector (7 downto 0):= x"00"; --00
+ constant R0: std_logic_vector (7 downto 0) := "00000000"; --R0
+ constant R00: std_logic_vector (7 downto 0):= "00010000"; --00010000
+ constant R1: std_logic_vector (7 downto 0) := "00000011"; --R1
+ constant R11: std_logic_vector (7 downto 0):= "00110111"; --00010000 --00110111
+ constant R2: std_logic_vector (7 downto 0) := "00000101"; --R2		 --00000101
+ constant R22: std_logic_vector (7 downto 0):= "01111001"; --01111001
+ constant R3: std_logic_vector (7 downto 0) := "00000111"; --R3		 --00000111
+ constant R33: std_logic_vector (7 downto 0):= "01111011"; --01111001 --01111011
+ constant R4: std_logic_vector (7 downto 0) := "00001000"; --R4
+ constant R44: std_logic_vector (7 downto 0):= "11010000"; --11010000
+ constant R5: std_logic_vector (7 downto 0) := "00001010"; --R5
+ constant R55: std_logic_vector (7 downto 0):= "00000110"; --00000110
+ constant R6: std_logic_vector (7 downto 0) := "00001100"; --R6
+ constant R66: std_logic_vector (7 downto 0):= "00000000"; --00000000
+ constant R7: std_logic_vector (7 downto 0) := "00001110"; --R7
+ constant R77: std_logic_vector (7 downto 0):= "00000001"; --00000001
+ constant R8: std_logic_vector (7 downto 0) := "00010000"; --R8
+ constant R88: std_logic_vector (7 downto 0):= "00000000"; --00000000
+ constant R9: std_logic_vector (7 downto 0) := "00010010"; --R9
+ constant R99: std_logic_vector (7 downto 0):= "00000001"; --00000001
+ constant R15: std_logic_vector (7 downto 0):= "00011110"; --R15
+ constant R1515: std_logic_vector (7 downto 0):= "00000000";--00000000
  
  begin
  
@@ -63,7 +62,7 @@ port(
  process(clock)
  begin
  
- if(counter=5) then
+ if(counter=11) then
  scl_out<='1';
  sda_out<='1';
  check <= '1';

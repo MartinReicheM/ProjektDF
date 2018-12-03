@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DigitalFilter
-Thu Nov 29 11:30:02 2018
+Mon Dec 03 16:28:00 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -51,13 +51,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Nov 29 11:30:01 2018       ;
+; Analysis & Synthesis Status     ; Successful - Mon Dec 03 16:28:00 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; DigitalFilter                               ;
 ; Top-level Entity Name           ; Main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 836                                         ;
+; Total registers                 ; 837                                         ;
 ; Total pins                      ; 10                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 786,432                                     ;
@@ -251,16 +251,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 505                      ;
+; Estimate of Logic utilization (ALMs needed) ; 508                      ;
 ;                                             ;                          ;
-; Combinational ALUT usage for logic          ; 625                      ;
+; Combinational ALUT usage for logic          ; 635                      ;
 ;     -- 7 input functions                    ; 3                        ;
-;     -- 6 input functions                    ; 129                      ;
-;     -- 5 input functions                    ; 101                      ;
+;     -- 6 input functions                    ; 138                      ;
+;     -- 5 input functions                    ; 98                       ;
 ;     -- 4 input functions                    ; 62                       ;
-;     -- <=3 input functions                  ; 330                      ;
+;     -- <=3 input functions                  ; 334                      ;
 ;                                             ;                          ;
-; Dedicated logic registers                   ; 836                      ;
+; Dedicated logic registers                   ; 837                      ;
 ;                                             ;                          ;
 ; I/O pins                                    ; 10                       ;
 ; Total MLAB memory bits                      ; 0                        ;
@@ -270,8 +270,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
 ; Maximum fan-out                             ; 509                      ;
-; Total fan-out                               ; 8248                     ;
-; Average fan-out                             ; 5.20                     ;
+; Total fan-out                               ; 8279                     ;
+; Average fan-out                             ; 5.18                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -280,10 +280,10 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                              ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |Main                                                                                                                                   ; 625 (0)             ; 836 (0)                   ; 786432            ; 0          ; 10   ; 0            ; |Main                                                                                                                                                                                                                                                                                                                                            ; Main                              ; work         ;
-;    |WM8731:inst5|                                                                                                                       ; 6 (6)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Main|WM8731:inst5                                                                                                                                                                                                                                                                                                                               ; WM8731                            ; work         ;
+; |Main                                                                                                                                   ; 635 (0)             ; 837 (0)                   ; 786432            ; 0          ; 10   ; 0            ; |Main                                                                                                                                                                                                                                                                                                                                            ; Main                              ; work         ;
+;    |WM8731:inst5|                                                                                                                       ; 8 (8)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|WM8731:inst5                                                                                                                                                                                                                                                                                                                               ; WM8731                            ; work         ;
 ;    |clock_divider:inst|                                                                                                                 ; 119 (119)           ; 102 (102)                 ; 0                 ; 0          ; 0    ; 0            ; |Main|clock_divider:inst                                                                                                                                                                                                                                                                                                                         ; clock_divider                     ; work         ;
-;    |i2c:inst4|                                                                                                                          ; 85 (85)             ; 43 (43)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|i2c:inst4                                                                                                                                                                                                                                                                                                                                  ; i2c                               ; work         ;
+;    |i2c:inst4|                                                                                                                          ; 93 (93)             ; 43 (43)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|i2c:inst4                                                                                                                                                                                                                                                                                                                                  ; i2c                               ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 92 (1)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Main|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 91 (0)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Main|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
 ;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 91 (0)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Main|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
@@ -364,14 +364,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
 
-+-------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                      ;
-+---------------------------------------+---------------------------------+
-; Register name                         ; Reason for Removal              ;
-+---------------------------------------+---------------------------------+
-; WM8731:inst5|daclrc                   ; Merged with WM8731:inst5|adclrc ;
-; Total Number of Removed Registers = 1 ;                                 ;
-+---------------------------------------+---------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; WM8731:inst5|statemachine[1,2]        ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -379,12 +379,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 836   ;
+; Total registers                              ; 837   ;
 ; Number of registers using Synchronous Clear  ; 240   ;
 ; Number of registers using Synchronous Load   ; 165   ;
-; Number of registers using Asynchronous Clear ; 267   ;
+; Number of registers using Asynchronous Clear ; 260   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 570   ;
+; Number of registers using Clock Enable       ; 563   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -395,13 +395,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; i2c:inst4|scl_out                                                                                                                                                                                                                                                                                                               ; 2       ;
-; WM8731:inst5|count[3]                                                                                                                                                                                                                                                                                                           ; 2       ;
-; WM8731:inst5|count[2]                                                                                                                                                                                                                                                                                                           ; 3       ;
-; WM8731:inst5|count[1]                                                                                                                                                                                                                                                                                                           ; 4       ;
-; WM8731:inst5|count[0]                                                                                                                                                                                                                                                                                                           ; 5       ;
-; i2c:inst4|count[2]                                                                                                                                                                                                                                                                                                              ; 11      ;
-; i2c:inst4|count[1]                                                                                                                                                                                                                                                                                                              ; 11      ;
-; i2c:inst4|count[0]                                                                                                                                                                                                                                                                                                              ; 13      ;
+; WM8731:inst5|count[4]                                                                                                                                                                                                                                                                                                           ; 3       ;
+; WM8731:inst5|count[3]                                                                                                                                                                                                                                                                                                           ; 4       ;
+; WM8731:inst5|count[2]                                                                                                                                                                                                                                                                                                           ; 5       ;
+; WM8731:inst5|count[1]                                                                                                                                                                                                                                                                                                           ; 6       ;
+; WM8731:inst5|count[0]                                                                                                                                                                                                                                                                                                           ; 7       ;
+; i2c:inst4|count[2]                                                                                                                                                                                                                                                                                                              ; 18      ;
+; i2c:inst4|count[1]                                                                                                                                                                                                                                                                                                              ; 15      ;
+; i2c:inst4|count[0]                                                                                                                                                                                                                                                                                                              ; 15      ;
 ; i2c:inst4|sda_out                                                                                                                                                                                                                                                                                                               ; 1       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 3       ;
@@ -422,7 +423,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[3]                                                                                                                                                   ; 1       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[4]                                                                                                                                                   ; 1       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[5]                                                                                                                                                   ; 1       ;
-; Total number of inverted registers = 28                                                                                                                                                                                                                                                                                         ;         ;
+; Total number of inverted registers = 29                                                                                                                                                                                                                                                                                         ;         ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -431,9 +432,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |Main|i2c:inst4|counter[15]     ;
-; 31:1               ; 2 bits    ; 40 LEs        ; 14 LEs               ; 26 LEs                 ; Yes        ; |Main|i2c:inst4|statemachine[1] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|WM8731:inst5|count[1]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |Main|i2c:inst4|counter[17]     ;
+; 31:1               ; 2 bits    ; 40 LEs        ; 14 LEs               ; 26 LEs                 ; Yes        ; |Main|i2c:inst4|statemachine[0] ;
 ; 30:1               ; 3 bits    ; 60 LEs        ; 6 LEs                ; 54 LEs                 ; Yes        ; |Main|i2c:inst4|count[1]        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
 
@@ -527,30 +527,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 154                         ;
-;     CLR               ; 4                           ;
-;     ENA               ; 44                          ;
-;     ENA CLR           ; 5                           ;
+; arriav_ff             ; 155                         ;
+;     CLR               ; 2                           ;
+;     ENA               ; 42                          ;
 ;     ENA SCLR          ; 96                          ;
 ;     ENA SLD           ; 1                           ;
-;     plain             ; 4                           ;
+;     plain             ; 14                          ;
 ; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 210                         ;
+; arriav_lcell_comb     ; 220                         ;
 ;     arith             ; 128                         ;
 ;         1 data inputs ; 128                         ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 81                          ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 9                           ;
+;     normal            ; 91                          ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 6                           ;
 ;         4 data inputs ; 13                          ;
-;         5 data inputs ; 19                          ;
-;         6 data inputs ; 32                          ;
+;         5 data inputs ; 16                          ;
+;         6 data inputs ; 41                          ;
 ; boundary_port         ; 10                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.34                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.23                        ;
 +-----------------------+-----------------------------+
 
 
@@ -559,7 +558,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -577,8 +576,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; bclk                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; clock_divider:inst|BCLK             ; N/A     ;
 ; dacdat                    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; WM8731:inst5|dacdat                 ; N/A     ;
 ; dacdat                    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; WM8731:inst5|dacdat                 ; N/A     ;
-; daclrc                    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; WM8731:inst5|adclrc                 ; N/A     ;
-; daclrc                    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; WM8731:inst5|adclrc                 ; N/A     ;
+; daclrc                    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; WM8731:inst5|daclrc                 ; N/A     ;
+; daclrc                    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; WM8731:inst5|daclrc                 ; N/A     ;
 ; scl                       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; i2c:inst4|scl_out~_wirecell         ; N/A     ;
 ; scl                       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; i2c:inst4|scl_out~_wirecell         ; N/A     ;
 ; sda                       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sda                                 ; N/A     ;
@@ -634,7 +633,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Nov 29 11:29:13 2018
+    Info: Processing started: Mon Dec 03 16:27:25 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DigitalFilter -c DigitalFilter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -661,15 +660,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file wm8731.
 Info (12127): Elaborating entity "Main" for the top level hierarchy
 Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:inst"
 Info (12128): Elaborating entity "WM8731" for hierarchy "WM8731:inst5"
+Warning (10541): VHDL Signal Declaration warning at WM8731.vhd(14): used implicit default value for signal "o_strL" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 14
+Warning (10541): VHDL Signal Declaration warning at WM8731.vhd(15): used implicit default value for signal "o_strR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 15
 Warning (10541): VHDL Signal Declaration warning at WM8731.vhd(18): used implicit default value for signal "o_parL" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 18
 Warning (10541): VHDL Signal Declaration warning at WM8731.vhd(19): used implicit default value for signal "o_parR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 19
-Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(32): object "inL" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 32
-Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(33): object "inR" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 33
-Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(34): object "utL" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 34
-Warning (10036): Verilog HDL or VHDL warning at WM8731.vhd(35): object "utR" assigned a value but never read File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 35
 Info (12128): Elaborating entity "DigitalFilter" for hierarchy "DigitalFilter:inst1"
 Info (12128): Elaborating entity "i2c" for hierarchy "i2c:inst4"
-Warning (10492): VHDL Process Statement warning at i2c.vhd(66): signal "counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 66
+Warning (10492): VHDL Process Statement warning at i2c.vhd(65): signal "counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 65
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_8l84.tdf
     Info (12023): Found entity 1: altsyncram_8l84 File: C:/Users/Martin/OneDrive/Dokument/Projekt15/db/altsyncram_8l84.tdf Line: 31
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dla.tdf
@@ -696,7 +693,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: C:/Users/Martin/OneDrive/Dokument/Projekt15/db/cmpr_99c.tdf Line: 22
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2018.11.29.11:29:46 Progress: Loading sldf3f4eebb/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2018.12.03.16:27:49 Progress: Loading sldf3f4eebb/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -721,20 +718,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/ip/s
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/Martin/OneDrive/Dokument/Projekt15/db/ip/sldf3f4eebb/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register i2c:inst4|scl_out will power up to High File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 66
+    Critical Warning (18010): Register i2c:inst4|scl_out will power up to High File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 65
 Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 57 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 9 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1214 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1223 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 7 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 1103 logic cells
+    Info (21061): Implemented 1112 logic cells
     Info (21064): Implemented 96 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 4945 megabytes
-    Info: Processing ended: Thu Nov 29 11:30:02 2018
-    Info: Elapsed time: 00:00:49
-    Info: Total CPU time (on all processors): 00:01:22
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4946 megabytes
+    Info: Processing ended: Mon Dec 03 16:28:01 2018
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:01:06
 
 

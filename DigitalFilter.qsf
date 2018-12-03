@@ -62,7 +62,7 @@ set_global_assignment -name VHDL_FILE WM8731.vhd
 set_location_assignment PIN_K12 -to sda
 set_location_assignment PIN_J12 -to scl
 set_location_assignment PIN_H8 -to daclrc
-set_location_assignment PIN_Y16 -to reset
+set_location_assignment PIN_Y18 -to reset
 set_location_assignment PIN_AF14 -to clock_50
 set_location_assignment PIN_G7 -to MCLK
 set_location_assignment PIN_K8 -to adclrc
