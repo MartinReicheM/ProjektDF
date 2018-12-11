@@ -3,83 +3,70 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
 use ieee.std_logic_signed.all;
 
-entity DigitalFilter is 
-port(
-		reset 	: in 	std_logic;
-		strInL	: in  std_logic;
-		strInR	: in  std_logic;
-		strOutL	: out std_logic;
-		strOutR	: out std_logic;
-		order 	: in  std_logic_vector(3 downto 0);
-		Ftype		: in  std_logic_vector(3 downto 0);
-		i_parLL	: in 	std_logic_vector(15 downto 0);
-		i_parRR	: in 	std_logic_vector(15 downto 0);
-		o_parLL	: out std_logic_vector(15 downto 0);
-		o_parRR	: out std_logic_vector(15 downto 0)
-);
-end entity;
+entity DigitalFilter is
+port (
+	signalIn: in std_logic;
+	signalOut: out std_logic;
+	filterDataIn: in std_logic_vector(15 downto 0);
+	filterDataOut: out std_logic_vector(15 downto 0)
+	);
+end DigitalFilter;
+ 
+architecture rtl of DigitalFilter is
 
-architecture rtl of DigitalFilter is 
-type inputs       is array(0 to 3) of std_logic_vector(15 downto 0);
-type coefficiants is array(0 to 7) of std_logic_vector(15 downto 0); 
+type inputs       is array(0 to 9) of std_logic_vector(15 downto 0);
+type coefficiants is array(0 to 9) of std_logic_vector(15 downto 0); 
 signal coeffarray : coefficiants;
-signal inputarrayL,inputarrayR : inputs;
-signal inputtick	: integer range 0 to 7:=0;
-signal loops 		: integer range 0 to 7:=0;
-signal outVecLL	: std_logic_vector(31 downto 0):=(others=>'0');
-signal outVecRR	: std_logic_vector(31 downto 0):=(others=>'0');
+signal arrayIn : inputs;
+signal filterOutput	: std_logic_vector(31 downto 0):=(others=>'0');
 
-begin 
------COEFFICIANTS FOR LP 9KHZ FIR FILTER -----
-coeffarray(0)<="0000010011101100";
-coeffarray(1)<="0001111010010011";
-coeffarray(2)<="0000010011101100";
-coeffarray(3)<="0011001100110011";
+ begin
 
---	process(strInL, reset) is 
---	begin 
---		if (reset = '0') then 
---			loops<=0;
---		
---		elsif rising_edge(strInL) then 
---			if (loops < conv_integer(order)) then 
---				multiVec <= coeffarray(loops)*inputarrayL(loops);
---				outVec<= outVec + multiVec(31 downto 16);
---				loops<=loops + 1;
---			else 
---				
---			end if; 
---		
---		end if;
---	
---
---	end process;
-	
-	------- 2:nd order FIR filter --------------
-	outVecLL<=coeffarray(0)*inputarrayL(0)+coeffarray(1)*inputarrayL(1)+coeffarray(2)*inputarrayL(2);
-	o_parLL<=outVecLL(31 downto 16);
-	--  o_parLL<=inputarrayL(0);
-	o_parRR<=inputarrayR(0);
-	strOutL<='1';
-	strOutR<='1';
-	
-------------- Sampling 16bit array from WM8731 ------------------
-	process(strInL) is 
-	begin
-		if rising_edge(strInL) then 
-			inputarrayL(0)<=inputarrayL(1);
-			inputarrayL(1)<=inputarrayL(2);
-			inputarrayL(2)<=i_parLL;
-		end if;
-	end process;
-	
-	process(strInR) is 
-	begin 
-		if rising_edge(strInR) then 
-			inputarrayR(0)<=inputarrayR(1);
-			inputarrayR(1)<=inputarrayR(2);
-			inputarrayR(2)<=i_parRR;
-		end if;
-	end process;
-	
-end architecture rtl;
+ process(filterDataIn) is
+ 
+ begin
+
+coeffarray(0)<= "1111101100010011";
+coeffarray(1)<= "0001111010010011";
+coeffarray(2)<= "0011000010110111";
+coeffarray(3)<= "0100000000000000";
+coeffarray(4)<= "0100000000000000";
+coeffarray(5)<= "0011000010110111";
+coeffarray(6)<= "0001111010010011";
+coeffarray(7)<= "1111101100010011";
+
+--coeffarray(0)<="0000000011000100";
+--coeffarray(1)<="0000001001001100";
+--coeffarray(2)<="0000000010101100";
+--coeffarray(3)<="0000110110000010";
+--coeffarray(4)<="0001101111110110";
+--coeffarray(5)<="0001101111110110";
+--coeffarray(6)<="0000110110000010";
+--coeffarray(7)<="0000000010101100";
+--coeffarray(8)<="0000001001001100";
+--coeffarray(9)<="0000000011000100";
+
+--coeffarray(0)<= "0001001110001000";
+--coeffarray(1)<= "0001001110001000";
+
+
+ filterOutput <= - coeffarray(0) * arrayIn(0) + coeffarray(1) * arrayIn(1) + coeffarray(2) * arrayIn(2) + coeffarray(3) * arrayIn(3) + coeffarray(4) * arrayIn(4) + coeffarray(5) * arrayIn(5) + coeffarray(6) * arrayIn(6) - coeffarray(7) * arrayIn(7); 
+--filterOutput<= -arrayIn(0)*coeffarray(0)-arrayIn(1)*coeffarray(1)+ arrayIn(2)*coeffarray(2)+arrayIn(3)*coeffarray(3)+ arrayIn(4)*coeffarray(4)+arrayIn(5)*coeffarray(5)+ arrayIn(6)*coeffarray(6)+arrayIn(7)*coeffarray(7)-arrayIn(8)*coeffarray(8)-arrayIn(9)*coeffarray(9);
+ filterDataOut <= filterOutput(31 downto 16);--arrayIn(0);	 -- filterDataIn;
+
+ if(rising_edge(signalIn)) then
+ arrayIn(0)<= arrayIn(1);
+ arrayIn(1)<=arrayIn(2);
+ arrayIn(2)<=arrayIn(3);
+ arrayIn(3)<=arrayIn(4);
+ arrayIn(4)<=arrayIn(5);
+ arrayIn(5)<=arrayIn(6);
+ arrayIn(6)<=arrayIn(7);
+ arrayIn(7)<=arrayIn(8);
+ arrayIn(8)<=arrayIn(9);
+ arrayIn(9)<=filterDataIn;
+ end if;
+ 
+ end process;
+ 
+ end architecture;

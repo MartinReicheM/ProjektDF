@@ -9,26 +9,29 @@ port(
 	dacdat	: out std_logic;
 	adcdat	: in  std_logic;
 	reset		: in  std_logic;
-	i_strL	: in  std_logic;
-	i_strR	: in  std_logic;
-	o_strL	: out std_logic;
-	o_strR	: out std_logic;
-	i_parL	: in  std_logic_vector(15 downto 0);
-	i_parR	: in  std_logic_vector(15 downto 0);
-	o_parL	: out std_logic_vector(15 downto 0);
-	o_parR	: out std_logic_vector(15 downto 0)
+	strobe	: out std_logic;
+	toFilter : out std_logic_vector(15 downto 0);
+	fromFilter : in std_logic_vector(15 downto 0)
 	);
  end entity;
  
 architecture rtl of WM8731 is
 
 	----Signals----
-	signal statemachine: integer range 0 to 5 :=0;
+	signal statemachine	: integer range 0 to 1 :=0;
+	signal outstate		: integer range 0 to 1 :=0;
+	signal outcount		: integer range 0 to 31:=0;
+	signal outcounter		: integer range 0 to 15:=15;
 	signal count : integer range 0 to 31 := 31;
+	signal counter : integer range 0 to 15 := 15;
 	signal temp : std_logic;
-	signal counter: integer := 0;
-	signal data: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
-	signal data1: std_logic_vector (15 downto 0) := "0000000000000000";
+	signal dataToFIR: std_logic_vector (15 downto 0):= "0000000000000000";
+	signal dataFromFIR: std_logic_vector (15 downto 0):= "0000000000000000";
+	
+	signal count1 : integer range 0 to 31 := 31;
+	signal counter1 : integer range 0 to 15 := 15;
+	signal lrc: integer := 0;
+	signal lrc1: integer := 0;
 	
 	begin
 	
@@ -43,15 +46,32 @@ architecture rtl of WM8731 is
 --------------------Read  Left--------------------
 			
 			when 0 =>
-			
-				if(count=31) then
-				daclrc <= '0';
+			adclrc <= '1';
+
+				if(count>29) then
+						daclrc <= '0';
+						
 				else
-				daclrc <= '1';
+						daclrc <= '1';
+
 				end if;
 				
-				adclrc <= '1';
-				temp <= adcdat;
+				if(count< 31 AND count>=15) then    --
+							dataToFIR(counter) <= adcdat;
+							temp <= dataFromFIR(counter);
+							counter <= counter-1;
+				elsif(count = 14) then
+							toFilter <= dataToFIR;
+							strobe <= '1';
+							temp <= '0';
+				elsif(count = 13) then 
+							strobe<='0';
+							temp<='0';
+				elsif(count = 2) then
+							dataFromFIR <= fromFilter; 
+							strobe <= '0';
+							temp <= '0';
+				end if;
 				
 				if((count-1)>=0) then
 					count <= count - 1;
@@ -59,23 +79,33 @@ architecture rtl of WM8731 is
 				else
 					statemachine <= 1;
 					count<=31;
+					counter <= 15;
 				end if;
 				
 			when 1 =>
-				adclrc <= '0';
-				if(count=31) then
-				daclrc <= '1';
+			adclrc <= '0';
+
+				if(count>29) then
+					daclrc <= '1';
 				else
-				daclrc <= '0';
+					daclrc <= '0';
+
 				end if;
-				temp <= adcdat;
 				
+				if(count< 31 AND count>=15) then --
+						temp <= dataToFIR(counter);
+						counter <= counter-1;
+					else
+						temp <= '0';
+					end if;
+								
 				if((count-1)>=0) then
 					count <= count - 1;
 					statemachine <= 1;
 				else
 					statemachine <= 0;
 					count<=31;
+					counter <= 15;
 				end if;
 				
 ------------------Other condition------------------
@@ -84,12 +114,11 @@ architecture rtl of WM8731 is
 				statemachine<=0;
 			
 			end case;
---------------------Loop back test-------------------
+--------------------Implementing Filter-------------------
 		elsif(rising_edge(bclk)) then
 		dacdat <= temp;
 		end if;
 	
 	end process;
-	
 	
 end architecture;

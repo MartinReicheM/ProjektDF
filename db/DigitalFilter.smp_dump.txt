@@ -1,0 +1,11 @@
+
+State Machine - |Main|i2c:inst4|statemachine
+Name statemachine.turnback statemachine.stop statemachine.acknowledge statemachine.sendData1 statemachine.sendData statemachine.addrSlave statemachine.start statemachine.idle 
+statemachine.idle 0 0 0 0 0 0 0 0 
+statemachine.start 0 0 0 0 0 0 1 1 
+statemachine.addrSlave 0 0 0 0 0 1 0 1 
+statemachine.sendData 0 0 0 0 1 0 0 1 
+statemachine.sendData1 0 0 0 1 0 0 0 1 
+statemachine.acknowledge 0 0 1 0 0 0 0 1 
+statemachine.stop 0 1 0 0 0 0 0 1 
+statemachine.turnback 1 0 0 0 0 0 0 1 
