@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DigitalFilter
-Tue Dec 11 14:32:42 2018
+Thu Dec 13 11:20:40 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -53,17 +53,17 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Dec 11 14:32:42 2018       ;
+; Analysis & Synthesis Status     ; Successful - Thu Dec 13 11:20:40 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; DigitalFilter                               ;
 ; Top-level Entity Name           ; Main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 1308                                        ;
-; Total pins                      ; 11                                          ;
+; Total registers                 ; 1525                                        ;
+; Total pins                      ; 27                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 151,552                                     ;
-; Total DSP Blocks                ; 8                                           ;
+; Total DSP Blocks                ; 24                                          ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
@@ -187,6 +187,7 @@ refer to the applicable agreement for further details.
 ; Main.bdf                                                           ; yes             ; User Block Diagram/Schematic File            ; C:/Users/Martin/OneDrive/Dokument/Projekt15/Main.bdf                                                           ;             ;
 ; i2c.vhd                                                            ; yes             ; User VHDL File                               ; C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd                                                            ;             ;
 ; WM8731.vhd                                                         ; yes             ; User VHDL File                               ; C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd                                                         ;             ;
+; LCD.vhd                                                            ; yes             ; User VHDL File                               ; C:/Users/Martin/OneDrive/Dokument/Projekt15/LCD.vhd                                                            ;             ;
 ; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_signaltap.vhd                                       ;             ;
 ; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                                  ;             ;
 ; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_ela_control.vhd                                     ;             ;
@@ -251,27 +252,27 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 744                      ;
+; Estimate of Logic utilization (ALMs needed) ; 867                      ;
 ;                                             ;                          ;
-; Combinational ALUT usage for logic          ; 687                      ;
+; Combinational ALUT usage for logic          ; 794                      ;
 ;     -- 7 input functions                    ; 1                        ;
-;     -- 6 input functions                    ; 149                      ;
-;     -- 5 input functions                    ; 129                      ;
-;     -- 4 input functions                    ; 53                       ;
-;     -- <=3 input functions                  ; 355                      ;
+;     -- 6 input functions                    ; 184                      ;
+;     -- 5 input functions                    ; 136                      ;
+;     -- 4 input functions                    ; 61                       ;
+;     -- <=3 input functions                  ; 412                      ;
 ;                                             ;                          ;
-; Dedicated logic registers                   ; 1308                     ;
+; Dedicated logic registers                   ; 1525                     ;
 ;                                             ;                          ;
-; I/O pins                                    ; 11                       ;
+; I/O pins                                    ; 27                       ;
 ; Total MLAB memory bits                      ; 0                        ;
 ; Total block memory bits                     ; 151552                   ;
 ;                                             ;                          ;
-; Total DSP Blocks                            ; 8                        ;
+; Total DSP Blocks                            ; 24                       ;
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
 ; Maximum fan-out                             ; 516                      ;
-; Total fan-out                               ; 7872                     ;
-; Average fan-out                             ; 3.80                     ;
+; Total fan-out                               ; 9097                     ;
+; Average fan-out                             ; 3.72                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -280,10 +281,11 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                              ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |Main                                                                                                                                   ; 687 (0)             ; 1308 (0)                  ; 151552            ; 8          ; 11   ; 0            ; |Main                                                                                                                                                                                                                                                                                                                                            ; Main                              ; work         ;
-;    |DigitalFilter:inst2|                                                                                                                ; 0 (0)               ; 160 (160)                 ; 0                 ; 8          ; 0    ; 0            ; |Main|DigitalFilter:inst2                                                                                                                                                                                                                                                                                                                        ; DigitalFilter                     ; work         ;
+; |Main                                                                                                                                   ; 794 (0)             ; 1525 (0)                  ; 151552            ; 24         ; 27   ; 0            ; |Main                                                                                                                                                                                                                                                                                                                                            ; Main                              ; work         ;
+;    |DigitalFilter:inst2|                                                                                                                ; 16 (16)             ; 320 (320)                 ; 0                 ; 24         ; 0    ; 0            ; |Main|DigitalFilter:inst2                                                                                                                                                                                                                                                                                                                        ; DigitalFilter                     ; work         ;
+;    |LCD:inst1|                                                                                                                          ; 50 (50)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|LCD:inst1                                                                                                                                                                                                                                                                                                                                  ; LCD                               ; work         ;
 ;    |WM8731:inst5|                                                                                                                       ; 55 (55)             ; 63 (63)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|WM8731:inst5                                                                                                                                                                                                                                                                                                                               ; WM8731                            ; work         ;
-;    |clock_divider:inst|                                                                                                                 ; 119 (119)           ; 102 (102)                 ; 0                 ; 0          ; 0    ; 0            ; |Main|clock_divider:inst                                                                                                                                                                                                                                                                                                                         ; clock_divider                     ; work         ;
+;    |clock_divider:inst|                                                                                                                 ; 160 (160)           ; 136 (136)                 ; 0                 ; 0          ; 0    ; 0            ; |Main|clock_divider:inst                                                                                                                                                                                                                                                                                                                         ; clock_divider                     ; work         ;
 ;    |i2c:inst4|                                                                                                                          ; 138 (138)           ; 79 (79)                   ; 0                 ; 0          ; 0    ; 0            ; |Main|i2c:inst4                                                                                                                                                                                                                                                                                                                                  ; i2c                               ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 91 (1)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Main|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 90 (0)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Main|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
@@ -380,11 +382,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------+-------------+
 ; Statistic                         ; Number Used ;
 +-----------------------------------+-------------+
-; Independent 18x18 plus 36         ; 8           ;
-; Total number of DSP blocks        ; 8           ;
+; Independent 18x18 plus 36         ; 24          ;
+; Total number of DSP blocks        ; 24          ;
 ;                                   ;             ;
-; Fixed Point Signed Multiplier     ; 2           ;
-; Fixed Point Mixed Sign Multiplier ; 6           ;
+; Fixed Point Signed Multiplier     ; 4           ;
+; Fixed Point Mixed Sign Multiplier ; 20          ;
 +-----------------------------------+-------------+
 
 
@@ -423,8 +425,10 @@ Encoding Type:  One-Hot
 +---------------------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
+; LCD:inst1|lcd_rw1                     ; Stuck at GND due to stuck port data_in ;
+; LCD:inst1|reset_led                   ; Stuck at VCC due to stuck port data_in ;
 ; i2c:inst4|statemachine.turnback       ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
+; Total Number of Removed Registers = 3 ;                                        ;
 +---------------------------------------+----------------------------------------+
 
 
@@ -433,12 +437,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1308  ;
-; Number of registers using Synchronous Clear  ; 253   ;
+; Total registers                              ; 1525  ;
+; Number of registers using Synchronous Clear  ; 289   ;
 ; Number of registers using Synchronous Load   ; 177   ;
 ; Number of registers using Asynchronous Clear ; 324   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 653   ;
+; Number of registers using Clock Enable       ; 698   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -486,9 +490,12 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; 8:1                ; 32 bits   ; 160 LEs       ; 0 LEs                ; 160 LEs                ; Yes        ; |Main|i2c:inst4|stateCounter[23] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|WM8731:inst5|counter[0]    ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |Main|i2c:inst4|count[0]         ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |Main|LCD:inst1|nastasteg[1]     ;
+; 11:1               ; 5 bits    ; 35 LEs        ; 10 LEs               ; 25 LEs                 ; Yes        ; |Main|LCD:inst1|counter[1]       ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 0 LEs                ; 160 LEs                ; Yes        ; |Main|i2c:inst4|stateCounter[27] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|WM8731:inst5|counter[3]    ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |Main|i2c:inst4|count[1]         ;
+; 89:1               ; 4 bits    ; 236 LEs       ; 172 LEs              ; 64 LEs                 ; Yes        ; |Main|LCD:inst1|data_ctl[4]      ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Main|i2c:inst4|statemachine     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 
@@ -582,30 +589,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 404                         ;
+; arriav_ff             ; 621                         ;
 ;     CLR               ; 2                           ;
-;     ENA               ; 81                          ;
-;     ENA SCLR          ; 128                         ;
-;     plain             ; 193                         ;
+;     ENA               ; 93                          ;
+;     ENA SCLR          ; 161                         ;
+;     SCLR              ; 3                           ;
+;     plain             ; 362                         ;
 ; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 313                         ;
-;     arith             ; 159                         ;
-;         1 data inputs ; 158                         ;
+; arriav_lcell_comb     ; 422                         ;
+;     arith             ; 191                         ;
+;         1 data inputs ; 190                         ;
 ;         2 data inputs ; 1                           ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 153                         ;
+;     normal            ; 230                         ;
+;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 15                          ;
-;         3 data inputs ; 15                          ;
-;         4 data inputs ; 15                          ;
-;         5 data inputs ; 25                          ;
-;         6 data inputs ; 80                          ;
-; arriav_mac            ; 8                           ;
-; boundary_port         ; 42                          ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 37                          ;
+;         4 data inputs ; 23                          ;
+;         5 data inputs ; 32                          ;
+;         6 data inputs ; 115                         ;
+; arriav_mac            ; 24                          ;
+; boundary_port         ; 58                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 2.08                        ;
+; Average LUT depth     ; 1.44                        ;
 +-----------------------+-----------------------------+
 
 
@@ -614,7 +623,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -739,15 +748,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Dec 11 14:32:00 2018
+    Info: Processing started: Thu Dec 13 11:19:50 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DigitalFilter -c DigitalFilter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file digitalfilter.vhd
-    Info (12022): Found design unit 1: DigitalFilter-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 15
+    Info (12022): Found design unit 1: DigitalFilter-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 17
     Info (12023): Found entity 1: DigitalFilter File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file clock_divider.vhd
-    Info (12022): Found design unit 1: clock_divider-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 15
+    Info (12022): Found design unit 1: clock_divider-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 16
     Info (12023): Found entity 1: clock_divider File: C:/Users/Martin/OneDrive/Dokument/Projekt15/clock_divider.vhd Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file main.bdf
     Info (12023): Found entity 1: Main
@@ -763,17 +772,414 @@ Info (12021): Found 2 design units, including 1 entities, in source file test.vh
 Info (12021): Found 2 design units, including 1 entities, in source file wm8731.vhd
     Info (12022): Found design unit 1: WM8731-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 18
     Info (12023): Found entity 1: WM8731 File: C:/Users/Martin/OneDrive/Dokument/Projekt15/WM8731.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file lcd.vhd
+    Info (12022): Found design unit 1: LCD-rtl File: C:/Users/Martin/OneDrive/Dokument/Projekt15/LCD.vhd Line: 21
+    Info (12023): Found entity 1: LCD File: C:/Users/Martin/OneDrive/Dokument/Projekt15/LCD.vhd Line: 6
 Info (12127): Elaborating entity "Main" for the top level hierarchy
 Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:inst"
 Info (12128): Elaborating entity "WM8731" for hierarchy "WM8731:inst5"
 Info (12128): Elaborating entity "DigitalFilter" for hierarchy "DigitalFilter:inst2"
 Warning (10541): VHDL Signal Declaration warning at DigitalFilter.vhd(9): used implicit default value for signal "signalOut" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 9
-Warning (10492): VHDL Process Statement warning at DigitalFilter.vhd(53): signal "coeffarray" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 53
-Warning (10492): VHDL Process Statement warning at DigitalFilter.vhd(53): signal "arrayIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 53
-Warning (10492): VHDL Process Statement warning at DigitalFilter.vhd(55): signal "filterOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 55
-Warning (10492): VHDL Process Statement warning at DigitalFilter.vhd(57): signal "signalIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at DigitalFilter.vhd(31): signal "i_ftype" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 31
+Warning (10492): VHDL Process Statement warning at DigitalFilter.vhd(42): signal "fircoeffarray" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at DigitalFilter.vhd(42): signal "arrayIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at DigitalFilter.vhd(63): signal "biircoeffarray" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at DigitalFilter.vhd(63): signal "arrayIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at DigitalFilter.vhd(63): signal "arrayOut" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at DigitalFilter.vhd(63): signal "aiircoeffarray" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at DigitalFilter.vhd(67): signal "filterOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 67
+Warning (10631): VHDL Process Statement warning at DigitalFilter.vhd(28): inferring latch(es) for signal or variable "fircoeffarray", which holds its previous value in one or more paths through the process File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Warning (10631): VHDL Process Statement warning at DigitalFilter.vhd(28): inferring latch(es) for signal or variable "biircoeffarray", which holds its previous value in one or more paths through the process File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Warning (10631): VHDL Process Statement warning at DigitalFilter.vhd(28): inferring latch(es) for signal or variable "aiircoeffarray", which holds its previous value in one or more paths through the process File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[7][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[6][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[5][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[4][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[3][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[2][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[1][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "aiircoeffarray[0][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[7][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[6][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[5][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[4][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[3][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[2][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[1][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "biircoeffarray[0][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[7][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[6][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[5][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[4][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[3][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[2][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[1][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][0]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][1]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][2]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][3]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][4]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][5]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][6]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][7]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][8]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][9]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][10]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][11]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][12]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][13]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][14]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
+Info (10041): Inferred latch for "fircoeffarray[0][15]" at DigitalFilter.vhd(28) File: C:/Users/Martin/OneDrive/Dokument/Projekt15/DigitalFilter.vhd Line: 28
 Info (12128): Elaborating entity "i2c" for hierarchy "i2c:inst4"
 Warning (10492): VHDL Process Statement warning at i2c.vhd(91): signal "counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 91
+Info (12128): Elaborating entity "LCD" for hierarchy "LCD:inst1"
+Warning (10541): VHDL Signal Declaration warning at LCD.vhd(13): used implicit default value for signal "lcd_on" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/LCD.vhd Line: 13
+Warning (10541): VHDL Signal Declaration warning at LCD.vhd(14): used implicit default value for signal "lcd_blon" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Martin/OneDrive/Dokument/Projekt15/LCD.vhd Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_3i84.tdf
     Info (12023): Found entity 1: altsyncram_3i84 File: C:/Users/Martin/OneDrive/Dokument/Projekt15/db/altsyncram_3i84.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_flc.tdf
@@ -796,7 +1202,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: C:/Users/Martin/OneDrive/Dokument/Projekt15/db/cmpr_99c.tdf Line: 22
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2018.12.11.14:32:29 Progress: Loading sldf3f4eebb/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2018.12.13.11:20:23 Progress: Loading sldf3f4eebb/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -819,23 +1225,37 @@ Info (12021): Found 2 design units, including 1 entities, in source file db/ip/s
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/Users/Martin/OneDrive/Dokument/Projekt15/db/ip/sldf3f4eebb/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldf3f4eebb/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/Martin/OneDrive/Dokument/Projekt15/db/ip/sldf3f4eebb/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Warning (13044): Always-enabled tri-state buffer(s) removed
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "LCD:inst1|data_out_d[7]" to the node "data_out_d[7]" into a wire File: C:/Users/Martin/OneDrive/Dokument/Projekt15/LCD.vhd Line: 16
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "LCD:inst1|data_out_d[6]" to the node "data_out_d[6]" into a wire File: C:/Users/Martin/OneDrive/Dokument/Projekt15/LCD.vhd Line: 16
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "LCD:inst1|data_out_d[5]" to the node "data_out_d[5]" into a wire File: C:/Users/Martin/OneDrive/Dokument/Projekt15/LCD.vhd Line: 16
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "LCD:inst1|data_out_d[4]" to the node "data_out_d[4]" into a wire File: C:/Users/Martin/OneDrive/Dokument/Projekt15/LCD.vhd Line: 16
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "LCD:inst1|data_out_d[3]" to the node "data_out_d[3]" into a wire File: C:/Users/Martin/OneDrive/Dokument/Projekt15/LCD.vhd Line: 16
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "LCD:inst1|data_out_d[2]" to the node "data_out_d[2]" into a wire File: C:/Users/Martin/OneDrive/Dokument/Projekt15/LCD.vhd Line: 16
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "LCD:inst1|data_out_d[1]" to the node "data_out_d[1]" into a wire File: C:/Users/Martin/OneDrive/Dokument/Projekt15/LCD.vhd Line: 16
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "LCD:inst1|data_out_d[0]" to the node "data_out_d[0]" into a wire File: C:/Users/Martin/OneDrive/Dokument/Projekt15/LCD.vhd Line: 16
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "lcd_rw" is stuck at GND
+    Warning (13410): Pin "lcd_on" is stuck at GND
+    Warning (13410): Pin "lcd_blon" is stuck at GND
+    Warning (13410): Pin "reset_led" is stuck at VCC
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register i2c:inst4|scl_out will power up to High File: C:/Users/Martin/OneDrive/Dokument/Projekt15/i2c.vhd Line: 91
 Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 107 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 9 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1635 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 7 output pins
+Info (21057): Implemented 1936 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 22 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 1574 logic cells
+    Info (21061): Implemented 1843 logic cells
     Info (21064): Implemented 37 RAM segments
-    Info (21062): Implemented 8 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4943 megabytes
-    Info: Processing ended: Tue Dec 11 14:32:42 2018
-    Info: Elapsed time: 00:00:42
-    Info: Total CPU time (on all processors): 00:01:17
+    Info (21062): Implemented 24 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 32 warnings
+    Info: Peak virtual memory: 4962 megabytes
+    Info: Processing ended: Thu Dec 13 11:20:40 2018
+    Info: Elapsed time: 00:00:50
+    Info: Total CPU time (on all processors): 00:01:27
 
 

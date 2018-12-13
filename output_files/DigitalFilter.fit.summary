@@ -1,17 +1,17 @@
-Fitter Status : Successful - Tue Dec 11 14:34:12 2018
+Fitter Status : Successful - Thu Dec 13 11:22:44 2018
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : DigitalFilter
 Top-level Entity Name : Main
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 594 / 32,070 ( 2 % )
-Total registers : 1320
-Total pins : 11 / 457 ( 2 % )
+Logic utilization (in ALMs) : 679 / 32,070 ( 2 % )
+Total registers : 1551
+Total pins : 27 / 457 ( 6 % )
 Total virtual pins : 0
 Total block memory bits : 151,552 / 4,065,280 ( 4 % )
 Total RAM Blocks : 19 / 397 ( 5 % )
-Total DSP Blocks : 8 / 87 ( 9 % )
+Total DSP Blocks : 24 / 87 ( 28 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

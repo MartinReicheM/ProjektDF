@@ -4,18 +4,19 @@ use IEEE.std_logic_unsigned.all;
 
 entity clock_divider is
 port (
-	clock_50: in std_logic;
-	reset: in std_logic;
-	MCLK: out std_logic;
-	BCLK: out std_logic;
-	clk400: out std_logic
+	clock_50	: in std_logic;
+	reset		: in std_logic;
+	MCLK		: out std_logic;
+	BCLK		: out std_logic;
+	clklcd	: out std_logic;
+	clk400	: out std_logic
 	);
  end clock_divider;
  
  architecture rtl of clock_divider is
  
- signal counter_bclk,counter_mclk,counter_i2c: integer := 0;
- signal clk_bclk,clk_mclk,clk_i2c: std_logic := '0'; 
+ signal counter_bclk,counter_mclk,counter_i2c,counter_lcd: integer := 0;
+ signal clk_bclk,clk_mclk,clk_i2c,clk_lcd: std_logic := '0'; 
 
  begin
  
@@ -50,9 +51,16 @@ port (
 			else
 				counter_i2c<=counter_i2c+1;
 			end if;
-		
-		BCLK<=clk_bclk;
-		MCLK<=clk_mclk;
+		-----LCD CLK --------
+			if(counter_lcd>=62499) then
+				clk_lcd<=not(clk_lcd);
+				counter_lcd<=0;
+			else 
+				counter_lcd<=counter_lcd+1;
+			end if;
+		clklcd<=clk_lcd;
+		BCLK	<=clk_bclk;
+		MCLK	<=clk_mclk;
 		clk400<=clk_i2c;
 		end if;
 end process;	

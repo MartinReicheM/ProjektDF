@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue Dec 11 14:32:42 2018
+Analysis & Synthesis Status : Successful - Thu Dec 13 11:20:40 2018
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : DigitalFilter
 Top-level Entity Name : Main
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 1308
-Total pins : 11
+Total registers : 1525
+Total pins : 27
 Total virtual pins : 0
 Total block memory bits : 151,552
-Total DSP Blocks : 8
+Total DSP Blocks : 24
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

@@ -54,9 +54,16 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 168 64)
 		(output)
-		(text "clk400" (rect 0 0 25 12)(font "Arial" ))
-		(text "clk400" (rect 122 59 147 71)(font "Arial" ))
+		(text "clklcd" (rect 0 0 21 12)(font "Arial" ))
+		(text "clklcd" (rect 126 59 147 71)(font "Arial" ))
 		(line (pt 168 64)(pt 152 64)(line_width 1))
+	)
+	(port
+		(pt 168 80)
+		(output)
+		(text "clk400" (rect 0 0 25 12)(font "Arial" ))
+		(text "clk400" (rect 122 75 147 87)(font "Arial" ))
+		(line (pt 168 80)(pt 152 80)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 152 96)(line_width 1))

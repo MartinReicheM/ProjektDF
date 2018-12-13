@@ -206,5 +206,19 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=4096" -section_id auto_signaltap_0
+set_location_assignment PIN_AE12 -to i_ftype
+set_location_assignment PIN_Y21 -to o_ftype
+set_global_assignment -name VHDL_FILE LCD.vhd
+set_location_assignment PIN_AJ25 -to data_out_d[7]
+set_location_assignment PIN_AH25 -to data_out_d[6]
+set_location_assignment PIN_AK26 -to data_out_d[5]
+set_location_assignment PIN_AJ26 -to data_out_d[4]
+set_location_assignment PIN_AK27 -to data_out_d[3]
+set_location_assignment PIN_AK28 -to data_out_d[2]
+set_location_assignment PIN_AK29 -to data_out_d[1]
+set_location_assignment PIN_AJ27 -to data_out_d[0]
+set_location_assignment PIN_AH27 -to lcd_e
+set_location_assignment PIN_AH24 -to lcd_rw
+set_location_assignment PIN_AG26 -to lcd_rs
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp

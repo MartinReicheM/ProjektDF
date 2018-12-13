@@ -20,9 +20,9 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 256 96)
+	(rect 16 16 256 128)
 	(text "DigitalFilter" (rect 5 0 46 12)(font "Arial" ))
-	(text "inst" (rect 8 64 20 76)(font "Arial" ))
+	(text "inst" (rect 8 96 20 108)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -33,9 +33,16 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 48)
 		(input)
+		(text "i_ftype" (rect 0 0 28 12)(font "Arial" ))
+		(text "i_ftype" (rect 21 43 49 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
 		(text "filterDataIn[15..0]" (rect 0 0 66 12)(font "Arial" ))
-		(text "filterDataIn[15..0]" (rect 21 43 87 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
+		(text "filterDataIn[15..0]" (rect 21 59 87 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
 	)
 	(port
 		(pt 240 32)
@@ -47,11 +54,18 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 240 48)
 		(output)
+		(text "o_ftype" (rect 0 0 31 12)(font "Arial" ))
+		(text "o_ftype" (rect 188 43 219 55)(font "Arial" ))
+		(line (pt 240 48)(pt 224 48)(line_width 1))
+	)
+	(port
+		(pt 240 64)
+		(output)
 		(text "filterDataOut[15..0]" (rect 0 0 73 12)(font "Arial" ))
-		(text "filterDataOut[15..0]" (rect 146 43 219 55)(font "Arial" ))
-		(line (pt 240 48)(pt 224 48)(line_width 3))
+		(text "filterDataOut[15..0]" (rect 146 59 219 71)(font "Arial" ))
+		(line (pt 240 64)(pt 224 64)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 224 64)(line_width 1))
+		(rectangle (rect 16 16 224 96)(line_width 1))
 	)
 )
